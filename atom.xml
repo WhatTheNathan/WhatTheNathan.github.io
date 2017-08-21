@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>What The Nathan</title>
+  <subtitle>Make That Old</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-08-21T09:38:29.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Nathan Liu</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>纪念纪念</title>
+    <link href="http://yoursite.com/2017/07/01/First%20Blog/"/>
+    <id>http://yoursite.com/2017/07/01/First Blog/</id>
+    <published>2017-07-01T05:55:18.000Z</published>
+    <updated>2017-08-21T09:38:29.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;找到一个让我写东西的地方。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;其实，个人是喜欢写东西的，中二的时候在空间日志里写下了很多对于NBA的一些想法，当然我那些青涩的样子都被我删除了哈哈哈。&lt;/p&gt;
+&lt;p&gt;所以我一直是想找一个地方去写东西的，而且作
+    
+    </summary>
+    
+      <category term="Life" scheme="http://yoursite.com/categories/Life/"/>
+    
+    
+      <category term="life" scheme="http://yoursite.com/tags/life/"/>
+    
+  </entry>
+  
+</feed>
