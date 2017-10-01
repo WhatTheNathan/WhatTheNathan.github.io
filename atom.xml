@@ -4,9 +4,9 @@
   <subtitle>Make That Old</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2017-08-21T16:02:49.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://nathanliuyolo.com/"/>
+  <updated>2017-10-01T12:44:43.192Z</updated>
+  <id>http://nathanliuyolo.com/</id>
   
   <author>
     <name>Nathan Liu</name>
@@ -16,9 +16,23 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>what</title>
+    <link href="http://nathanliuyolo.com/2017/10/01/what/"/>
+    <id>http://nathanliuyolo.com/2017/10/01/what/</id>
+    <published>2017-10-01T12:44:43.000Z</published>
+    <updated>2017-10-01T12:44:43.192Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Robocup2017日本名古屋国际赛所感</title>
-    <link href="http://yoursite.com/2017/08/21/Robocup2017%E5%9B%BD%E9%99%85%E8%B5%9B%E6%89%80%E6%84%9F/"/>
-    <id>http://yoursite.com/2017/08/21/Robocup2017国际赛所感/</id>
+    <link href="http://nathanliuyolo.com/2017/08/21/Robocup2017%E5%9B%BD%E9%99%85%E8%B5%9B%E6%89%80%E6%84%9F/"/>
+    <id>http://nathanliuyolo.com/2017/08/21/Robocup2017国际赛所感/</id>
     <published>2017-08-21T10:39:04.000Z</published>
     <updated>2017-08-21T16:02:49.000Z</updated>
     
@@ -34,19 +48,19 @@
     
     </summary>
     
-      <category term="Life" scheme="http://yoursite.com/categories/Life/"/>
+      <category term="Life" scheme="http://nathanliuyolo.com/categories/Life/"/>
     
     
-      <category term="life" scheme="http://yoursite.com/tags/life/"/>
+      <category term="life" scheme="http://nathanliuyolo.com/tags/life/"/>
     
-      <category term="Robocup" scheme="http://yoursite.com/tags/Robocup/"/>
+      <category term="Robocup" scheme="http://nathanliuyolo.com/tags/Robocup/"/>
     
   </entry>
   
   <entry>
     <title>纪念纪念</title>
-    <link href="http://yoursite.com/2017/07/01/First%20Blog/"/>
-    <id>http://yoursite.com/2017/07/01/First Blog/</id>
+    <link href="http://nathanliuyolo.com/2017/07/01/First%20Blog/"/>
+    <id>http://nathanliuyolo.com/2017/07/01/First Blog/</id>
     <published>2017-07-01T05:55:18.000Z</published>
     <updated>2017-08-21T09:38:29.000Z</updated>
     
@@ -60,10 +74,10 @@
     
     </summary>
     
-      <category term="Life" scheme="http://yoursite.com/categories/Life/"/>
+      <category term="Life" scheme="http://nathanliuyolo.com/categories/Life/"/>
     
     
-      <category term="life" scheme="http://yoursite.com/tags/life/"/>
+      <category term="life" scheme="http://nathanliuyolo.com/tags/life/"/>
     
   </entry>
   
