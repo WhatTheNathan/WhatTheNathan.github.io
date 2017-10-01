@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/child/"/>
-  <updated>2017-10-01T12:52:03.553Z</updated>
+  <updated>2017-08-21T16:02:49.000Z</updated>
   <id>http://yoursite.com/child/</id>
   
   <author>
@@ -16,23 +16,30 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>短学期实训iOS开发所遇到的坑整理</title>
-    <link href="http://yoursite.com/child/2017/10/01/%E7%9F%AD%E5%AD%A6%E6%9C%9F%E5%AE%9E%E8%AE%ADiOS%E5%BC%80%E5%8F%91%E6%89%80%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E6%95%B4%E7%90%86/"/>
-    <id>http://yoursite.com/child/2017/10/01/短学期实训iOS开发所遇到的坑整理/</id>
-    <published>2017-10-01T12:39:34.000Z</published>
-    <updated>2017-10-01T12:52:03.553Z</updated>
+    <title>Robocup2017日本名古屋国际赛所感</title>
+    <link href="http://yoursite.com/child/2017/08/21/Robocup2017%E5%9B%BD%E9%99%85%E8%B5%9B%E6%89%80%E6%84%9F/"/>
+    <id>http://yoursite.com/child/2017/08/21/Robocup2017国际赛所感/</id>
+    <published>2017-08-21T10:39:04.000Z</published>
+    <updated>2017-08-21T16:02:49.000Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;​    短学期结束时就想做一个整理了，但因为一些事情一直拖着，乘着国庆放假现在终于有时间啦~&lt;/p&gt;
-&lt;p&gt;​    本文主要为我自己在实训中开发iOS端时遇到的坑，写完之后感觉都不是高大上的做法..甚至可能是未来的我看起来有点错误的做法…但毕竟是自己花时间踩过的坑，还是
+      &lt;blockquote&gt;
+&lt;p&gt;小时候，觉得那些能代表一个学校，甚至代表国家出去比赛的同龄人很酷。&lt;/p&gt;
+&lt;p&gt;如今自己成为了小时候的自己所羡慕的那类人，怎么说呢，很酷。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/child/2017/08/21/Robocup2017国际赛所感/2017-07-28 170327.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Robocup是机器人方向国际上最有影响力的赛事，更多的赛事历史信息可以参考官网&lt;a href=&quot;http://www.robocup.org。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.robocup.org。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Robocup最先应该是只有Soccer类别，后面慢慢扩展Rescue、Home等类别。Robocup的招牌是标准平台，那些德国澳大利亚等等的强队真的是有在做科研的东西，基本上都是一个实验室的博士硕士的科研项目。而国内各个组别的队伍大部分都是以本科生为主，实力强劲的基本都是有较多的硕士甚至博士在带着做。&lt;/p&gt;
     
     </summary>
     
-      <category term="iOS开发" scheme="http://yoursite.com/child/categories/iOS%E5%BC%80%E5%8F%91/"/>
+      <category term="Life" scheme="http://yoursite.com/child/categories/Life/"/>
     
     
-      <category term="iOS开发" scheme="http://yoursite.com/child/tags/iOS%E5%BC%80%E5%8F%91/"/>
+      <category term="life" scheme="http://yoursite.com/child/tags/life/"/>
+    
+      <category term="Robocup" scheme="http://yoursite.com/child/tags/Robocup/"/>
     
   </entry>
   
