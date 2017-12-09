@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-09T02:39:26.454Z</updated>
+  <updated>2017-12-09T03:30:35.334Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TransE论文知识总结</title>
+    <link href="http://yoursite.com/2017/12/09/TransE%E8%AE%BA%E6%96%87%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2017/12/09/TransE论文知识总结/</id>
+    <published>2017-12-09T02:37:25.000Z</published>
+    <updated>2017-12-09T03:30:35.334Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-relational-data.p&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Translating Embeddings for Modeling Multi-relational Data&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;关于表示学习的前话&quot;&gt;&lt;a href=&quot;#关于表示学习的前话&quot; class=&quot;headerlink&quot; title=&quot;关于表示学习的前话&quot;&gt;&lt;/a&gt;关于表示学习的前话&lt;/h2&gt;&lt;p&gt;​    深度学习中最重要的作用就是表示学习，深度学习首先是学习特征，然后是学习分类，即所谓的端对端学习，所以深度学习很适合去解决像图像处理这种数据的”初始表示”与解决任务所需的”合适表示”相距甚远的问题。表示学习就是要将所研究对象的语义信息表示为稠密低纬实值向量，而在该低纬度空间中，两个对象距离越近则说明其语义相似度越高。&lt;/p&gt;
+&lt;p&gt;​    而且当处理这种在语义层面上难以表示的数据时，我们很难像特征工程那样人工去设计出合适的特征，而深度神经网络具有强大的建模以及知识抽取的能力，这种问题正是DNN大施拳脚的地方。&lt;/p&gt;
+&lt;p&gt;​    而最近入坑的也是本文所涉及的是知识表示学习，即面向知识库中的实体和关系进行表示学习。&lt;/p&gt;
+&lt;p&gt;​    本文主要是对最近阅读TransE模型提出的论文的知识总结，其他References见文末。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://yoursite.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="表示学习" scheme="http://yoursite.com/tags/%E8%A1%A8%E7%A4%BA%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="TransE" scheme="http://yoursite.com/tags/TransE/"/>
+    
+      <category term="机器学习" scheme="http://yoursite.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>小猴偷米iOS开发技术分享</title>

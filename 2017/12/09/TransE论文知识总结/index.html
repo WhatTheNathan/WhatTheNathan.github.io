@@ -1,0 +1,956 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="表示学习,TransE,机器学习," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="What The Nathan" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/uploads/site.png?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Translating Embeddings for Modeling Multi-relational Data 关于表示学习的前话​    深度学习中最重要的作用就是表示学习，深度学习首先是学习特征，然后是学习分类，即所谓的端对端学习，所以深度学习很适合去解决像图像处理这种数据的”初始表示”与解决任务所需的”合适表示”相距甚远的问题。表示学习就是要将所研究对象的语义信息表示为稠密低纬实值向量，">
+<meta name="keywords" content="表示学习,TransE,机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TransE论文知识总结">
+<meta property="og:url" content="http://yoursite.com/2017/12/09/TransE论文知识总结/index.html">
+<meta property="og:site_name" content="What The Nathan">
+<meta property="og:description" content="Translating Embeddings for Modeling Multi-relational Data 关于表示学习的前话​    深度学习中最重要的作用就是表示学习，深度学习首先是学习特征，然后是学习分类，即所谓的端对端学习，所以深度学习很适合去解决像图像处理这种数据的”初始表示”与解决任务所需的”合适表示”相距甚远的问题。表示学习就是要将所研究对象的语义信息表示为稠密低纬实值向量，">
+<meta property="og:image" content="http://yoursite.com/2017/12/09/TransE论文知识总结/dataSet.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/12/09/TransE论文知识总结/table_1.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/12/09/TransE论文知识总结/table_2.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/12/09/TransE论文知识总结/table_3.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/12/09/TransE论文知识总结/table_4.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/12/09/TransE论文知识总结/table_5.jpg">
+<meta property="og:updated_time" content="2017-12-09T03:30:35.334Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TransE论文知识总结">
+<meta name="twitter:description" content="Translating Embeddings for Modeling Multi-relational Data 关于表示学习的前话​    深度学习中最重要的作用就是表示学习，深度学习首先是学习特征，然后是学习分类，即所谓的端对端学习，所以深度学习很适合去解决像图像处理这种数据的”初始表示”与解决任务所需的”合适表示”相距甚远的问题。表示学习就是要将所研究对象的语义信息表示为稠密低纬实值向量，">
+<meta name="twitter:image" content="http://yoursite.com/2017/12/09/TransE论文知识总结/dataSet.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/09/TransE论文知识总结/"/>
+
+
+
+
+
+  <title>TransE论文知识总结 | What The Nathan</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">What The Nathan</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Make That Old</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/09/TransE论文知识总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nathan Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/what.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="What The Nathan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">TransE论文知识总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-09T10:37:25+08:00">
+                2017-12-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机器学习/" itemprop="url" rel="index">
+                    <span itemprop="name">机器学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://papers.nips.cc/paper/5071-translating-embeddings-for-modeling-multi-relational-data.p" target="_blank" rel="external">Translating Embeddings for Modeling Multi-relational Data</a></p>
+<h2 id="关于表示学习的前话"><a href="#关于表示学习的前话" class="headerlink" title="关于表示学习的前话"></a>关于表示学习的前话</h2><p>​    深度学习中最重要的作用就是表示学习，深度学习首先是学习特征，然后是学习分类，即所谓的端对端学习，所以深度学习很适合去解决像图像处理这种数据的”初始表示”与解决任务所需的”合适表示”相距甚远的问题。表示学习就是要将所研究对象的语义信息表示为稠密低纬实值向量，而在该低纬度空间中，两个对象距离越近则说明其语义相似度越高。</p>
+<p>​    而且当处理这种在语义层面上难以表示的数据时，我们很难像特征工程那样人工去设计出合适的特征，而深度神经网络具有强大的建模以及知识抽取的能力，这种问题正是DNN大施拳脚的地方。</p>
+<p>​    而最近入坑的也是本文所涉及的是知识表示学习，即面向知识库中的实体和关系进行表示学习。</p>
+<p>​    本文主要是对最近阅读TransE模型提出的论文的知识总结，其他References见文末。</p>
+<a id="more"></a>
+<h2 id="所研究的问题"><a href="#所研究的问题" class="headerlink" title="所研究的问题"></a>所研究的问题</h2><p><strong>如何将多关系数据的实体和关系表示为低纬度空间中的向量是本篇论文的核心问题。</strong></p>
+<ul>
+<li>表示为低纬空间中的向量更利于我们提高计算效率，并有效缓解数据稀疏问题。</li>
+<li>本文目标是要提出一个容易训练、训练参数少、并适用于大规模数据库的<strong>知识表示模型</strong>。</li>
+</ul>
+<h3 id="背景理论知识介绍"><a href="#背景理论知识介绍" class="headerlink" title="背景理论知识介绍"></a>背景理论知识介绍</h3><h4 id="知识库"><a href="#知识库" class="headerlink" title="知识库"></a>知识库</h4><blockquote>
+<p> 知识库将人类知识组织成结构化的知识系统，人们花费大量精力构建了各种结构化的知识库，如语言知识库WordNet、世界知识库Freebase。知识库描述现实世界中实体(entity)间的关系(relation)，而这些知识蕴藏在无(半)结构的互联网信息中，而知识库是有结构的。因此，知识库的主要研究目标是从无(半)结构的互联网信息中获取结构知识、自动融合构建知识库、服务知识推理等相关应用，知识表示是知识获取与应用的基础，因此知识表示是贯穿知识库构件与应用全过程的关键问题。                                                                </p>
+<p> ​                                                                —— [1]</p>
+</blockquote>
+<h4 id="多关系数据建模"><a href="#多关系数据建模" class="headerlink" title="多关系数据建模"></a>多关系数据建模</h4><ul>
+<li>人们往往以网络的形式组织知识库中的知识， 在本篇论文中，多关系数据指的正是知识库(看作有向图结构)中的节点(entities)以及其之间的关系(edges)。实体指的是人名、地名、机构名、概念名等。我们用三元组(实体，关系，实体)的形式来表示知识，对应着知识库网络中的一条连边及其连接的两个实体。</li>
+<li>文中用(head,label,tail)来表示三元组(triplet)，简写为(h,l,t)。</li>
+</ul>
+<h4 id="分布式表示"><a href="#分布式表示" class="headerlink" title="分布式表示"></a>分布式表示</h4><ul>
+<li>表示学习得到的低纬向量表示是一种分布式表示(distributed representation)，这样命名是因为当孤立地看向量中的每一纬，都没有明确对应的含义。而综合各维形成一个向量，则能够表示对象的语义信息。</li>
+</ul>
+<h2 id="先前的模型"><a href="#先前的模型" class="headerlink" title="先前的模型"></a>先前的模型</h2><h3 id="多关系数据建模的难点"><a href="#多关系数据建模的难点" class="headerlink" title="多关系数据建模的难点"></a>多关系数据建模的难点</h3><ul>
+<li>本质上来说，建模的过程是提取实体之间的局部或全局连接模式，并通过使用这些模式来推广特定实体和其他所有实体之间观察到的关系。</li>
+<li>对于单一关系来说，局部的意思是非常的结构化，类似于社交网络中的the friend of my friend is my friend，但也可以依赖实体，比如那些喜欢<em>星球大战6</em>的人也喜欢<em>星球大战5</em>，但是他们可能喜欢也可能不喜欢<em>泰坦尼克号</em>。</li>
+<li>而与单一关系数据相比，在对数据进行一些描述性分析后可以进行特定但简单的建模假设。多关系数据建模的难点在于局部性的概念可能同时涉及不同类型的关系和实体，因此对多关系数据建模更多通用性方法，其可以同时考虑所有异构关系来选择适当的模式。</li>
+</ul>
+<h3 id="先前模型优缺点"><a href="#先前模型优缺点" class="headerlink" title="先前模型优缺点"></a>先前模型优缺点</h3><ul>
+<li><p>大多数现有的多关系数据建模的方法的设计旨在从潜在的属性的关系学习，论文中这样解释</p>
+<blockquote>
+<p>that is，by learning and operating on latent representations(or embeddings) of the constituents(entities and relationships)</p>
+</blockquote>
+<p>其实就是对实体和关系的嵌入向量操作并学习。</p>
+</li>
+<li><p>而最近的这些方法都专注于提高贝叶斯聚类框架(Bayesian clustering framework)，或是学习低纬度空间中实体表示的基于能量的框架的表达性和普遍性。</p>
+</li>
+<li><p>表达能力可以看做模型复杂度，一般模型越复杂，表达能力越强，具体表现为参数的个数，复杂的模型一般有更多的参数。</p>
+</li>
+<li><p>这些模型的强大表达性是以模型复杂度的大幅增加为代价的，这导致人对于建模的假设难以理解，并且使计算成本更高。因为这种高容量模型的proper regularization难以设计，或许由于需要解决许多局部最小值的非凸优化问题来训练，所以这些方法可能受到过拟合的影响。</p>
+</li>
+<li><p>也正是由于[2]中指出一个简单的模型在具有相对不同关系的多关系数据集上获得的表现几乎与最具表达能力的模型一样好，这表明即使是在复杂和异构的多关系域中，简单而恰当的建模假设也能达到准确性和可伸缩性之间更好的平衡，为论文想提出一个更简单的模型提供了理论支持。</p>
+</li>
+</ul>
+<h2 id="Translation-based-model"><a href="#Translation-based-model" class="headerlink" title="Translation-based model"></a>Translation-based model</h2><h3 id="问题域"><a href="#问题域" class="headerlink" title="问题域"></a>问题域</h3><ul>
+<li>给定一个三元组的集合S，其由属于实体集E的实体h,t和属于关系集L的关系l组成，我们的模型要学习实体和关系在低纬度空间中嵌入向量表示。</li>
+</ul>
+<h3 id="提出动机"><a href="#提出动机" class="headerlink" title="提出动机"></a>提出动机</h3><ul>
+<li>层次的关系在知识数据库中非常常见，翻译是来表示它们的自然变化。</li>
+<li>基于[8]的工作，作者从自由文本中学习词嵌入，以及不同类型的实体之间的一对一关系，比如国家与城市之间的”首都”被模型表示为嵌入空间中的翻译。这表明可能存在某种嵌入空间，其中不同类型的实体之间的一对一关系也可以由翻译表示。而TransE的目的就是要强化这种嵌入空间的结构。</li>
+</ul>
+<h3 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h3><blockquote>
+<p>关系在嵌入空间中表示为翻译，即给定一个三元组(h,l,t)，那么尾实体t的嵌入向量应该接近(并且是<strong>最接近</strong>)于头实体h的嵌入向量与依赖关系l的某向量之和。若三元组不存在，则尾实体的嵌入向量应该远离后两者之和。</p>
+<script type="math/tex; mode=display">
+h + l ≈  t</script></blockquote>
+<h3 id="具体过程"><a href="#具体过程" class="headerlink" title="具体过程"></a>具体过程</h3><ul>
+<li><p>与之前的基于能量的框架一样，一个三元组的能量用来表示，d()即损失函数，可以采取L1距离(曼哈顿距离)或者L2距离(欧几里得距离)。该能量函数通过h+l与t的距离来表示该三元组的置信度，函数值越小，则该三元组置信度越高。</p>
+<script type="math/tex; mode=display">
+ d(h+l,t) = |l_{h+l}-l_t|_{L1/L2}</script></li>
+<li><p>优化目标函数为(这里markdown没发在文字中嵌入数学公式…所以体谅下)</p>
+<script type="math/tex; mode=display">
+ \Gamma = \sum_{(h,l,t)\in S} \sum_{(h^{'},l,t^{'})\in S^{'}}[\gamma+d(h+l,t)-d(h^{'}+l,t^{'})]_{+}</script><ul>
+<li>[x]+取的是x的正数部分。</li>
+<li><p>S是合法三元组的集合，而S’是错误(corrupted)三元组的集合，我们通过将S中每个三元组的h或t随机替换成一个实体构成，注意不是同时替换。</p>
+<script type="math/tex; mode=display">
+S^{'}_{(h,l,t)}=\{(h^{'},l,t)|h^{'}\in E\}\bigcup\{(h,l,t^{'})|t^{'}\in E\}</script></li>
+<li><p>γ是大于0的先验参数(hyperparameter)，表示的是合法三元组和错误的三元组之间的间隔距离。</p>
+</li>
+<li>实体以及关系的初始化采用了[3]中的Xavier初始化。</li>
+<li>使用随机梯度下降算法优化目标函数，使用batch的方式。从目标函数也很好推断出算法的嵌套运行，先从训练集选择出一个三元组的集合，对于每一个这样的三元组，采样出一个错误的三元组，然后通过恒定的学习速率的梯度步骤更新参数。算法基于验证集的性能停止。</li>
+</ul>
+</li>
+<li><p><strong>对于该优化目标函数，个人理解是合法三元组的能量函数值是要小于错误三元组的，我们希望通过在训练集的训练过程中，使每个合法三元组的能量函数值与错误三元组的能量函数值的差值尽可能小于设定好的先验参数γ，从而得到实体和关系的嵌入向量。</strong></p>
+</li>
+</ul>
+<h2 id="Related-work"><a href="#Related-work" class="headerlink" title="Related work"></a>Related work</h2><p><strong>简要介绍了主要横向对比的模型SE和Neural Tensor Model</strong></p>
+<ul>
+<li>SE尽管表达能力更强，但性能并不如TransE，作者认为原因是:<ul>
+<li>TransE是更直接地表示关系的真实属性的方式</li>
+<li>对于嵌入的模型优化是困难的</li>
+</ul>
+</li>
+</ul>
+<h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><p><strong>通过使用TransE和最近的几种方法，对从Wordnet和Freebase提取的数据的实验来评估TransE的性能，这几种方法被证明可以在各种benchmarks中达到最佳性能，并且可以扩展到相对较大的数据集。</strong></p>
+<h3 id="Data-Sets"><a href="#Data-Sets" class="headerlink" title="Data Sets"></a>Data Sets</h3><ul>
+<li>WordNet，[2]中使用的数据版本。</li>
+</ul>
+<p>使用Freebase创建了两个数据集:</p>
+<ul>
+<li>为了做一个小数据集，选择了在Freebase中有至少100个mentions，且在Wikilinks数据库中也存在的实体的子集。同时去除了只是颠倒头实体和尾实体的三元组。最终我们获得了拥有拥有14951个实体，1345种关系的592213个三元组的数据集。我们称该数据集为FB15K。</li>
+<li>同时为了测试TransE在大规模数据集上的性能，我们通过选择出现频率最高的100万个实体，创建了拥有25K种关系的1700多万个三元组的数据集，我们称该数据集为FB1M。</li>
+</ul>
+<p><img src="/2017/12/09/TransE论文知识总结/dataSet.jpg" alt="dataSet"></p>
+<h3 id="Experimental-setup"><a href="#Experimental-setup" class="headerlink" title="Experimental setup"></a>Experimental setup</h3><h4 id="实验指标"><a href="#实验指标" class="headerlink" title="实验指标"></a>实验指标</h4><ul>
+<li>对于每一个测试的三元组(h,l,t)，用关系l所涉及的实体集合的实体h’轮流替换掉h，计算所得到的三元组的能量函数值，并按照从低到高的顺序排序，该测试三元组的排名作为MeanRank(Raw)，但因为有些排名在测试三元组前面的三元组(h,l,t’)也是正确的三元组，因此将这部分三元组去掉后所得到的测试三元组的排名称为MeanRank(Filter)。</li>
+<li>对于所有测试三元组，MeanRank(Raw)小于等于10的三元组所占百分比称为Hits@10(Raw)，MeanRank(Filter)小于等于10的三元组所占百分比称为Hits@10(Filter)。</li>
+<li>同样的过程要再重复一遍，这次替换尾实体t而不是头实体h。最后需要将替换头实体和替换尾实体得到的指标取平均得到最终的指标。</li>
+</ul>
+<h4 id="Baselines"><a href="#Baselines" class="headerlink" title="Baselines"></a>Baselines</h4><ul>
+<li>Unstructured: 将数据视为单关系，没有翻译的TransE版本(将向量l设置为0)。</li>
+<li>RESCAL: 集体矩阵分解模型，通过交替最小二乘法训练。</li>
+<li>基于能量的模型，SE、SME(Linear)、SME(BILinear)、LFM</li>
+</ul>
+<p>下表给出了各方法基于FB15K的理论参数数量，可以对于低纬度嵌入，Unstructured、SME(Linear)、SME(BILinear)、LFM和TransE具有相同数量的参数。SE和RESCAL对于每个关系学习至少一个k×k矩阵，需要学习更多参数。 RESCAL在FB15k上需要大约87倍的参数，因为它需要比其他模型大得多的嵌入空间来获得良好的性能。</p>
+<p><img src="/2017/12/09/TransE论文知识总结/table_1.jpg" alt="table_1"></p>
+<h4 id="Implemetation"><a href="#Implemetation" class="headerlink" title="Implemetation"></a>Implemetation</h4><p>先验参数有</p>
+<ul>
+<li>学习率λ，among {0.001,0.01,0.1}</li>
+<li>间距γ among {1,2,10}</li>
+<li>潜在维数k among{20,50}</li>
+<li>能量函数d采用L1或L2</li>
+</ul>
+<p>最佳配置参数</p>
+<ul>
+<li>WordNet: k=20，λ=0.01，γ=2，d=L1</li>
+<li>FB15K: k=50，λ=0.01，γ=1，d=L1</li>
+<li>FB1M: k=50，λ=0.01，γ=1，d=L2</li>
+<li>训练时间限制最多1000个epochs</li>
+</ul>
+<h3 id="Link-prediction"><a href="#Link-prediction" class="headerlink" title="Link prediction"></a>Link prediction</h3><h4 id="Overall-results"><a href="#Overall-results" class="headerlink" title="Overall results"></a>Overall results</h4><ul>
+<li>过滤(Filter)之后的表现拥有较低的MeanRank和较高的HITS@10。</li>
+<li>TransE在所有指标上优于所有Baselines方法，其中对于WordNet数据集的Hits@10(Filter)指标达到89%，对于FB1M数据集的Hits@10(Filter)指标达到34%都是非常promising的性能表现。</li>
+<li>translation的重要性是巨大的，当比较TransE和Unstructured比较时，Unstructured对于WN数据集的MeanRank指标表现很好(亚军)，但是Hits@10的结果非常差。因为Unstructured只是简单地将共同出现在一起的实体聚集，与涉及的关系无关，因此只能猜测有哪些相关的实体。</li>
+</ul>
+<p><img src="/2017/12/09/TransE论文知识总结/table_2.jpg" alt="table_2"></p>
+<h4 id="Detailed-Results"><a href="#Detailed-Results" class="headerlink" title="Detailed Results"></a>Detailed Results</h4><ul>
+<li>通过将FB15K中Hits@10指标根据头实体和尾实体作为参数分为四类: 一对一、一对多、多对一、多对多。如果一个一个头实体最多与一个尾实体一起出现，则关系是一对一；如果一个头实体可以出现多条尾实体，则关系为一对多；如果多个头实体出现相同的尾实体，则关系为多对一；如果多个头实体可以出现多个尾实体，则关系为多对多。</li>
+</ul>
+<p><img src="/2017/12/09/TransE论文知识总结/table_3.jpg" alt="table_3"></p>
+<ul>
+<li>正如人们所期望的，预测三元组的”side 1”(一对多关系的头实体和多对一关系的尾实体)更容易。</li>
+<li>SME(BILinear)表现出色，因为其对于那些情况是训练最多的。</li>
+<li>Unstructured对于一对一关系上表现良好，但是在其他类型关系上都失败了，说明其只是简单地发现嵌入空间中连接在一起的实体，添加翻译项(即从Unstructured升级到TransE)，使其可以在嵌入空间中从一个实体簇连接到另一个实体簇。</li>
+</ul>
+<h4 id="Illusstration"><a href="#Illusstration" class="headerlink" title="Illusstration"></a>Illusstration</h4><ul>
+<li>下表给出了TransE在FB15K上的链接预测结果，其说明了TransE的能力，给定一个头实体和一个关系，即使正确的实体不总是排名很高，但预测的结果符合常识。</li>
+</ul>
+<p><img src="/2017/12/09/TransE论文知识总结/table_4.jpg" alt="table_4"></p>
+<h3 id="Learning-to-predict-new-relationships-with-few-examples"><a href="#Learning-to-predict-new-relationships-with-few-examples" class="headerlink" title="Learning to predict new relationships with few examples"></a>Learning to predict new relationships with few examples</h3><ul>
+<li>我们使用FB15K来检查这些模型学习新关系的速度来测试模型推广到新的事实的能力如何。</li>
+<li>我们随机选择了40种关系，并将数据集分为两组<ul>
+<li>FB15K-40rel包括了这四十种关系包含的所有三元组。分为训练集和测试集。</li>
+<li>FB15K-rest包括了总数据集中除开这40种关系剩下的所有关系包含的三元组。分为训练集和验证机集。</li>
+</ul>
+</li>
+</ul>
+<h4 id="实验步骤"><a href="#实验步骤" class="headerlink" title="实验步骤"></a>实验步骤</h4><ol>
+<li>模型通过FB15K-rest的训练集和验证机训练而成。</li>
+<li>接着使用FB15K-40rel的训练集训练，只是学习与这40种关系有关的参数。</li>
+<li>最后使用FB15K-40rel的测试集进行测试。</li>
+<li>从第二步开始我们使用每个关系涉及的0、10、100、1000个例子(可以理解为具体的三元组)来重复整个过程。</li>
+</ol>
+<h4 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h4><ul>
+<li>当没有提供未知关系涉及的例子时，Unstructured的性能是最好的，因为其不使用该信息来预测。</li>
+<li>TransE是学习速度最快的方法，其模型的简单性使其泛化能力出色，且不必修改已经训练过的嵌入向量。</li>
+</ul>
+<p><img src="/2017/12/09/TransE论文知识总结/table_5.jpg" alt="table_5"></p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[1] 刘知远，孙茂林，林衍凯，谢若冰: 知识表示学习研究进展</p>
+<p>[2] A. Bordes, X. Glorot, J. Weston, and Y. Bengio. A semantic matching energy function forlearning with multi-relational data. Machine Learning, 2013.</p>
+<p>[3] X. Glorot and Y. Bengio. Understanding the difficulty of training deep feedforward neural net-works. In Proceedings of the International Conference on Artificial Intelligence and Statistics(AISTATS), 2010.</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/表示学习/" rel="tag"># 表示学习</a>
+          
+            <a href="/tags/TransE/" rel="tag"># TransE</a>
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/07/小猴偷米iOS开发技术分享/" rel="next" title="小猴偷米iOS开发技术分享">
+                <i class="fa fa-chevron-left"></i> 小猴偷米iOS开发技术分享
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/what.png"
+               alt="Nathan Liu" />
+          <p class="site-author-name" itemprop="name">Nathan Liu</p>
+           
+              <p class="site-description motion-element" itemprop="description">Nathan的个人博客,关于技术与开发,关于NBA,关于我的生活。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/WhatTheNathan" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/WhatTheNathan" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/liu-gui-dong-82/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-comments-o"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/whatthenathan/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-google"></i>
+                  
+                  Instagram
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于表示学习的前话"><span class="nav-number">1.</span> <span class="nav-text">关于表示学习的前话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#所研究的问题"><span class="nav-number">2.</span> <span class="nav-text">所研究的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景理论知识介绍"><span class="nav-number">2.1.</span> <span class="nav-text">背景理论知识介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#知识库"><span class="nav-number">2.1.1.</span> <span class="nav-text">知识库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多关系数据建模"><span class="nav-number">2.1.2.</span> <span class="nav-text">多关系数据建模</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分布式表示"><span class="nav-number">2.1.3.</span> <span class="nav-text">分布式表示</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#先前的模型"><span class="nav-number">3.</span> <span class="nav-text">先前的模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多关系数据建模的难点"><span class="nav-number">3.1.</span> <span class="nav-text">多关系数据建模的难点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#先前模型优缺点"><span class="nav-number">3.2.</span> <span class="nav-text">先前模型优缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Translation-based-model"><span class="nav-number">4.</span> <span class="nav-text">Translation-based model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题域"><span class="nav-number">4.1.</span> <span class="nav-text">问题域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提出动机"><span class="nav-number">4.2.</span> <span class="nav-text">提出动机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心思想"><span class="nav-number">4.3.</span> <span class="nav-text">核心思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体过程"><span class="nav-number">4.4.</span> <span class="nav-text">具体过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-work"><span class="nav-number">5.</span> <span class="nav-text">Related work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiments"><span class="nav-number">6.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Sets"><span class="nav-number">6.1.</span> <span class="nav-text">Data Sets</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Experimental-setup"><span class="nav-number">6.2.</span> <span class="nav-text">Experimental setup</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实验指标"><span class="nav-number">6.2.1.</span> <span class="nav-text">实验指标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Baselines"><span class="nav-number">6.2.2.</span> <span class="nav-text">Baselines</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Implemetation"><span class="nav-number">6.2.3.</span> <span class="nav-text">Implemetation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Link-prediction"><span class="nav-number">6.3.</span> <span class="nav-text">Link prediction</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Overall-results"><span class="nav-number">6.3.1.</span> <span class="nav-text">Overall results</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Detailed-Results"><span class="nav-number">6.3.2.</span> <span class="nav-text">Detailed Results</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Illusstration"><span class="nav-number">6.3.3.</span> <span class="nav-text">Illusstration</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Learning-to-predict-new-relationships-with-few-examples"><span class="nav-number">6.4.</span> <span class="nav-text">Learning to predict new relationships with few examples</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实验步骤"><span class="nav-number">6.4.1.</span> <span class="nav-text">实验步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验结果"><span class="nav-number">6.4.2.</span> <span class="nav-text">实验结果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">7.</span> <span class="nav-text">References</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Nathan Liu</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
