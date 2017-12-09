@@ -95,15 +95,15 @@
 
 
 
-<meta name="description" content="Nathan的个人博客,关于技术与开发，关于NBA，关于我的生活。">
+<meta name="description" content="Nathan的个人博客,关于技术与开发,关于NBA,关于我的生活。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="What The Nathan">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="What The Nathan">
-<meta property="og:description" content="Nathan的个人博客,关于技术与开发，关于NBA，关于我的生活。">
+<meta property="og:description" content="Nathan的个人博客,关于技术与开发,关于NBA,关于我的生活。">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="What The Nathan">
-<meta name="twitter:description" content="Nathan的个人博客,关于技术与开发，关于NBA，关于我的生活。">
+<meta name="twitter:description" content="Nathan的个人博客,关于技术与开发,关于NBA,关于我的生活。">
 
 
 
@@ -357,329 +357,18 @@
 
       
         
-          
-            <h1 id="A-Taste-Of-Developing-iOS-Application"><a href="#A-Taste-Of-Developing-iOS-Application" class="headerlink" title="A Taste Of Developing iOS Application"></a>A Taste Of Developing iOS Application</h1><h4 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h4><blockquote>
+          <h1 id="A-Taste-Of-Developing-iOS-Application"><a href="#A-Taste-Of-Developing-iOS-Application" class="headerlink" title="A Taste Of Developing iOS Application"></a>A Taste Of Developing iOS Application</h1><h4 id="前言"><a href="#前言" class="headerlink" title="前言:"></a>前言:</h4><blockquote>
 <p>其实不敢用iOS入门这样的标题，因为感觉自己也才刚入门(hhh)，所以对这次分享的形式我也有做过一些思考，毕竟自己以前并没有过这样来介绍一个大的工程开发领域的经验。</p>
 <p>那么我最后决定是以A Taste Of Developing iOS Application为主题的技术分享，主要是面向对iOS开发、移动端开发有兴趣、无基础的同学。这次分享会让大家对iOS开发有一个大局上的了解，在过程中我会带大家编写一个demo来感觉一下iOS开发是什么样的，所以可能会较广地涉及iOS开发中的各个方面，例如Swift、MVC、Views、Frameworks等等，但不会深，体现了A Taste的主题。</p>
 <p>当然也是和有移动端开发经验的同学们一起交流。最后也会给出我在2017年底这时候，对真正想学习iOS开发的同学的一点入门建议。</p>
 </blockquote>
-<h2 id="What’s-in-iOS？"><a href="#What’s-in-iOS？" class="headerlink" title="What’s in iOS？"></a>What’s in iOS？</h2><p><strong>Core OS</strong></p>
-<ul>
-<li>最底层，最接近硬件</li>
-<li>iOS是BSD版本的Unix系统</li>
-</ul>
-<p><strong>Core Services</strong></p>
-<ul>
-<li>对Core OS层的面向对象封装</li>
-<li>包括提供手机位置Core Location，文件访问File Access，网络请求Networking等等服务</li>
-</ul>
-<p><strong>Media</strong></p>
-<ul>
-<li>图片格式处理</li>
-<li>音频、视频处理等等</li>
-</ul>
-<p><strong><em>Cocoa Touch</em></strong></p>
-<ul>
-<li>最顶层，最接近用户，负责iOS的用户界面</li>
-<li>一整套完整的框架，包括最核心的Foundation和UIKit，其通过对视图层的控件以及其功能的面向对象封装来提供良好的开发环境，是iOS开发唯一的框架，在macOS开发中称作Cocoa。</li>
-<li>因前身是被苹果公司收购的NeXT公司用Objective-C语言开发的多媒体系统NeXTSTEP的核心软件框架，因此Cocoa框架中的类都有着NS的前缀。</li>
-</ul>
-<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p><strong>IDE:</strong> <strong>Xcode9</strong> or AppCode</p>
-<p><strong>语言:</strong> Objective-C or <strong>Swift</strong></p>
-<ul>
-<li>ObjC是对C语言的超集，对其扩充的面向对象编程语言，移动开发火的那几年，ObjC赶上了热潮，就像现在以及可见的未来的人工智能热潮的python。</li>
-<li>绝大部分公司的主端核心业务都是ObjC，更别说Cocoa框架是Objc编写，所以ObjC无疑是iOS开发必学的语言。</li>
-<li>Swift是苹果公司的亲儿子，于2014年推出，甚至在2015年公开了源码，而从2016年Swift3.0推出，愈发稳定，越来越多的公司以及新产品都采用Swift开发，Swift毫无疑问是iOS开发的未来(尽管Swift的发明人跑去谷歌了….</li>
-<li>所以现在入门iOS开发，我非常推荐选择学习Swift，这也是苹果官方所推荐的。之后会详细介绍Swift，相信你一定会喜欢上这门语言，而有了Swift基础再去学习ObjC也是非常快的，毕竟其实本质要学习的是Cocoa开发。</li>
-</ul>
-<p><strong>包管理工具:</strong> <strong>CocoaPods</strong> or Carthage or Swift Package Manager</p>
-<ul>
-<li>可能Carthage的”风评”越来越好，但它其实是将所有配置交给Xcode，本身只负责下载库，解析库版本依赖。</li>
-<li>而CocoaPods可以实现cmake的机制，有更多定制的高级功能。</li>
-</ul>
-<p><strong>设计模式:</strong> <strong>MVC</strong>、MVVM</p>
-<ul>
-<li>苹果官方主推MVC，从ViewController的命名上看，心中就已经有🅱🌲了。</li>
-<li>目前潮流以及大势是MVVM。</li>
-</ul>
-<h2 id="Swift编程语言"><a href="#Swift编程语言" class="headerlink" title="Swift编程语言"></a>Swift编程语言</h2><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><ul>
-<li><p>于2014年WWDC发布，2016年发布Swift3.0后语法开始趋于稳定，最新为Swift4.0。</p>
-</li>
-<li><p>Swift3.0与2.0相比改动较大，几乎Cocoa的NS前缀都”去除”了，比如NSURL -&gt; URL，但其实本质是提供去除NS前缀的struct来引用NS类。</p>
-</li>
-<li><p>Swift是强类型静态语言，关于强类型、弱类型、动态、静态的定义很多人有自己的理解。弱类型语言对于类型检查不严格，比如会容忍隐式的类型转换，而强类型语言Swift对于类型需要强制定义。动态语言在运行期间才去确定数据类型(Python)，而静态语言Swift会在编译时确定数据类型。</p>
-</li>
-<li><p>Swift设计初就有成为universal language的野心，是具有脚本性的编译语言，Swift本质是编译性语言不用说，关于其的脚本性主要是因为类型推断、大量语法糖甚至Playground让人感觉像是脚本语言，而这也正是Swift友好、易上手的体现。</p>
-<blockquote>
-<p>Swift is friendly to new programmers. It is the first industrial-quality systems programming language that is <strong>as expressive and enjoyable as a scripting language</strong>. </p>
-<p>​                                            — The Swift Programming Language</p>
-</blockquote>
-</li>
-<li><p>Swift基于安全性开发，是<strong>type-safe</strong>的编程语言，这也是其是静态语言的原因。它让你清楚地知道代码要处理的值的类型，让你在开发的时候尽早发现并修复错误。类型推断、Optional都是类型安全的重要体现。</p>
-</li>
-<li><p>Swift对于函数式编程和流式编程拥有原生的支持，使用-&gt;符号来支持函数和闭包，map、flapmap、filter等内置函数等。目前流行的语言对函数式编程的支持都很强，<strong>函数式响应式(Functional Reactive Programming)</strong>的编程思想在前端、移动端已经越来越流行。</p>
-</li>
-</ul>
-<h3 id="demo所用到的Swift简单语法特性介绍"><a href="#demo所用到的Swift简单语法特性介绍" class="headerlink" title="demo所用到的Swift简单语法特性介绍"></a>demo所用到的Swift简单语法特性介绍</h3><h4 id="Constants-and-Variables"><a href="#Constants-and-Variables" class="headerlink" title="Constants and Variables"></a>Constants and Variables</h4><ul>
-<li>使用关键词<strong>let</strong>来声明常量。</li>
-<li>使用关键词<strong>var</strong>来声明变量。</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> maximunNumberOfLoginAttempts = <span class="number">10</span></div><div class="line"><span class="keyword">var</span> currentLoginAttempt = <span class="number">0</span></div></pre></td></tr></table></figure>
-<h4 id="Type-Annotations"><a href="#Type-Annotations" class="headerlink" title="Type Annotations"></a>Type Annotations</h4><ul>
-<li>使用类型注释在声明常量或变量时去确定其类型。</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> welcomeMessage: <span class="type">String</span></div></pre></td></tr></table></figure>
-<ul>
-<li>之前未使用类型注释但未报错，是因为Swift编译器能根据赋予的初始值去推断类型。</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//correct</span></div><div class="line"><span class="keyword">var</span> welcomeMessage = <span class="string">"Hello Swift"</span></div><div class="line"></div><div class="line"><span class="comment">//wrong</span></div><div class="line"><span class="keyword">var</span> welcomeMessage</div></pre></td></tr></table></figure>
-<ul>
-<li>因为类型推断的存在，在实际代码编写中很少去写类型注释。</li>
-</ul>
-<h4 id="Print-amp-Comments"><a href="#Print-amp-Comments" class="headerlink" title="Print &amp; Comments"></a>Print &amp; Comments</h4><ul>
-<li>Swift使用字符串插入，即先对字符串中插入占位符(常量或变量)，再用其的值去替代。</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> text = <span class="string">"Swift"</span></div><div class="line"><span class="built_in">print</span>(<span class="string">"Hello <span class="subst">\(text)</span>"</span>)</div><div class="line"><span class="comment">// Hello Swift</span></div></pre></td></tr></table></figure>
-<ul>
-<li>Swift的注释支持嵌套</li>
-</ul>
-<h4 id="Optional-可选类型"><a href="#Optional-可选类型" class="headerlink" title="*Optional(可选类型)"></a>*Optional(可选类型)</h4><ul>
-<li>Optional是Swift语言非常非常非常重要的概念，也可以说Optional出现在iOS开发中的任何地方。</li>
-<li>Swift使用optional来表示值可能缺失的情况，optional代表着两种可能性，如果存在值，那么可以<strong>unwrap the optional</strong>去获取值，或者不存在值，即为nil。</li>
-</ul>
-<h5 id="产生optional"><a href="#产生optional" class="headerlink" title="产生optional"></a>产生optional</h5><ul>
-<li>通过赋予可选变量特殊值nil来表示其没有值。</li>
-</ul>
-<ul>
-<li><p>问号暗示包含的值是可选类型，Int?即其可能包含Int值，也可能没有值。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 例如将String转为Int可能失败</span></div><div class="line"><span class="comment">// convertedNumber被推测为"Int?"类型，而不是Int</span></div><div class="line"><span class="keyword">let</span> possibleNumber = <span class="string">"123"</span></div><div class="line"><span class="keyword">let</span> convertedNumber = <span class="type">Int</span>(possibleNumber)</div><div class="line"></div><div class="line"><span class="comment">// 赋值为nil表示没有值</span></div><div class="line"><span class="keyword">var</span> serverResponseCode = <span class="literal">nil</span></div><div class="line"><span class="comment">// 申明一个可选常量或变量但未赋值，会自动设置为nil</span></div><div class="line"><span class="keyword">var</span> answer: <span class="type">String</span>?</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="unwrap-the-optional"><a href="#unwrap-the-optional" class="headerlink" title="unwrap the optional"></a>unwrap the optional</h5><ul>
-<li>使用感叹号！去强制解析</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">print</span>(convertedNumber)</div><div class="line"><span class="comment">// Optional(123)</span></div><div class="line"><span class="built_in">print</span>(convertedNumber!)</div><div class="line"><span class="comment">// 123</span></div></pre></td></tr></table></figure>
-<ul>
-<li>使用可选绑定(optinal binding)来判断可选类型是否包含值</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="keyword">let</span> actualNumber = <span class="type">Int</span>(possibleNumber) &#123;</div><div class="line">  <span class="built_in">print</span>(<span class="string">"it has an integer value of <span class="subst">\(actualNumber)</span>"</span>)</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="built_in">print</span>(<span class="string">"it could not be converted to an integer"</span>)</div><div class="line">&#125;</div><div class="line"><span class="comment">// it has an integer value of 123</span></div></pre></td></tr></table></figure>
-<ul>
-<li>Optional本质上就是个枚举</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Optional作为泛型枚举的定义</span></div><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Optional</span>&lt;<span class="title">T</span>&gt; </span>&#123;</div><div class="line">  <span class="keyword">case</span> <span class="keyword">none</span></div><div class="line">  <span class="keyword">case</span> some(<span class="type">T</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> x: <span class="type">String</span>？ = <span class="literal">nil</span></div><div class="line">... <span class="keyword">is</span> ...</div><div class="line"><span class="keyword">let</span> x = <span class="type">Optional</span>&lt;<span class="type">String</span>&gt;.<span class="keyword">none</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> x: <span class="type">String</span>? = <span class="string">"hello"</span></div><div class="line">... <span class="keyword">is</span> ...</div><div class="line"><span class="keyword">let</span> x = <span class="type">Optional</span>&lt;<span class="type">String</span>&gt;.some(<span class="string">"hello"</span>)</div><div class="line"></div><div class="line"><span class="keyword">let</span> y = x!</div><div class="line">... <span class="keyword">is</span> ...</div><div class="line"><span class="keyword">switch</span> x &#123;</div><div class="line">  <span class="keyword">case</span> some(<span class="keyword">let</span> value): y = value</div><div class="line">  <span class="keyword">case</span> <span class="keyword">none</span>: <span class="comment">//raise an exception</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> x: <span class="type">String</span>? = ...</div><div class="line"><span class="keyword">if</span> <span class="keyword">let</span> y = x &#123;</div><div class="line">  <span class="comment">// do something with y</span></div><div class="line">&#125;</div><div class="line">... <span class="keyword">is</span> ...</div><div class="line"><span class="keyword">switch</span> x &#123;</div><div class="line">  <span class="keyword">case</span> .some(<span class="keyword">let</span> y):</div><div class="line"> 	<span class="comment">// do something with y</span></div><div class="line">  <span class="keyword">case</span> .<span class="keyword">none</span>:</div><div class="line"> 	<span class="keyword">break</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li><p>Optional Chaining</p>
-</li>
-<li><p>空合运算符(Nil Coalescing Operator)</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 本质是三目运算符</span></div><div class="line"><span class="comment">// a != nil ? a! : b</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> defaultColorName = <span class="string">"red"</span></div><div class="line"><span class="keyword">var</span> userDefinedColorName: <span class="type">String</span>?</div><div class="line"><span class="keyword">var</span> colorNameToUse = userDefinedColorName ?? defaultColorName</div><div class="line"><span class="comment">// 输出red</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/// 创建空数组</span></div><div class="line"><span class="keyword">var</span> someInts = [<span class="type">Int</span>]() </div><div class="line">someInts.append(<span class="number">3</span>)</div><div class="line"></div><div class="line"><span class="keyword">var</span> shoppingList: [<span class="type">String</span>] = [<span class="string">"Eggs"</span>,<span class="string">"Milk"</span>]</div><div class="line"><span class="comment">//遍历数组</span></div><div class="line"><span class="keyword">for</span> item <span class="keyword">in</span> shoppingList &#123;</div><div class="line">  <span class="built_in">print</span>(item)</div><div class="line">&#125;</div><div class="line"><span class="comment">// Eggs</span></div><div class="line"><span class="comment">// Milk</span></div></pre></td></tr></table></figure>
-<h4 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> parameters: [<span class="type">String</span>: <span class="type">String</span>] = <span class="string">"cardNumber : 71115414"</span></div></pre></td></tr></table></figure>
-<h4 id="Enum-switch"><a href="#Enum-switch" class="headerlink" title="Enum + switch"></a>Enum + switch</h4><ul>
-<li>Swift中可以定义枚举来关联任意类型的关联值</li>
-</ul>
-<ul>
-<li>switch的值绑定(value bindings)，即允许将匹配的值绑定到一个临时的常量或变量，并且在case分支体内使用。</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Movement</span> </span>&#123;</div><div class="line">    <span class="keyword">case</span> <span class="type">Left</span></div><div class="line">    <span class="keyword">case</span> <span class="type">Right</span></div><div class="line">    <span class="keyword">case</span> <span class="type">Top</span></div><div class="line">    <span class="keyword">case</span> <span class="type">Bottom</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> aMovement = <span class="type">Movement</span>.<span class="type">Left</span></div><div class="line"></div><div class="line"><span class="comment">// .Left也是类型推断的体现</span></div><div class="line"><span class="keyword">switch</span> aMovement &#123;</div><div class="line"><span class="keyword">case</span> .<span class="type">Left</span>:</div><div class="line">    <span class="built_in">print</span>(<span class="string">"left"</span>)</div><div class="line"><span class="keyword">default</span>:</div><div class="line">    <span class="built_in">print</span>(<span class="string">"Unknown"</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 关联值与值绑定</span></div><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">BodyData</span> </span>&#123;</div><div class="line">    <span class="keyword">case</span> height(<span class="type">Int</span>)</div><div class="line">    <span class="keyword">case</span> sex(<span class="type">String</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> <span class="type">Bob_height</span> = <span class="type">BodyData</span>.height(<span class="number">180</span>)</div><div class="line"></div><div class="line"><span class="keyword">switch</span> <span class="type">Bob_height</span> &#123;</div><div class="line"><span class="keyword">case</span> .height(<span class="keyword">let</span> height):</div><div class="line">    <span class="built_in">print</span>(height)</div><div class="line"><span class="keyword">case</span> .sex(<span class="keyword">let</span> sex):</div><div class="line">    <span class="built_in">print</span>(sex)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><ul>
-<li>返回箭头-&gt;表明所返回的类型</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">greet</span><span class="params">(person: String)</span></span> -&gt; <span class="type">String</span> &#123;</div><div class="line">    <span class="keyword">let</span> greeting = <span class="string">"Hello, "</span> + person + <span class="string">"!"</span></div><div class="line">    <span class="keyword">return</span> greeting</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li><p>swift的函数中，每个函数参数都有一个参数标签(argument label)以及一个参数名称(parameter name)，参数标签在调用函数时使用，参数名称在函数的实现中使用。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 默认情况下，函数参数使用参数名称来作为它们的参数标签</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">someFunction</span><span class="params">(firstParameterName: Int, secondParameterName: Int)</span></span> &#123;</div><div class="line"><span class="comment">// 在函数体内，firstParameterName 和 secondParameterName 代表参数中的第一个和第二个参数值</span></div><div class="line">&#125;</div><div class="line">someFunction(firstParameterName: <span class="number">1</span>, secondParameterName: <span class="number">2</span>)</div><div class="line"></div><div class="line"><span class="comment">// 指定参数标签，以空格分隔</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">someFunction</span><span class="params">(argumentLabel parameterName: Int)</span></span> &#123; </div><div class="line">  <span class="comment">// 在函数体内，parameterName 代表参数值</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 参数标签的命名可以带来良好的代码阅读体验</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">request</span><span class="params">(<span class="keyword">for</span> path: String)</span></span> -&gt; <span class="type">URLRequest</span> &#123; &#125;</div><div class="line"><span class="keyword">let</span> request = request(<span class="keyword">for</span>: <span class="string">"www.google.com"</span>)</div><div class="line"></div><div class="line"><span class="comment">// 使用_忽略参数标签</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">someFunction</span><span class="params">(<span class="number">_</span> firstParameterName: Int, secondParameterName: Int)</span></span> &#123;</div><div class="line"><span class="comment">// 在函数体内，firstParameterName 和 secondParameterName 代表参数中的第一个和第二个参数值</span></div><div class="line">&#125;</div><div class="line">someFunction(<span class="number">1</span>, secondParameterName: <span class="number">2</span>)</div></pre></td></tr></table></figure>
-</li>
-<li><p>函数类型、函数作为参数、嵌套函数等等</p>
-</li>
-</ul>
-<h4 id="闭包-Closure"><a href="#闭包-Closure" class="headerlink" title="*闭包(Closure)"></a>*闭包(Closure)</h4><ul>
-<li><p>闭包是自包含的函数代码块，可以在代码中被传递和使用。是Objc中blocks的演变，也类似其他语言中的lambda表达式(匿名函数)。</p>
-</li>
-<li><p>闭包可以捕获(capturing)和存储其在上下文中的任意常量和变量的引用，Swift会自己管理在过程中涉及到的所有内存操作。</p>
-</li>
-<li><p>函数中的全局函数和嵌套函数实际上就是特殊的闭包。</p>
-</li>
-<li><p>闭包表达式</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; (parameters) -&gt; (<span class="keyword">return</span> type) <span class="keyword">in</span></div><div class="line">  statements</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Swift语法设计是能省略则省略。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line"></div><div class="line"><span class="comment">// in关键字分隔闭包的参数与函数体</span></div><div class="line"><span class="keyword">var</span> doubleNumbers = numbers.<span class="built_in">map</span>(&#123;</div><div class="line">    (number: <span class="type">Int</span>) -&gt; <span class="type">Int</span> <span class="keyword">in</span></div><div class="line">    <span class="keyword">return</span> number * <span class="number">2</span></div><div class="line">&#125;)</div><div class="line"><span class="built_in">print</span>(doubleNumbers)</div><div class="line"><span class="comment">// [2,4,6]</span></div><div class="line"></div><div class="line"><span class="comment">// 参数类型和返回类型可以自动推导出，所以可以省略</span></div><div class="line"><span class="keyword">var</span> doubleNumbers = numbers.<span class="built_in">map</span>(&#123; number <span class="keyword">in</span></div><div class="line">    <span class="keyword">return</span> number * <span class="number">2</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 闭包知道需要返回值(根据map)，所以可以省略return</span></div><div class="line"><span class="keyword">var</span> doubleNumbers = numbers.<span class="built_in">map</span>(&#123; number <span class="keyword">in</span> number * <span class="number">2</span> &#125;)</div><div class="line"></div><div class="line"><span class="comment">// 尾随闭包: 闭包表达式作为作为最后一个参数传递给函数时，可以省略参数标签(这里本来就没有)，省略()</span></div><div class="line"><span class="keyword">var</span> doubleNumbers = numbers.<span class="built_in">map</span> &#123; number <span class="keyword">in</span> number * <span class="number">2</span> &#125;</div><div class="line"></div><div class="line"><span class="comment">// 可以用$0表示第一个参数，$2表示第二个参数</span></div><div class="line"><span class="keyword">var</span> doubleNumbers = numbers.<span class="built_in">map</span> &#123; $<span class="number">0</span> * <span class="number">2</span> &#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="类与结构体-class-amp-amp-struct"><a href="#类与结构体-class-amp-amp-struct" class="headerlink" title="类与结构体(class &amp;&amp; struct)"></a>类与结构体(class &amp;&amp; struct)</h4><ul>
-<li><p>相信大家都有OOP的经验，主要强调类与结构体的差别。</p>
-</li>
-<li><p>结构体是值类型，值类型被赋予给一个变量、常量或者被传递给一个函数时，其值会被拷贝。</p>
-</li>
-<li><p>类是引用类型，引用类型在上述操作时，其值不会被拷贝。</p>
-</li>
-<li><p>demo中用到了属性观察器(Property Observers)</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 属性观察期监控和响应属性值的变化，didSet会在新的值被设置之后立即调用</span></div><div class="line"><span class="keyword">var</span> repoInfo: <span class="type">RepositoryInfo</span>? &#123;</div><div class="line">        <span class="keyword">didSet</span> &#123;</div><div class="line">            updateUI()</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="协议、扩展、代理-protocol、extension、delegate"><a href="#协议、扩展、代理-protocol、extension、delegate" class="headerlink" title="*协议、扩展、代理(protocol、extension、delegate)"></a>*协议、扩展、代理(protocol、extension、delegate)</h4><h5 id="协议-protocol"><a href="#协议-protocol" class="headerlink" title="协议(protocol)"></a>协议(protocol)</h5><ul>
-<li>类似于java的interface？ </li>
-<li>定义了一个蓝图，规定了用来实现某一特定任务或者功能的方法、属性。</li>
-<li>类、结构体、枚举都可以遵循协议。</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// protocol关键字</span></div><div class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">descriptionProtocol</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">func</span> <span class="title">description</span><span class="params">()</span></span> -&gt; <span class="type">String</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">func</span> <span class="title">description</span><span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">""</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="代理-delegate"><a href="#代理-delegate" class="headerlink" title="代理(delegate)"></a>代理(delegate)</h5><ul>
-<li><p>代理模式，即将一个对象的一部分功能委托给其他类型的实例。</p>
-</li>
-<li><p>具体过程: 定义协议来封装那些需要被委托的功能，这样遵循协议的类型就能提供这些功能。</p>
-</li>
-<li><p>减少了代码复杂度，在iOS中大量使用。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 定义协议来委托需要实现的功能</span></div><div class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">LogManagerDelegate</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">func</span> <span class="title">writeLog</span><span class="params">()</span></span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 用户登录类，想将保存日志记录的功能委托出去</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserController</span>:  </span>&#123;</div><div class="line">  <span class="keyword">var</span> delegate: <span class="type">LogManagerDelegate</span>?</div><div class="line">  <span class="comment">// 查看是否有代理，然后调用它</span></div><div class="line">  <span class="function"><span class="keyword">func</span> <span class="title">login</span><span class="params">()</span></span> &#123;</div><div class="line">    delegate?.writeLog()</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 日志管理类，遵循了LogManagerDelegate的协议</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MysqlLogManager</span>: <span class="title">LogManagerDelegate</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">func</span> <span class="title">writeLog</span><span class="params">()</span></span> &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"将日志保存到mysql数据库中"</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> userController = <span class="type">UserController</span>()</div><div class="line">userController.login()</div><div class="line"><span class="comment">// nothing</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> mysqlLogManager = <span class="type">MysqlLogManager</span>()</div><div class="line">userController.delegate = mysqlLogManager <span class="comment">//声明delegate</span></div><div class="line">userController.login()</div><div class="line"><span class="comment">// 将日志保存到mysql数据库中</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="扩展-extension"><a href="#扩展-extension" class="headerlink" title="扩展(extension)"></a>扩展(extension)</h5><ul>
-<li>可以使已有类型遵循并符合协议。</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// demo中代码，使controller实现uitextfield的协议，作为其代理</span></div><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">ViewController</span>: <span class="title">UITextFieldDelegate</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">textFieldShouldReturn</span><span class="params">(<span class="number">_</span> textField: UITextField)</span></span> -&gt; <span class="type">Bool</span> &#123;</div><div class="line">        searchForGithub(repositoryName: textField.text!)</div><div class="line">        textField.resignFirstResponder()</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="开发模式"><a href="#开发模式" class="headerlink" title="开发模式"></a>开发模式</h2><ul>
-<li>按UI设计划分<ol>
-<li>xib/Storyboard党</li>
-<li>纯代码党(手动AutoLayout党)，使用Masonry、SnapKit第三方库</li>
-</ol>
-</li>
-<li>按设计模式划分<ol>
-<li>MVC</li>
-<li>MVVM</li>
-</ol>
-</li>
-</ul>
-<h3 id="Storyboard"><a href="#Storyboard" class="headerlink" title="Storyboard"></a>Storyboard</h3><ul>
-<li>是多个xib(界面布局文件)的集合。</li>
-</ul>
-<ul>
-<li>Apple一直在强力推广Storyboard + MVC的开发模式，Storyboard拥有上手容易、直观、页面跳转逻辑可视化等优点，Storyboard更多是降低了iOS开发的技术入门门槛。</li>
-<li>但不太适合多人开发(虽可以做拆分)，且当页面逻辑复杂时，做变更和复用是非常麻烦的事。</li>
-<li>纯代码布局，容易复用，且容易批量调整。</li>
-<li><strong>用Storyboard大概是一时爽吧….即短期开发出一个demo使用storyboard很快</strong></li>
-</ul>
-<h3 id="AutoLayout"><a href="#AutoLayout" class="headerlink" title="AutoLayout"></a>AutoLayout</h3><ul>
-<li>iOS开发中描述性的布局方式，同时也是处理适配手机屏幕的主要方式之一(搭配SizeClass)</li>
-<li>掌握AutoLayout更多是经验。</li>
-<li>核心是<strong>约束</strong>和<strong>参照</strong>，在iOS中要显示一个控件，需要其<strong>位置</strong>和<strong>尺寸</strong>。</li>
-<li>约束就是对控件的尺寸大小或者位置进行约束，参照是以另一个控件的位置进行约束(是的，本质上都是约束hhh)</li>
-</ul>
-<h5 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h5><ul>
-<li>可以使用一个空的UIView作为Container作为参照，固定宽高。</li>
-<li>要善于使用centerX和centerY作为参照。</li>
-</ul>
-<h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><ul>
-<li><p>苹果的MVC和传统的MVC有些出入。</p>
-</li>
-<li><p>一种面向对象的设计模式，将程序划分为三个部分。</p>
-</li>
-<li><p>Model(模型)</p>
-<ul>
-<li>数据层</li>
-<li>what the app is，but not how it is displayed</li>
-<li>kinda like algorithms and data structure</li>
-<li>与UI无关</li>
-</ul>
-</li>
-<li><p>Controller(控制器)</p>
-<ul>
-<li>决定model如何展示到屏幕上(how it displays)</li>
-<li>与用户交互</li>
-<li>Model与View之间的<strong>胶水层</strong></li>
-</ul>
-</li>
-<li><p>View(视图)</p>
-<ul>
-<li>视图层，对于iOS来说以UI开头的类基本都属于这层</li>
-<li>从属于控制器，控制器复用View来实现其展示到屏幕上的功能。</li>
-</ul>
-</li>
-<li><p>关系</p>
-<ul>
-<li>View与Model之间相互独立，只能通过Controller来相互联系</li>
-</ul>
-<p><img src="/2017/12/07/小猴偷米iOS开发技术分享/image_1.jpg" alt=""></p>
-</li>
-</ul>
-<p><strong>在iOS实际开发中，Controller很难和View做到相互独立，经常耦合在一起，即使你可以将一些业务逻辑和数据转换的工作交给Model，但是你无法将负担分给View，因为View本质还是重用的视图，以及将用户的操作行为交给Controller来处理，于是Controller成为了所有东西的delegate和datasource，还要负责网络请求逻辑……..</strong></p>
-<p><strong>所以Massive Controller是iOS开发者不可避免的问题，MVVM的设计模式能很有效地解决这一问题</strong></p>
-<p><strong>这次demo还是以苹果所推广的开发模式来编写，即Storyboard + MVC，个人也认为刚接触iOS开发时也应该先熟悉这种开发模式，之后再去上手纯代码布局，MVVM这些操作。</strong></p>
-<h2 id="CocoaPods构建工程"><a href="#CocoaPods构建工程" class="headerlink" title="CocoaPods构建工程"></a>CocoaPods构建工程</h2><h4 id="Single-View-App的project的初始目录"><a href="#Single-View-App的project的初始目录" class="headerlink" title="Single View App的project的初始目录"></a>Single View App的project的初始目录</h4><ul>
-<li>AppDelegate.swift 应用程序的代理</li>
-<li>ViewController.swift</li>
-<li>Main.storyboard</li>
-<li>Assets.xcasstes 图片资源等</li>
-<li>LaunchScreen.storyboard</li>
-<li>info.plist 配置设置文件</li>
-</ul>
-<h4 id="构建CocoaPods工程"><a href="#构建CocoaPods工程" class="headerlink" title="构建CocoaPods工程"></a>构建CocoaPods工程</h4><ul>
-<li><p>touch podfile</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">source 'https://github.com/CocoaPods/Specs.git'</div><div class="line">platform:ios,'9.0'</div><div class="line">use_frameworks!</div><div class="line">target 'demo-finish' do</div><div class="line">	pod 'Alamofire','~&gt; 4.4.0'</div><div class="line">	pod 'SwiftyJSON'</div><div class="line">	pod 'SDWebImage', '~&gt; 4.0'</div><div class="line">end</div></pre></td></tr></table></figure>
-</li>
-<li><p>pod install</p>
-</li>
-</ul>
-<p><img src="/2017/12/07/小猴偷米iOS开发技术分享/image_2.jpg" alt=""></p>
-<ul>
-<li>打开demo.xcworkspace</li>
-</ul>
-<h2 id="TablebView"><a href="#TablebView" class="headerlink" title="TablebView"></a>TablebView</h2><ul>
-<li><p>TableView几乎是iOS开发中最重要的UIView，其继承了UIScollView</p>
-</li>
-<li><p>分为Dynamic和Static</p>
-<p><img src="/2017/12/07/小猴偷米iOS开发技术分享/image_3.jpg" alt=""></p>
-</li>
-<li><p>tableView是由section组成的，每一个section可以拥有一个header和一个footer，和多行rows。</p>
-</li>
-<li><p>每一个row的原型是cell，即tableview以cell为模板，通过复用来构造整个tableview</p>
-<p><img src="/2017/12/07/小猴偷米iOS开发技术分享/image_4.jpg" alt=""></p>
-</li>
-</ul>
-<h5 id="关联代码与TableView"><a href="#关联代码与TableView" class="headerlink" title="关联代码与TableView"></a>关联代码与TableView</h5><ul>
-<li>TableView提供两个协议，dataSource和delegate<ul>
-<li>delegate用来控制视图如何展示</li>
-<li>datasource提供cell中的数据</li>
-</ul>
-</li>
-</ul>
-<h5 id="delegate核心的三个函数"><a href="#delegate核心的三个函数" class="headerlink" title="delegate核心的三个函数"></a>delegate核心的三个函数</h5><ul>
-<li><p>共多少个sections</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">numberOfSections</span><span class="params">(<span class="keyword">in</span> tableView: UITableView)</span></span> -&gt; <span class="type">Int</span> &#123;&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>每个section里有多少个rows</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, numberOfRowsInSection section: Int)</span></span> -&gt; <span class="type">Int</span> &#123;&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>定制每个row (indexPath是包含section和row的容器)</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, cellForRowAt indexPath: IndexPath)</span></span> -&gt; <span class="type">UITableViewCell</span> &#123;</div><div class="line">        <span class="keyword">let</span> cell = tableView.dequeueReusableCell(withIdentifier: <span class="string">"repoinfo"</span>, <span class="keyword">for</span>: indexPath) <span class="keyword">as</span>! <span class="type">RepoTableViewCell</span></div><div class="line">        cell.repoInfo = repos[indexPath.section][indexPath.row]</div><div class="line">        <span class="keyword">return</span> cell</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>通常我们使用Array of Arrays来实现model的数据结构，这是概念性的东西，即一维对应着section,二维对应着row，这样通过data[section][row]即获取了每一个cell所对应的数据。</strong></p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> repos: [[<span class="type">RepositoryInfo</span>]] = []</div></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>今天的分享涉及了iOS开发很多方面，但都很浅，最主要的目的就是让大家能有个初步的了解与体会。</li>
-<li>现在前端越来越有将移动端”并入”的趋势，事实的确如此，从之前的Web APP，到最近的React Native，包括MVVM，React的思想也是从前端传过来的。但是原生APP开发方式始终有它的优势所在，尤其iOS开发终归要听苹果爸爸的意见。而且React Native最初开发目的其实是给前端的js玩家能够快速迭代开发移动端，而并不是想来”勾引”原生开发者(虽然它做到了….)</li>
-<li>移动开发现在的确不如前些年火热，甚至有给人”没落”的印象，门槛提高的确是不争的事实，但任何领域都不缺优秀的开发者。</li>
-<li>我觉得扩宽技能树是一方面，但能越早地选择专攻的方向越好，坠好是能找到自己感兴趣的方向。我自己当时学习iOS除了果粉的原因外，主要是自己平日接触时间最长的东西就是手机，觉得从口袋里掏出手机，给别人展示自己写的APP很cool。</li>
-<li>找不到兴趣所在，就去搞机器学习吧  : )</li>
-</ul>
-<h4 id="iOS入门推荐资源"><a href="#iOS入门推荐资源" class="headerlink" title="iOS入门推荐资源"></a>iOS入门推荐资源</h4><ul>
-<li><p>Developing iOS11 Apps with Swift(Standford CS193P)   itunes(posts)应该有英文字幕的</p>
-</li>
-<li><p>The Swift Language Guide</p>
-</li>
-<li><p><a href="https://github.com/vsouza/awesome-ios" target="_blank" rel="external">https://github.com/vsouza/awesome-ios</a></p>
-</li>
-<li><p><a href="https://github.com/matteocrippa/awesome-swift" target="_blank" rel="external">https://github.com/matteocrippa/awesome-swift</a></p>
-</li>
-<li><p><a href="http://swifter.tips" target="_blank" rel="external">http://swifter.tips</a></p>
-</li>
-<li><p><a href="https://www.boxueio.com" target="_blank" rel="external">https://www.boxueio.com</a></p>
-<p>​</p>
-</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/07/小猴偷米iOS开发技术分享/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -926,73 +615,15 @@
 
       
         
-          
-            <p>​    短学期结束时就想做一个整理了，但因为一些事情一直拖着，乘着国庆放假现在终于有时间啦~</p>
+          <p>​    短学期结束时就想做一个整理了，但因为一些事情一直拖着，乘着国庆放假现在终于有时间啦~</p>
 <p>​    本文主要为我自己在实训中开发iOS端时遇到的坑，写完之后感觉都不是高大上的做法..甚至可能是未来的我看起来有点错误的做法…但毕竟是自己花时间踩过的坑，还是非常想记下来。</p>
-<h3 id="ScrollView-TableView-UISegmentedControl-UISlider实现常见首页效果"><a href="#ScrollView-TableView-UISegmentedControl-UISlider实现常见首页效果" class="headerlink" title="ScrollView+TableView+UISegmentedControl+UISlider实现常见首页效果"></a>ScrollView+TableView+UISegmentedControl+UISlider实现常见首页效果</h3><p><img src="/2017/10/01/短学期实训iOS开发所遇到的坑整理/2017-10-01 19_34_48.gif" alt=""></p>
-<p>​    在做动态页面的时候，我想要实现如图非常常见的首页效果，用UISegmentedControl来做页面的切换。虽然看起来效果很不错，但感觉又是一个非常”屌丝”的做法。</p>
-<p>​    在短学期之前其实自己本身没有怎么用scrolllView写过东西，所以在最终定下这一套UI界面之前还是花了不少时间。</p>
-<p>​    首先用scrollView来控制两个tableView，可以通过tag的不同在dataSource以及delegate方法中进行判断。</p>
-<p><img src="/2017/10/01/短学期实训iOS开发所遇到的坑整理/what.jpg" alt="">        </p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">numberOfSections</span><span class="params">(<span class="keyword">in</span> tableView: UITableView)</span></span> -&gt; <span class="type">Int</span> &#123;</div><div class="line">        <span class="keyword">if</span> tableView.tag == <span class="number">101</span>&#123;</div><div class="line">            <span class="keyword">return</span> movements.<span class="built_in">count</span></div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> hotMovements.<span class="built_in">count</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>但要实现效果图的效果，重点在于scrollView以及UISegmentedControl的设置，核心思想就是用户对其中任意一个控件进行操作使得其改变时，要连带着改变另一个控件。</p>
-<p>1.UISegmentedControl的初始化</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//UI改变</span></div><div class="line">segmented.tintColor = <span class="type">UIColor</span>.clear</div><div class="line">        <span class="keyword">let</span> unselectedTextAttributes: <span class="type">NSDictionary</span> = [<span class="type">NSFontAttributeName</span>: <span class="type">UIFont</span>.boldSystemFont(ofSize: <span class="number">14</span>), <span class="type">NSForegroundColorAttributeName</span>: <span class="type">UIColor</span> ( red: <span class="number">192</span>/<span class="number">255</span>, green: <span class="number">192</span>/<span class="number">255</span>, blue: <span class="number">192</span>/<span class="number">255</span>, alpha: <span class="number">1.0</span> )];</div><div class="line">        segmented.setTitleTextAttributes(unselectedTextAttributes <span class="keyword">as</span> [<span class="type">NSObject</span> : <span class="type">AnyObject</span>], <span class="keyword">for</span>: <span class="type">UIControlState</span>.normal)</div><div class="line">        <span class="keyword">let</span> selectedTextAttributes: <span class="type">NSDictionary</span> = [<span class="type">NSFontAttributeName</span>: <span class="type">UIFont</span>.boldSystemFont(ofSize: <span class="number">14</span>), <span class="type">NSForegroundColorAttributeName</span>: <span class="type">UIColor</span>.black]</div><div class="line">        segmented.setTitleTextAttributes(selectedTextAttributes <span class="keyword">as</span> [<span class="type">NSObject</span> : <span class="type">AnyObject</span>], <span class="keyword">for</span>: <span class="type">UIControlState</span>.selected)</div><div class="line"></div><div class="line"><span class="comment">//</span></div><div class="line">segmented.addTarget(<span class="keyword">self</span>, action: #selector(segmentChanged), <span class="keyword">for</span>: <span class="type">UIControlEvents</span>.valueChanged)</div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">segmentChanged</span><span class="params">(<span class="number">_</span> sender : UISegmentedControl)</span></span>&#123;</div><div class="line">        <span class="keyword">let</span> index = sender.selectedSegmentIndex</div><div class="line">        <span class="keyword">var</span> frame = scrollView.frame</div><div class="line">        frame.origin.x = frame.size.width * <span class="type">CGFloat</span>(index)</div><div class="line">        frame.origin.y = <span class="number">0</span></div><div class="line">        scrollView.scrollRectToVisible(frame, animated: <span class="literal">true</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>通过addTarget函数，当对segmented的selectedSegementIndex改变时，scrollView自动滑动。</li>
-<li>最初我是想通过动态操控scrollView的contentOffSet来操控scrollView的滑动，后来发现了scrollRectToVisible方法，就弃用了原本的策略。</li>
-</ul>
-<p>2.scrollView的初始化</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">scrollView.delegate = <span class="keyword">self</span> </div><div class="line">scrollView.isPagingEnabled = <span class="literal">true</span></div><div class="line"><span class="keyword">let</span> scrollViewFrame = scrollView.bounds</div><div class="line">scrollView.contentSize = <span class="type">CGSize</span>(width: scrollViewFrame.size.width * <span class="type">CGFloat</span>(segmented.numberOfSegments), height: scrollViewFrame.size.height)</div><div class="line">scrollView.showsHorizontalScrollIndicator = <span class="literal">false</span></div><div class="line">scrollView.showsVerticalScrollIndicator = <span class="literal">false</span></div><div class="line">scrollView.scrollsToTop = <span class="literal">false</span></div><div class="line">scrollView.bounces = <span class="literal">false</span></div><div class="line"><span class="comment">// scrollView delegate</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">scrollViewDidEndDecelerating</span><span class="params">(<span class="number">_</span> scrollView: UIScrollView)</span></span> &#123;</div><div class="line">        <span class="keyword">let</span> segments = <span class="type">Int</span>(scrollView.contentOffset.x / scrollView.frame.size.width)</div><div class="line">        segmented.selectedSegmentIndex = segments</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>isPagingEnabled=true使得scrollView在滑动时实现翻页的效果，即效果图中手势滑到一半时松手后会自动滑向”下一页”的效果。</li>
-<li>设置contentSize为两个tableView的size.</li>
-<li>scrollViewDidEndDecelerating方法每当scroll停止时调用，通过实现该方法，使得当scrollView滑动时，segmented会随之改变。</li>
-</ul>
-<p>3.UISlider的使用</p>
-<p>在最后美化UI时我在想怎样实现那个进度条，看到有人使用UISlider，我便拿来用，用完感觉很蠢…</p>
-<p>首先是怎样消去中间的拉动的球…</p>
-<p><img src="/2017/10/01/短学期实训iOS开发所遇到的坑整理/UISlider.jpg" alt=""></p>
-<p>在查找中发现这个东西删不掉，只能用图片代替，所以只能用最小的白色图片来替代(仔细看效果图..也许你能看到中间小小的白色部分)</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@IBOutlet</span> <span class="keyword">weak</span> <span class="keyword">var</span> slider: <span class="type">UISlider</span>!&#123;</div><div class="line">        <span class="keyword">didSet</span>&#123;</div><div class="line">            slider.setThumbImage(#imageLiteral(resourceName: <span class="string">"empty.png"</span>), <span class="keyword">for</span>: <span class="type">UIControlState</span>.normal)</div><div class="line">        &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<p>是不是很蠢….而更蠢的地方在于使用UISlider只适用于两个segment的情况…</p>
-<p>那么怎样去实现进度条的改变呢？</p>
-<p>只需要在刚才的segmentChanged函数中添加对UISlider的改变即可.其实就是对minimumTrack和maximumTrack的颜色改变</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> index == <span class="number">0</span>&#123;</div><div class="line">       slider.minimumTrackTintColor = <span class="type">UIColor</span>.black</div><div class="line">       slider.maximumTrackTintColor = <span class="type">UIColor</span> ( red: <span class="number">192</span>/<span class="number">255</span>, green: <span class="number">192</span>/<span class="number">255</span>, blue: <span class="number">192</span>/<span class="number">255</span>, alpha: <span class="number">1.0</span> )</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">       slider.minimumTrackTintColor = <span class="type">UIColor</span> ( red: <span class="number">192</span>/<span class="number">255</span>, green: <span class="number">192</span>/<span class="number">255</span>, blue: <span class="number">192</span>/<span class="number">255</span>, alpha: <span class="number">1.0</span> )</div><div class="line">       slider.maximumTrackTintColor = <span class="type">UIColor</span>.black</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="unwind-segue跳转后的直接跳转"><a href="#unwind-segue跳转后的直接跳转" class="headerlink" title="unwind segue跳转后的直接跳转"></a>unwind segue跳转后的直接跳转</h3><p>​    unwind segue可以跳转回直接或间接presented到当前MVC的MVC，最大的好处在于它可以直接跳转回在一个navigation controller的栈中的MVC，意味着你可以使用unwind进行多级跳转。并且unwind用起来也十分简便。</p>
-<p>​    而我遇到的坑是这样的,功能需求是在动态页面，通过popover的MVC点击发布动态，然后unwind segue跳转回动态页面，最后IBAction的方法直接跳转到发布动态的MVC。而当我这么做的时候发布动态的MVC总会自动跳转回来。</p>
-<p><img src="/2017/10/01/短学期实训iOS开发所遇到的坑整理/2017-10-01 16_55_43.gif" alt=""></p>
-<p>​    当然你肯定会说为什么不直接从popover的MVC直接跳转呢？我当时也尝试过，问题主要在navigation controller上，而且我自我感觉从popover的MVC去做segue是不对的(….)</p>
-<p>​    于是当晚我琢磨了一段时间，当时还是Xcode8,有一段报错的小字，今天用Xcode9再去跑时就没有了…很难受。凭自己的记忆，我印象中那段小字的意思主要是指出alpha的问题，当时的我没有搜到好的解决办法，而联想到popoverMVC出现后，当前页面的其余UI会变得灰暗些，于是我猜测是因为unwind之后，其余UI还没有恢复就直接segue导致转场失败。</p>
-<p>​    所以顺着我的猜测，我将IBAction中的方法的segue延迟一小段时间试一下，果然成功了。</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@IBAction</span> <span class="function"><span class="keyword">func</span> <span class="title">postMovement</span><span class="params">(from segue : UIStoryboardSegue)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span> <span class="keyword">let</span> vc = segue.source <span class="keyword">as</span>? <span class="type">HomePopViewController</span>&#123;</div><div class="line">            <span class="keyword">let</span> seconds = <span class="number">0.4</span></div><div class="line">            perform(#selector(<span class="keyword">self</span>.performSegueToPost), with: <span class="literal">nil</span>, afterDelay: <span class="type">TimeInterval</span>(seconds))</div><div class="line">        &#125;</div><div class="line"> &#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">performSegueToPost</span><span class="params">()</span></span>&#123;</div><div class="line">      	performSegue(withIdentifier: <span class="string">"postMovementFromHome"</span>, sender: <span class="keyword">self</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>​    但有意思的是..0.3秒以下依然出错，其实这个坑的问题以及我的解决办法都感觉不是很”正规”，但因为是自己灵机一动所想出的解决办法，所以就记录了下来，希望在以后的学习过程中能再来回顾并”更正”这个坑。但是毕竟最后呈现的效果还是不错的嘛~</p>
-<p><img src="/2017/10/01/短学期实训iOS开发所遇到的坑整理/2017-10-01 16_54_28.gif" alt=""></p>
-<h3 id="MapView中原生下弹窗口实现"><a href="#MapView中原生下弹窗口实现" class="headerlink" title="MapView中原生下弹窗口实现"></a>MapView中原生下弹窗口实现</h3><p>​    需求是类似于实现摩拜单车APP那样的效果，点击地图上的annotation时，会出现该annotation的详细信息，即通过一个下弹窗口呈现。</p>
-<p><img src="/2017/10/01/短学期实训iOS开发所遇到的坑整理/2017-10-01 16_51_09.gif" alt=""></p>
-<p>​    因为开发效率的原因，我当时还是先去寻找了第三方库，但没有找到比较合适的。最后是看到一篇很简单明了的关于弹出视图的文章，便照着修改实现了上图的效果。</p>
-<p>​    关键是在于用一个空视图覆盖原本的UI来响应手势操作,然后在这个空视图上添加子视图即dropDownView。并通过UIView.animate来实现转场动画效果。</p>
-<ol>
-<li><p>定义空视图和下弹视图</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> emptyView = <span class="type">UIView</span>()</div><div class="line"><span class="keyword">let</span> dropDownView = <span class="type">UIView</span>()</div><div class="line"><span class="comment">// 定义下弹视图的原位置和大小</span></div><div class="line"><span class="keyword">let</span> originDropDownView = <span class="type">CGPoint</span>(x: <span class="number">0</span>, y: -<span class="number">56</span>)</div><div class="line"><span class="keyword">var</span> sizeDropDownView = <span class="type">CGSize</span>(width: <span class="keyword">self</span>.view.frame.width, height: <span class="number">120</span>)</div><div class="line"><span class="comment">// 设置空视图的大小，打开交互，添加手势</span></div><div class="line">emptyView.frame = <span class="keyword">self</span>.view.frame</div></pre></td></tr></table></figure>
-</li>
-<li><p>在dropDownView中加载控件</p>
-</li>
-<li><p>转场动画</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="type">UIView</span>.animate(withDuration: <span class="number">0.3</span>) &#123; () -&gt; <span class="type">Void</span> <span class="keyword">in</span></div><div class="line">	<span class="keyword">self</span>.dropDownView.frame.origin = <span class="type">CGPoint</span>(x: <span class="number">0</span>, y: <span class="number">64</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>加载视图</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">emptyView.addSubview(dropDownView)</div><div class="line"><span class="keyword">self</span>.view.addSubview(emptyView)</div></pre></td></tr></table></figure>
-</li>
-<li><p>dropDownView的收回</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">func</span> <span class="title">popOffDropDownView</span><span class="params">()</span></span>&#123;</div><div class="line">    dropDownView.removeAllSubviews()</div><div class="line">	<span class="type">UIView</span>.animate(withDuration: <span class="number">0.3</span>) &#123; () -&gt; <span class="type">Void</span> <span class="keyword">in</span></div><div class="line">         <span class="keyword">self</span>.dropDownView.frame.origin = <span class="type">CGPoint</span>(x: <span class="number">0</span>, y: -<span class="number">36</span>)</div><div class="line">	&#125;</div><div class="line">  	<span class="keyword">let</span> seconds = <span class="number">0.3</span></div><div class="line">    perform(#selector(<span class="keyword">self</span>.timeChanged), with: <span class="literal">nil</span>, afterDelay: seconds)</div><div class="line">&#125;</div><div class="line"><span class="comment">//延时操作，等待下弹视图转场动画结束</span></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">timeChanged</span><span class="params">()</span></span>&#123;</div><div class="line">    emptyView.removeFromSuperview()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>​    这样就基本完成了图中的效果，但是简单的用一个空视图来覆盖原有的UI来响应操作所带来的问题就是如果想在原本的MapView进行的手势操作都需要自己添加手势，例如直接点击其他的annotation做切换等等。</p>
-<p>​    如果是自己添加手势，不仅效果上不太流畅，而且麻烦。我感觉重写hittest是比较好的方法，而不是使用空视图去覆盖。但是使用空视图的方法对于一些比较简单的需求还是非常方便实用的。</p>
-</li>
-</ol>
-<h3 id="后文"><a href="#后文" class="headerlink" title="后文"></a>后文</h3><p>之后有空再补….</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/01/短学期实训iOS开发所遇到的坑整理/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1349,7 +980,7 @@
                alt="Nathan Liu" />
           <p class="site-author-name" itemprop="name">Nathan Liu</p>
            
-              <p class="site-description motion-element" itemprop="description">Nathan的个人博客,关于技术与开发，关于NBA，关于我的生活。</p>
+              <p class="site-description motion-element" itemprop="description">Nathan的个人博客,关于技术与开发,关于NBA,关于我的生活。</p>
           
         </div>
         <nav class="site-state motion-element">

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-07T18:52:27.293Z</updated>
+  <updated>2017-12-09T02:39:26.454Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,11 +20,15 @@
     <link href="http://yoursite.com/2017/12/07/%E5%B0%8F%E7%8C%B4%E5%81%B7%E7%B1%B3iOS%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/"/>
     <id>http://yoursite.com/2017/12/07/小猴偷米iOS开发技术分享/</id>
     <published>2017-12-07T13:40:34.000Z</published>
-    <updated>2017-12-07T18:52:27.293Z</updated>
+    <updated>2017-12-09T02:39:26.454Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;A-Taste-Of-Developing-iOS-Application&quot;&gt;&lt;a href=&quot;#A-Taste-Of-Developing-iOS-Application&quot; class=&quot;headerlink&quot; title=&quot;A Taste Of Develop
+      &lt;h1 id=&quot;A-Taste-Of-Developing-iOS-Application&quot;&gt;&lt;a href=&quot;#A-Taste-Of-Developing-iOS-Application&quot; class=&quot;headerlink&quot; title=&quot;A Taste Of Developing iOS Application&quot;&gt;&lt;/a&gt;A Taste Of Developing iOS Application&lt;/h1&gt;&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言:&quot;&gt;&lt;/a&gt;前言:&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;其实不敢用iOS入门这样的标题，因为感觉自己也才刚入门(hhh)，所以对这次分享的形式我也有做过一些思考，毕竟自己以前并没有过这样来介绍一个大的工程开发领域的经验。&lt;/p&gt;
+&lt;p&gt;那么我最后决定是以A Taste Of Developing iOS Application为主题的技术分享，主要是面向对iOS开发、移动端开发有兴趣、无基础的同学。这次分享会让大家对iOS开发有一个大局上的了解，在过程中我会带大家编写一个demo来感觉一下iOS开发是什么样的，所以可能会较广地涉及iOS开发中的各个方面，例如Swift、MVC、Views、Frameworks等等，但不会深，体现了A Taste的主题。&lt;/p&gt;
+&lt;p&gt;当然也是和有移动端开发经验的同学们一起交流。最后也会给出我在2017年底这时候，对真正想学习iOS开发的同学的一点入门建议。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -66,12 +70,12 @@
     <link href="http://yoursite.com/2017/10/01/%E7%9F%AD%E5%AD%A6%E6%9C%9F%E5%AE%9E%E8%AE%ADiOS%E5%BC%80%E5%8F%91%E6%89%80%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E6%95%B4%E7%90%86/"/>
     <id>http://yoursite.com/2017/10/01/短学期实训iOS开发所遇到的坑整理/</id>
     <published>2017-10-01T12:39:34.000Z</published>
-    <updated>2017-10-01T13:55:09.126Z</updated>
+    <updated>2017-12-08T08:40:24.852Z</updated>
     
     <summary type="html">
     
       &lt;p&gt;​    短学期结束时就想做一个整理了，但因为一些事情一直拖着，乘着国庆放假现在终于有时间啦~&lt;/p&gt;
-&lt;p&gt;​    本文主要为我自己在实训中开发iOS端时遇到的坑，写完之后感觉都不是高大上的做法..甚至可能是未来的我看起来有点错误的做法…但毕竟是自己花时间踩过的坑，还是
+&lt;p&gt;​    本文主要为我自己在实训中开发iOS端时遇到的坑，写完之后感觉都不是高大上的做法..甚至可能是未来的我看起来有点错误的做法…但毕竟是自己花时间踩过的坑，还是非常想记下来。&lt;/p&gt;
     
     </summary>
     

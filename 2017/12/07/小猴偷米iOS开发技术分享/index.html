@@ -106,7 +106,7 @@
 <meta property="og:image" content="http://yoursite.com/2017/12/07/小猴偷米iOS开发技术分享/image_2.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/12/07/小猴偷米iOS开发技术分享/image_3.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/12/07/小猴偷米iOS开发技术分享/image_4.jpg">
-<meta property="og:updated_time" content="2017-12-07T18:52:27.293Z">
+<meta property="og:updated_time" content="2017-12-09T02:39:26.454Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小猴偷米iOS开发技术分享">
 <meta name="twitter:description" content="A Taste Of Developing iOS Application前言: 其实不敢用iOS入门这样的标题，因为感觉自己也才刚入门(hhh)，所以对这次分享的形式我也有做过一些思考，毕竟自己以前并没有过这样来介绍一个大的工程开发领域的经验。 那么我最后决定是以A Taste Of Developing iOS Application为主题的技术分享，主要是面向对iOS开发、移动端开发有兴趣">
@@ -364,7 +364,8 @@
 <p>那么我最后决定是以A Taste Of Developing iOS Application为主题的技术分享，主要是面向对iOS开发、移动端开发有兴趣、无基础的同学。这次分享会让大家对iOS开发有一个大局上的了解，在过程中我会带大家编写一个demo来感觉一下iOS开发是什么样的，所以可能会较广地涉及iOS开发中的各个方面，例如Swift、MVC、Views、Frameworks等等，但不会深，体现了A Taste的主题。</p>
 <p>当然也是和有移动端开发经验的同学们一起交流。最后也会给出我在2017年底这时候，对真正想学习iOS开发的同学的一点入门建议。</p>
 </blockquote>
-<h2 id="What’s-in-iOS？"><a href="#What’s-in-iOS？" class="headerlink" title="What’s in iOS？"></a>What’s in iOS？</h2><p><strong>Core OS</strong></p>
+<a id="more"></a>
+<h1 id="What’s-in-iOS？"><a href="#What’s-in-iOS？" class="headerlink" title="What’s in iOS？"></a>What’s in iOS？</h1><p><strong>Core OS</strong></p>
 <ul>
 <li>最底层，最接近硬件</li>
 <li>iOS是BSD版本的Unix系统</li>
@@ -385,7 +386,7 @@
 <li>一整套完整的框架，包括最核心的Foundation和UIKit，其通过对视图层的控件以及其功能的面向对象封装来提供良好的开发环境，是iOS开发唯一的框架，在macOS开发中称作Cocoa。</li>
 <li>因前身是被苹果公司收购的NeXT公司用Objective-C语言开发的多媒体系统NeXTSTEP的核心软件框架，因此Cocoa框架中的类都有着NS的前缀。</li>
 </ul>
-<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p><strong>IDE:</strong> <strong>Xcode9</strong> or AppCode</p>
+<h1 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h1><p><strong>IDE:</strong> <strong>Xcode9</strong> or AppCode</p>
 <p><strong>语言:</strong> Objective-C or <strong>Swift</strong></p>
 <ul>
 <li>ObjC是对C语言的超集，对其扩充的面向对象编程语言，移动开发火的那几年，ObjC赶上了热潮，就像现在以及可见的未来的人工智能热潮的python。</li>
@@ -403,7 +404,7 @@
 <li>苹果官方主推MVC，从ViewController的命名上看，心中就已经有🅱🌲了。</li>
 <li>目前潮流以及大势是MVVM。</li>
 </ul>
-<h2 id="Swift编程语言"><a href="#Swift编程语言" class="headerlink" title="Swift编程语言"></a>Swift编程语言</h2><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><ul>
+<h1 id="Swift编程语言"><a href="#Swift编程语言" class="headerlink" title="Swift编程语言"></a>Swift编程语言</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
 <li><p>于2014年WWDC发布，2016年发布Swift3.0后语法开始趋于稳定，最新为Swift4.0。</p>
 </li>
 <li><p>Swift3.0与2.0相比改动较大，几乎Cocoa的NS前缀都”去除”了，比如NSURL -&gt; URL，但其实本质是提供去除NS前缀的struct来引用NS类。</p>
@@ -421,12 +422,12 @@
 <li><p>Swift对于函数式编程和流式编程拥有原生的支持，使用-&gt;符号来支持函数和闭包，map、flapmap、filter等内置函数等。目前流行的语言对函数式编程的支持都很强，<strong>函数式响应式(Functional Reactive Programming)</strong>的编程思想在前端、移动端已经越来越流行。</p>
 </li>
 </ul>
-<h3 id="demo所用到的Swift简单语法特性介绍"><a href="#demo所用到的Swift简单语法特性介绍" class="headerlink" title="demo所用到的Swift简单语法特性介绍"></a>demo所用到的Swift简单语法特性介绍</h3><h4 id="Constants-and-Variables"><a href="#Constants-and-Variables" class="headerlink" title="Constants and Variables"></a>Constants and Variables</h4><ul>
+<h2 id="demo所用到的Swift简单语法特性介绍"><a href="#demo所用到的Swift简单语法特性介绍" class="headerlink" title="demo所用到的Swift简单语法特性介绍"></a>demo所用到的Swift简单语法特性介绍</h2><h3 id="Constants-and-Variables"><a href="#Constants-and-Variables" class="headerlink" title="Constants and Variables"></a>Constants and Variables</h3><ul>
 <li>使用关键词<strong>let</strong>来声明常量。</li>
 <li>使用关键词<strong>var</strong>来声明变量。</li>
 </ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> maximunNumberOfLoginAttempts = <span class="number">10</span></div><div class="line"><span class="keyword">var</span> currentLoginAttempt = <span class="number">0</span></div></pre></td></tr></table></figure>
-<h4 id="Type-Annotations"><a href="#Type-Annotations" class="headerlink" title="Type Annotations"></a>Type Annotations</h4><ul>
+<h3 id="Type-Annotations"><a href="#Type-Annotations" class="headerlink" title="Type Annotations"></a>Type Annotations</h3><ul>
 <li>使用类型注释在声明常量或变量时去确定其类型。</li>
 </ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> welcomeMessage: <span class="type">String</span></div></pre></td></tr></table></figure>
@@ -437,18 +438,18 @@
 <ul>
 <li>因为类型推断的存在，在实际代码编写中很少去写类型注释。</li>
 </ul>
-<h4 id="Print-amp-Comments"><a href="#Print-amp-Comments" class="headerlink" title="Print &amp; Comments"></a>Print &amp; Comments</h4><ul>
+<h3 id="Print-amp-Comments"><a href="#Print-amp-Comments" class="headerlink" title="Print &amp; Comments"></a>Print &amp; Comments</h3><ul>
 <li>Swift使用字符串插入，即先对字符串中插入占位符(常量或变量)，再用其的值去替代。</li>
 </ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> text = <span class="string">"Swift"</span></div><div class="line"><span class="built_in">print</span>(<span class="string">"Hello <span class="subst">\(text)</span>"</span>)</div><div class="line"><span class="comment">// Hello Swift</span></div></pre></td></tr></table></figure>
 <ul>
 <li>Swift的注释支持嵌套</li>
 </ul>
-<h4 id="Optional-可选类型"><a href="#Optional-可选类型" class="headerlink" title="*Optional(可选类型)"></a>*Optional(可选类型)</h4><ul>
+<h3 id="Optional-可选类型"><a href="#Optional-可选类型" class="headerlink" title="*Optional(可选类型)"></a>*Optional(可选类型)</h3><ul>
 <li>Optional是Swift语言非常非常非常重要的概念，也可以说Optional出现在iOS开发中的任何地方。</li>
 <li>Swift使用optional来表示值可能缺失的情况，optional代表着两种可能性，如果存在值，那么可以<strong>unwrap the optional</strong>去获取值，或者不存在值，即为nil。</li>
 </ul>
-<h5 id="产生optional"><a href="#产生optional" class="headerlink" title="产生optional"></a>产生optional</h5><ul>
+<h4 id="产生optional"><a href="#产生optional" class="headerlink" title="产生optional"></a>产生optional</h4><ul>
 <li>通过赋予可选变量特殊值nil来表示其没有值。</li>
 </ul>
 <ul>
@@ -456,7 +457,7 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 例如将String转为Int可能失败</span></div><div class="line"><span class="comment">// convertedNumber被推测为"Int?"类型，而不是Int</span></div><div class="line"><span class="keyword">let</span> possibleNumber = <span class="string">"123"</span></div><div class="line"><span class="keyword">let</span> convertedNumber = <span class="type">Int</span>(possibleNumber)</div><div class="line"></div><div class="line"><span class="comment">// 赋值为nil表示没有值</span></div><div class="line"><span class="keyword">var</span> serverResponseCode = <span class="literal">nil</span></div><div class="line"><span class="comment">// 申明一个可选常量或变量但未赋值，会自动设置为nil</span></div><div class="line"><span class="keyword">var</span> answer: <span class="type">String</span>?</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h5 id="unwrap-the-optional"><a href="#unwrap-the-optional" class="headerlink" title="unwrap the optional"></a>unwrap the optional</h5><ul>
+<h4 id="unwrap-the-optional"><a href="#unwrap-the-optional" class="headerlink" title="unwrap the optional"></a>unwrap the optional</h4><ul>
 <li>使用感叹号！去强制解析</li>
 </ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">print</span>(convertedNumber)</div><div class="line"><span class="comment">// Optional(123)</span></div><div class="line"><span class="built_in">print</span>(convertedNumber!)</div><div class="line"><span class="comment">// 123</span></div></pre></td></tr></table></figure>
@@ -475,16 +476,16 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 本质是三目运算符</span></div><div class="line"><span class="comment">// a != nil ? a! : b</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> defaultColorName = <span class="string">"red"</span></div><div class="line"><span class="keyword">var</span> userDefinedColorName: <span class="type">String</span>?</div><div class="line"><span class="keyword">var</span> colorNameToUse = userDefinedColorName ?? defaultColorName</div><div class="line"><span class="comment">// 输出red</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/// 创建空数组</span></div><div class="line"><span class="keyword">var</span> someInts = [<span class="type">Int</span>]() </div><div class="line">someInts.append(<span class="number">3</span>)</div><div class="line"></div><div class="line"><span class="keyword">var</span> shoppingList: [<span class="type">String</span>] = [<span class="string">"Eggs"</span>,<span class="string">"Milk"</span>]</div><div class="line"><span class="comment">//遍历数组</span></div><div class="line"><span class="keyword">for</span> item <span class="keyword">in</span> shoppingList &#123;</div><div class="line">  <span class="built_in">print</span>(item)</div><div class="line">&#125;</div><div class="line"><span class="comment">// Eggs</span></div><div class="line"><span class="comment">// Milk</span></div></pre></td></tr></table></figure>
-<h4 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> parameters: [<span class="type">String</span>: <span class="type">String</span>] = <span class="string">"cardNumber : 71115414"</span></div></pre></td></tr></table></figure>
-<h4 id="Enum-switch"><a href="#Enum-switch" class="headerlink" title="Enum + switch"></a>Enum + switch</h4><ul>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/// 创建空数组</span></div><div class="line"><span class="keyword">var</span> someInts = [<span class="type">Int</span>]() </div><div class="line">someInts.append(<span class="number">3</span>)</div><div class="line"></div><div class="line"><span class="keyword">var</span> shoppingList: [<span class="type">String</span>] = [<span class="string">"Eggs"</span>,<span class="string">"Milk"</span>]</div><div class="line"><span class="comment">//遍历数组</span></div><div class="line"><span class="keyword">for</span> item <span class="keyword">in</span> shoppingList &#123;</div><div class="line">  <span class="built_in">print</span>(item)</div><div class="line">&#125;</div><div class="line"><span class="comment">// Eggs</span></div><div class="line"><span class="comment">// Milk</span></div></pre></td></tr></table></figure>
+<h3 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> parameters: [<span class="type">String</span>: <span class="type">String</span>] = <span class="string">"cardNumber : 71115414"</span></div></pre></td></tr></table></figure>
+<h3 id="Enum-switch"><a href="#Enum-switch" class="headerlink" title="Enum + switch"></a>Enum + switch</h3><ul>
 <li>Swift中可以定义枚举来关联任意类型的关联值</li>
 </ul>
 <ul>
 <li>switch的值绑定(value bindings)，即允许将匹配的值绑定到一个临时的常量或变量，并且在case分支体内使用。</li>
 </ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Movement</span> </span>&#123;</div><div class="line">    <span class="keyword">case</span> <span class="type">Left</span></div><div class="line">    <span class="keyword">case</span> <span class="type">Right</span></div><div class="line">    <span class="keyword">case</span> <span class="type">Top</span></div><div class="line">    <span class="keyword">case</span> <span class="type">Bottom</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> aMovement = <span class="type">Movement</span>.<span class="type">Left</span></div><div class="line"></div><div class="line"><span class="comment">// .Left也是类型推断的体现</span></div><div class="line"><span class="keyword">switch</span> aMovement &#123;</div><div class="line"><span class="keyword">case</span> .<span class="type">Left</span>:</div><div class="line">    <span class="built_in">print</span>(<span class="string">"left"</span>)</div><div class="line"><span class="keyword">default</span>:</div><div class="line">    <span class="built_in">print</span>(<span class="string">"Unknown"</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 关联值与值绑定</span></div><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">BodyData</span> </span>&#123;</div><div class="line">    <span class="keyword">case</span> height(<span class="type">Int</span>)</div><div class="line">    <span class="keyword">case</span> sex(<span class="type">String</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> <span class="type">Bob_height</span> = <span class="type">BodyData</span>.height(<span class="number">180</span>)</div><div class="line"></div><div class="line"><span class="keyword">switch</span> <span class="type">Bob_height</span> &#123;</div><div class="line"><span class="keyword">case</span> .height(<span class="keyword">let</span> height):</div><div class="line">    <span class="built_in">print</span>(height)</div><div class="line"><span class="keyword">case</span> .sex(<span class="keyword">let</span> sex):</div><div class="line">    <span class="built_in">print</span>(sex)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
 <li>返回箭头-&gt;表明所返回的类型</li>
 </ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">greet</span><span class="params">(person: String)</span></span> -&gt; <span class="type">String</span> &#123;</div><div class="line">    <span class="keyword">let</span> greeting = <span class="string">"Hello, "</span> + person + <span class="string">"!"</span></div><div class="line">    <span class="keyword">return</span> greeting</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -495,7 +496,7 @@
 <li><p>函数类型、函数作为参数、嵌套函数等等</p>
 </li>
 </ul>
-<h4 id="闭包-Closure"><a href="#闭包-Closure" class="headerlink" title="*闭包(Closure)"></a>*闭包(Closure)</h4><ul>
+<h3 id="闭包-Closure"><a href="#闭包-Closure" class="headerlink" title="*闭包(Closure)"></a>*闭包(Closure)</h3><ul>
 <li><p>闭包是自包含的函数代码块，可以在代码中被传递和使用。是Objc中blocks的演变，也类似其他语言中的lambda表达式(匿名函数)。</p>
 </li>
 <li><p>闭包可以捕获(capturing)和存储其在上下文中的任意常量和变量的引用，Swift会自己管理在过程中涉及到的所有内存操作。</p>
@@ -509,7 +510,7 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line"></div><div class="line"><span class="comment">// in关键字分隔闭包的参数与函数体</span></div><div class="line"><span class="keyword">var</span> doubleNumbers = numbers.<span class="built_in">map</span>(&#123;</div><div class="line">    (number: <span class="type">Int</span>) -&gt; <span class="type">Int</span> <span class="keyword">in</span></div><div class="line">    <span class="keyword">return</span> number * <span class="number">2</span></div><div class="line">&#125;)</div><div class="line"><span class="built_in">print</span>(doubleNumbers)</div><div class="line"><span class="comment">// [2,4,6]</span></div><div class="line"></div><div class="line"><span class="comment">// 参数类型和返回类型可以自动推导出，所以可以省略</span></div><div class="line"><span class="keyword">var</span> doubleNumbers = numbers.<span class="built_in">map</span>(&#123; number <span class="keyword">in</span></div><div class="line">    <span class="keyword">return</span> number * <span class="number">2</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 闭包知道需要返回值(根据map)，所以可以省略return</span></div><div class="line"><span class="keyword">var</span> doubleNumbers = numbers.<span class="built_in">map</span>(&#123; number <span class="keyword">in</span> number * <span class="number">2</span> &#125;)</div><div class="line"></div><div class="line"><span class="comment">// 尾随闭包: 闭包表达式作为作为最后一个参数传递给函数时，可以省略参数标签(这里本来就没有)，省略()</span></div><div class="line"><span class="keyword">var</span> doubleNumbers = numbers.<span class="built_in">map</span> &#123; number <span class="keyword">in</span> number * <span class="number">2</span> &#125;</div><div class="line"></div><div class="line"><span class="comment">// 可以用$0表示第一个参数，$2表示第二个参数</span></div><div class="line"><span class="keyword">var</span> doubleNumbers = numbers.<span class="built_in">map</span> &#123; $<span class="number">0</span> * <span class="number">2</span> &#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="类与结构体-class-amp-amp-struct"><a href="#类与结构体-class-amp-amp-struct" class="headerlink" title="类与结构体(class &amp;&amp; struct)"></a>类与结构体(class &amp;&amp; struct)</h4><ul>
+<h3 id="类与结构体-class-amp-amp-struct"><a href="#类与结构体-class-amp-amp-struct" class="headerlink" title="类与结构体(class &amp;&amp; struct)"></a>类与结构体(class &amp;&amp; struct)</h3><ul>
 <li><p>相信大家都有OOP的经验，主要强调类与结构体的差别。</p>
 </li>
 <li><p>结构体是值类型，值类型被赋予给一个变量、常量或者被传递给一个函数时，其值会被拷贝。</p>
@@ -520,13 +521,13 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 属性观察期监控和响应属性值的变化，didSet会在新的值被设置之后立即调用</span></div><div class="line"><span class="keyword">var</span> repoInfo: <span class="type">RepositoryInfo</span>? &#123;</div><div class="line">        <span class="keyword">didSet</span> &#123;</div><div class="line">            updateUI()</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="协议、扩展、代理-protocol、extension、delegate"><a href="#协议、扩展、代理-protocol、extension、delegate" class="headerlink" title="*协议、扩展、代理(protocol、extension、delegate)"></a>*协议、扩展、代理(protocol、extension、delegate)</h4><h5 id="协议-protocol"><a href="#协议-protocol" class="headerlink" title="协议(protocol)"></a>协议(protocol)</h5><ul>
+<h3 id="协议、扩展、代理-protocol、extension、delegate"><a href="#协议、扩展、代理-protocol、extension、delegate" class="headerlink" title="*协议、扩展、代理(protocol、extension、delegate)"></a>*协议、扩展、代理(protocol、extension、delegate)</h3><h4 id="协议-protocol"><a href="#协议-protocol" class="headerlink" title="协议(protocol)"></a>协议(protocol)</h4><ul>
 <li>类似于java的interface？ </li>
 <li>定义了一个蓝图，规定了用来实现某一特定任务或者功能的方法、属性。</li>
 <li>类、结构体、枚举都可以遵循协议。</li>
 </ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// protocol关键字</span></div><div class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">descriptionProtocol</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">func</span> <span class="title">description</span><span class="params">()</span></span> -&gt; <span class="type">String</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">func</span> <span class="title">description</span><span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">""</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="代理-delegate"><a href="#代理-delegate" class="headerlink" title="代理(delegate)"></a>代理(delegate)</h5><ul>
+<h4 id="代理-delegate"><a href="#代理-delegate" class="headerlink" title="代理(delegate)"></a>代理(delegate)</h4><ul>
 <li><p>代理模式，即将一个对象的一部分功能委托给其他类型的实例。</p>
 </li>
 <li><p>具体过程: 定义协议来封装那些需要被委托的功能，这样遵循协议的类型就能提供这些功能。</p>
@@ -535,11 +536,11 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 定义协议来委托需要实现的功能</span></div><div class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">LogManagerDelegate</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">func</span> <span class="title">writeLog</span><span class="params">()</span></span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 用户登录类，想将保存日志记录的功能委托出去</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserController</span>:  </span>&#123;</div><div class="line">  <span class="keyword">var</span> delegate: <span class="type">LogManagerDelegate</span>?</div><div class="line">  <span class="comment">// 查看是否有代理，然后调用它</span></div><div class="line">  <span class="function"><span class="keyword">func</span> <span class="title">login</span><span class="params">()</span></span> &#123;</div><div class="line">    delegate?.writeLog()</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 日志管理类，遵循了LogManagerDelegate的协议</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MysqlLogManager</span>: <span class="title">LogManagerDelegate</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">func</span> <span class="title">writeLog</span><span class="params">()</span></span> &#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"将日志保存到mysql数据库中"</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> userController = <span class="type">UserController</span>()</div><div class="line">userController.login()</div><div class="line"><span class="comment">// nothing</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> mysqlLogManager = <span class="type">MysqlLogManager</span>()</div><div class="line">userController.delegate = mysqlLogManager <span class="comment">//声明delegate</span></div><div class="line">userController.login()</div><div class="line"><span class="comment">// 将日志保存到mysql数据库中</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h5 id="扩展-extension"><a href="#扩展-extension" class="headerlink" title="扩展(extension)"></a>扩展(extension)</h5><ul>
+<h4 id="扩展-extension"><a href="#扩展-extension" class="headerlink" title="扩展(extension)"></a>扩展(extension)</h4><ul>
 <li>可以使已有类型遵循并符合协议。</li>
 </ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// demo中代码，使controller实现uitextfield的协议，作为其代理</span></div><div class="line"><span class="class"><span class="keyword">extension</span> <span class="title">ViewController</span>: <span class="title">UITextFieldDelegate</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">textFieldShouldReturn</span><span class="params">(<span class="number">_</span> textField: UITextField)</span></span> -&gt; <span class="type">Bool</span> &#123;</div><div class="line">        searchForGithub(repositoryName: textField.text!)</div><div class="line">        textField.resignFirstResponder()</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="开发模式"><a href="#开发模式" class="headerlink" title="开发模式"></a>开发模式</h2><ul>
+<h1 id="开发模式"><a href="#开发模式" class="headerlink" title="开发模式"></a>开发模式</h1><ul>
 <li>按UI设计划分<ol>
 <li>xib/Storyboard党</li>
 <li>纯代码党(手动AutoLayout党)，使用Masonry、SnapKit第三方库</li>
@@ -551,7 +552,7 @@
 </ol>
 </li>
 </ul>
-<h3 id="Storyboard"><a href="#Storyboard" class="headerlink" title="Storyboard"></a>Storyboard</h3><ul>
+<h2 id="Storyboard"><a href="#Storyboard" class="headerlink" title="Storyboard"></a>Storyboard</h2><ul>
 <li>是多个xib(界面布局文件)的集合。</li>
 </ul>
 <ul>
@@ -560,7 +561,7 @@
 <li>纯代码布局，容易复用，且容易批量调整。</li>
 <li><strong>用Storyboard大概是一时爽吧….即短期开发出一个demo使用storyboard很快</strong></li>
 </ul>
-<h3 id="AutoLayout"><a href="#AutoLayout" class="headerlink" title="AutoLayout"></a>AutoLayout</h3><ul>
+<h2 id="AutoLayout"><a href="#AutoLayout" class="headerlink" title="AutoLayout"></a>AutoLayout</h2><ul>
 <li>iOS开发中描述性的布局方式，同时也是处理适配手机屏幕的主要方式之一(搭配SizeClass)</li>
 <li>掌握AutoLayout更多是经验。</li>
 <li>核心是<strong>约束</strong>和<strong>参照</strong>，在iOS中要显示一个控件，需要其<strong>位置</strong>和<strong>尺寸</strong>。</li>
@@ -570,7 +571,7 @@
 <li>可以使用一个空的UIView作为Container作为参照，固定宽高。</li>
 <li>要善于使用centerX和centerY作为参照。</li>
 </ul>
-<h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><ul>
+<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><ul>
 <li><p>苹果的MVC和传统的MVC有些出入。</p>
 </li>
 <li><p>一种面向对象的设计模式，将程序划分为三个部分。</p>
@@ -606,7 +607,7 @@
 <p><strong>在iOS实际开发中，Controller很难和View做到相互独立，经常耦合在一起，即使你可以将一些业务逻辑和数据转换的工作交给Model，但是你无法将负担分给View，因为View本质还是重用的视图，以及将用户的操作行为交给Controller来处理，于是Controller成为了所有东西的delegate和datasource，还要负责网络请求逻辑……..</strong></p>
 <p><strong>所以Massive Controller是iOS开发者不可避免的问题，MVVM的设计模式能很有效地解决这一问题</strong></p>
 <p><strong>这次demo还是以苹果所推广的开发模式来编写，即Storyboard + MVC，个人也认为刚接触iOS开发时也应该先熟悉这种开发模式，之后再去上手纯代码布局，MVVM这些操作。</strong></p>
-<h2 id="CocoaPods构建工程"><a href="#CocoaPods构建工程" class="headerlink" title="CocoaPods构建工程"></a>CocoaPods构建工程</h2><h4 id="Single-View-App的project的初始目录"><a href="#Single-View-App的project的初始目录" class="headerlink" title="Single View App的project的初始目录"></a>Single View App的project的初始目录</h4><ul>
+<h1 id="CocoaPods构建工程"><a href="#CocoaPods构建工程" class="headerlink" title="CocoaPods构建工程"></a>CocoaPods构建工程</h1><h4 id="Single-View-App的project的初始目录"><a href="#Single-View-App的project的初始目录" class="headerlink" title="Single View App的project的初始目录"></a>Single View App的project的初始目录</h4><ul>
 <li>AppDelegate.swift 应用程序的代理</li>
 <li>ViewController.swift</li>
 <li>Main.storyboard</li>
@@ -625,7 +626,7 @@
 <ul>
 <li>打开demo.xcworkspace</li>
 </ul>
-<h2 id="TablebView"><a href="#TablebView" class="headerlink" title="TablebView"></a>TablebView</h2><ul>
+<h1 id="TablebView"><a href="#TablebView" class="headerlink" title="TablebView"></a>TablebView</h1><ul>
 <li><p>TableView几乎是iOS开发中最重要的UIView，其继承了UIScollView</p>
 </li>
 <li><p>分为Dynamic和Static</p>
@@ -637,14 +638,14 @@
 <p><img src="/2017/12/07/小猴偷米iOS开发技术分享/image_4.jpg" alt=""></p>
 </li>
 </ul>
-<h5 id="关联代码与TableView"><a href="#关联代码与TableView" class="headerlink" title="关联代码与TableView"></a>关联代码与TableView</h5><ul>
+<h2 id="关联代码与TableView"><a href="#关联代码与TableView" class="headerlink" title="关联代码与TableView"></a>关联代码与TableView</h2><ul>
 <li>TableView提供两个协议，dataSource和delegate<ul>
 <li>delegate用来控制视图如何展示</li>
 <li>datasource提供cell中的数据</li>
 </ul>
 </li>
 </ul>
-<h5 id="delegate核心的三个函数"><a href="#delegate核心的三个函数" class="headerlink" title="delegate核心的三个函数"></a>delegate核心的三个函数</h5><ul>
+<h2 id="delegate核心的三个函数"><a href="#delegate核心的三个函数" class="headerlink" title="delegate核心的三个函数"></a>delegate核心的三个函数</h2><ul>
 <li><p>共多少个sections</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">numberOfSections</span><span class="params">(<span class="keyword">in</span> tableView: UITableView)</span></span> -&gt; <span class="type">Int</span> &#123;&#125;</div></pre></td></tr></table></figure>
 </li>
@@ -657,14 +658,14 @@
 </ul>
 <p><strong>通常我们使用Array of Arrays来实现model的数据结构，这是概念性的东西，即一维对应着section,二维对应着row，这样通过data[section][row]即获取了每一个cell所对应的数据。</strong></p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> repos: [[<span class="type">RepositoryInfo</span>]] = []</div></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
 <li>今天的分享涉及了iOS开发很多方面，但都很浅，最主要的目的就是让大家能有个初步的了解与体会。</li>
 <li>现在前端越来越有将移动端”并入”的趋势，事实的确如此，从之前的Web APP，到最近的React Native，包括MVVM，React的思想也是从前端传过来的。但是原生APP开发方式始终有它的优势所在，尤其iOS开发终归要听苹果爸爸的意见。而且React Native最初开发目的其实是给前端的js玩家能够快速迭代开发移动端，而并不是想来”勾引”原生开发者(虽然它做到了….)</li>
 <li>移动开发现在的确不如前些年火热，甚至有给人”没落”的印象，门槛提高的确是不争的事实，但任何领域都不缺优秀的开发者。</li>
 <li>我觉得扩宽技能树是一方面，但能越早地选择专攻的方向越好，坠好是能找到自己感兴趣的方向。我自己当时学习iOS除了果粉的原因外，主要是自己平日接触时间最长的东西就是手机，觉得从口袋里掏出手机，给别人展示自己写的APP很cool。</li>
 <li>找不到兴趣所在，就去搞机器学习吧  : )</li>
 </ul>
-<h4 id="iOS入门推荐资源"><a href="#iOS入门推荐资源" class="headerlink" title="iOS入门推荐资源"></a>iOS入门推荐资源</h4><ul>
+<h2 id="iOS入门推荐资源"><a href="#iOS入门推荐资源" class="headerlink" title="iOS入门推荐资源"></a>iOS入门推荐资源</h2><ul>
 <li><p>Developing iOS11 Apps with Swift(Standford CS193P)   itunes(posts)应该有英文字幕的</p>
 </li>
 <li><p>The Swift Language Guide</p>
@@ -795,7 +796,7 @@
                alt="Nathan Liu" />
           <p class="site-author-name" itemprop="name">Nathan Liu</p>
            
-              <p class="site-description motion-element" itemprop="description">Nathan的个人博客,关于技术与开发，关于NBA，关于我的生活。</p>
+              <p class="site-description motion-element" itemprop="description">Nathan的个人博客,关于技术与开发,关于NBA,关于我的生活。</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -905,7 +906,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-Taste-Of-Developing-iOS-Application"><span class="nav-number">1.</span> <span class="nav-text">A Taste Of Developing iOS Application</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">前言:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What’s-in-iOS？"><span class="nav-number">1.1.</span> <span class="nav-text">What’s in iOS？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发环境"><span class="nav-number">1.2.</span> <span class="nav-text">开发环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Swift编程语言"><span class="nav-number">1.3.</span> <span class="nav-text">Swift编程语言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">概述</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#demo所用到的Swift简单语法特性介绍"><span class="nav-number">1.3.1.</span> <span class="nav-text">demo所用到的Swift简单语法特性介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Constants-and-Variables"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">Constants and Variables</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Type-Annotations"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">Type Annotations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Print-amp-Comments"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">Print & Comments</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Optional-可选类型"><span class="nav-number">1.3.1.4.</span> <span class="nav-text">*Optional(可选类型)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#产生optional"><span class="nav-number">1.3.1.4.1.</span> <span class="nav-text">产生optional</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#unwrap-the-optional"><span class="nav-number">1.3.1.4.2.</span> <span class="nav-text">unwrap the optional</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">1.3.1.5.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字典"><span class="nav-number">1.3.1.6.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Enum-switch"><span class="nav-number">1.3.1.7.</span> <span class="nav-text">Enum + switch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数"><span class="nav-number">1.3.1.8.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#闭包-Closure"><span class="nav-number">1.3.1.9.</span> <span class="nav-text">*闭包(Closure)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类与结构体-class-amp-amp-struct"><span class="nav-number">1.3.1.10.</span> <span class="nav-text">类与结构体(class && struct)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#协议、扩展、代理-protocol、extension、delegate"><span class="nav-number">1.3.1.11.</span> <span class="nav-text">*协议、扩展、代理(protocol、extension、delegate)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#协议-protocol"><span class="nav-number">1.3.1.11.1.</span> <span class="nav-text">协议(protocol)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#代理-delegate"><span class="nav-number">1.3.1.11.2.</span> <span class="nav-text">代理(delegate)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#扩展-extension"><span class="nav-number">1.3.1.11.3.</span> <span class="nav-text">扩展(extension)</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发模式"><span class="nav-number">1.4.</span> <span class="nav-text">开发模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Storyboard"><span class="nav-number">1.4.1.</span> <span class="nav-text">Storyboard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AutoLayout"><span class="nav-number">1.4.2.</span> <span class="nav-text">AutoLayout</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#小技巧"><span class="nav-number">1.4.2.0.1.</span> <span class="nav-text">小技巧</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MVC"><span class="nav-number">1.4.3.</span> <span class="nav-text">MVC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CocoaPods构建工程"><span class="nav-number">1.5.</span> <span class="nav-text">CocoaPods构建工程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Single-View-App的project的初始目录"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">Single View App的project的初始目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构建CocoaPods工程"><span class="nav-number">1.5.0.2.</span> <span class="nav-text">构建CocoaPods工程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TablebView"><span class="nav-number">1.6.</span> <span class="nav-text">TablebView</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#关联代码与TableView"><span class="nav-number">1.6.0.0.1.</span> <span class="nav-text">关联代码与TableView</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#delegate核心的三个函数"><span class="nav-number">1.6.0.0.2.</span> <span class="nav-text">delegate核心的三个函数</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.7.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#iOS入门推荐资源"><span class="nav-number">1.7.0.1.</span> <span class="nav-text">iOS入门推荐资源</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-Taste-Of-Developing-iOS-Application"><span class="nav-number">1.</span> <span class="nav-text">A Taste Of Developing iOS Application</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">前言:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What’s-in-iOS？"><span class="nav-number">2.</span> <span class="nav-text">What’s in iOS？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开发环境"><span class="nav-number">3.</span> <span class="nav-text">开发环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Swift编程语言"><span class="nav-number">4.</span> <span class="nav-text">Swift编程语言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">4.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#demo所用到的Swift简单语法特性介绍"><span class="nav-number">4.2.</span> <span class="nav-text">demo所用到的Swift简单语法特性介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Constants-and-Variables"><span class="nav-number">4.2.1.</span> <span class="nav-text">Constants and Variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Type-Annotations"><span class="nav-number">4.2.2.</span> <span class="nav-text">Type Annotations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Print-amp-Comments"><span class="nav-number">4.2.3.</span> <span class="nav-text">Print & Comments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Optional-可选类型"><span class="nav-number">4.2.4.</span> <span class="nav-text">*Optional(可选类型)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#产生optional"><span class="nav-number">4.2.4.1.</span> <span class="nav-text">产生optional</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unwrap-the-optional"><span class="nav-number">4.2.4.2.</span> <span class="nav-text">unwrap the optional</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">4.2.5.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字典"><span class="nav-number">4.2.6.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Enum-switch"><span class="nav-number">4.2.7.</span> <span class="nav-text">Enum + switch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">4.2.8.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包-Closure"><span class="nav-number">4.2.9.</span> <span class="nav-text">*闭包(Closure)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类与结构体-class-amp-amp-struct"><span class="nav-number">4.2.10.</span> <span class="nav-text">类与结构体(class && struct)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协议、扩展、代理-protocol、extension、delegate"><span class="nav-number">4.2.11.</span> <span class="nav-text">*协议、扩展、代理(protocol、extension、delegate)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#协议-protocol"><span class="nav-number">4.2.11.1.</span> <span class="nav-text">协议(protocol)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代理-delegate"><span class="nav-number">4.2.11.2.</span> <span class="nav-text">代理(delegate)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展-extension"><span class="nav-number">4.2.11.3.</span> <span class="nav-text">扩展(extension)</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开发模式"><span class="nav-number">5.</span> <span class="nav-text">开发模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Storyboard"><span class="nav-number">5.1.</span> <span class="nav-text">Storyboard</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AutoLayout"><span class="nav-number">5.2.</span> <span class="nav-text">AutoLayout</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#小技巧"><span class="nav-number">5.2.0.0.1.</span> <span class="nav-text">小技巧</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-number">5.3.</span> <span class="nav-text">MVC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CocoaPods构建工程"><span class="nav-number">6.</span> <span class="nav-text">CocoaPods构建工程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Single-View-App的project的初始目录"><span class="nav-number">6.0.0.1.</span> <span class="nav-text">Single View App的project的初始目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构建CocoaPods工程"><span class="nav-number">6.0.0.2.</span> <span class="nav-text">构建CocoaPods工程</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TablebView"><span class="nav-number">7.</span> <span class="nav-text">TablebView</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关联代码与TableView"><span class="nav-number">7.1.</span> <span class="nav-text">关联代码与TableView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delegate核心的三个函数"><span class="nav-number">7.2.</span> <span class="nav-text">delegate核心的三个函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS入门推荐资源"><span class="nav-number">8.1.</span> <span class="nav-text">iOS入门推荐资源</span></a></li></ol></li></ol></div>
             
 
           </div>

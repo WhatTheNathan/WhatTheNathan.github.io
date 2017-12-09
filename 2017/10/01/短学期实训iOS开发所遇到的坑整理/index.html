@@ -95,23 +95,23 @@
 
 
 
-<meta name="description" content="​    短学期结束时就想做一个整理了，但因为一些事情一直拖着，乘着国庆放假现在终于有时间啦~ ​    本文主要为我自己在实训中开发iOS端时遇到的坑，写完之后感觉都不是高大上的做法..甚至可能是未来的我看起来有点错误的做法…但毕竟是自己花时间踩过的坑，还是非常想记下来。 ScrollView+TableView+UISegmentedControl+UISlider实现常见首页效果 ​">
+<meta name="description" content="​    短学期结束时就想做一个整理了，但因为一些事情一直拖着，乘着国庆放假现在终于有时间啦~ ​    本文主要为我自己在实训中开发iOS端时遇到的坑，写完之后感觉都不是高大上的做法..甚至可能是未来的我看起来有点错误的做法…但毕竟是自己花时间踩过的坑，还是非常想记下来。">
 <meta name="keywords" content="iOS开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="短学期实训iOS开发所遇到的坑整理">
 <meta property="og:url" content="http://yoursite.com/2017/10/01/短学期实训iOS开发所遇到的坑整理/index.html">
 <meta property="og:site_name" content="What The Nathan">
-<meta property="og:description" content="​    短学期结束时就想做一个整理了，但因为一些事情一直拖着，乘着国庆放假现在终于有时间啦~ ​    本文主要为我自己在实训中开发iOS端时遇到的坑，写完之后感觉都不是高大上的做法..甚至可能是未来的我看起来有点错误的做法…但毕竟是自己花时间踩过的坑，还是非常想记下来。 ScrollView+TableView+UISegmentedControl+UISlider实现常见首页效果 ​">
+<meta property="og:description" content="​    短学期结束时就想做一个整理了，但因为一些事情一直拖着，乘着国庆放假现在终于有时间啦~ ​    本文主要为我自己在实训中开发iOS端时遇到的坑，写完之后感觉都不是高大上的做法..甚至可能是未来的我看起来有点错误的做法…但毕竟是自己花时间踩过的坑，还是非常想记下来。">
 <meta property="og:image" content="http://yoursite.com/2017/10/01/短学期实训iOS开发所遇到的坑整理/2017-10-01%2019_34_48.gif">
 <meta property="og:image" content="http://yoursite.com/2017/10/01/短学期实训iOS开发所遇到的坑整理/what.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/10/01/短学期实训iOS开发所遇到的坑整理/UISlider.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/10/01/短学期实训iOS开发所遇到的坑整理/2017-10-01%2016_55_43.gif">
 <meta property="og:image" content="http://yoursite.com/2017/10/01/短学期实训iOS开发所遇到的坑整理/2017-10-01%2016_54_28.gif">
 <meta property="og:image" content="http://yoursite.com/2017/10/01/短学期实训iOS开发所遇到的坑整理/2017-10-01%2016_51_09.gif">
-<meta property="og:updated_time" content="2017-10-01T13:55:09.126Z">
+<meta property="og:updated_time" content="2017-12-08T08:40:24.852Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="短学期实训iOS开发所遇到的坑整理">
-<meta name="twitter:description" content="​    短学期结束时就想做一个整理了，但因为一些事情一直拖着，乘着国庆放假现在终于有时间啦~ ​    本文主要为我自己在实训中开发iOS端时遇到的坑，写完之后感觉都不是高大上的做法..甚至可能是未来的我看起来有点错误的做法…但毕竟是自己花时间踩过的坑，还是非常想记下来。 ScrollView+TableView+UISegmentedControl+UISlider实现常见首页效果 ​">
+<meta name="twitter:description" content="​    短学期结束时就想做一个整理了，但因为一些事情一直拖着，乘着国庆放假现在终于有时间啦~ ​    本文主要为我自己在实训中开发iOS端时遇到的坑，写完之后感觉都不是高大上的做法..甚至可能是未来的我看起来有点错误的做法…但毕竟是自己花时间踩过的坑，还是非常想记下来。">
 <meta name="twitter:image" content="http://yoursite.com/2017/10/01/短学期实训iOS开发所遇到的坑整理/2017-10-01%2019_34_48.gif">
 
 
@@ -363,6 +363,7 @@
       
         <p>​    短学期结束时就想做一个整理了，但因为一些事情一直拖着，乘着国庆放假现在终于有时间啦~</p>
 <p>​    本文主要为我自己在实训中开发iOS端时遇到的坑，写完之后感觉都不是高大上的做法..甚至可能是未来的我看起来有点错误的做法…但毕竟是自己花时间踩过的坑，还是非常想记下来。</p>
+<a id="more"></a>
 <h3 id="ScrollView-TableView-UISegmentedControl-UISlider实现常见首页效果"><a href="#ScrollView-TableView-UISegmentedControl-UISlider实现常见首页效果" class="headerlink" title="ScrollView+TableView+UISegmentedControl+UISlider实现常见首页效果"></a>ScrollView+TableView+UISegmentedControl+UISlider实现常见首页效果</h3><p><img src="/2017/10/01/短学期实训iOS开发所遇到的坑整理/2017-10-01 19_34_48.gif" alt=""></p>
 <p>​    在做动态页面的时候，我想要实现如图非常常见的首页效果，用UISegmentedControl来做页面的切换。虽然看起来效果很不错，但感觉又是一个非常”屌丝”的做法。</p>
 <p>​    在短学期之前其实自己本身没有怎么用scrolllView写过东西，所以在最终定下这一套UI界面之前还是花了不少时间。</p>
@@ -543,7 +544,7 @@
                alt="Nathan Liu" />
           <p class="site-author-name" itemprop="name">Nathan Liu</p>
            
-              <p class="site-description motion-element" itemprop="description">Nathan的个人博客,关于技术与开发，关于NBA，关于我的生活。</p>
+              <p class="site-description motion-element" itemprop="description">Nathan的个人博客,关于技术与开发,关于NBA,关于我的生活。</p>
           
         </div>
         <nav class="site-state motion-element">
