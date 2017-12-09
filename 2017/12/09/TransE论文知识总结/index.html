@@ -108,7 +108,7 @@
 <meta property="og:image" content="http://yoursite.com/2017/12/09/TransE论文知识总结/table_3.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/12/09/TransE论文知识总结/table_4.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/12/09/TransE论文知识总结/table_5.jpg">
-<meta property="og:updated_time" content="2017-12-09T03:30:35.334Z">
+<meta property="og:updated_time" content="2017-12-09T05:07:32.964Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TransE论文知识总结">
 <meta name="twitter:description" content="Translating Embeddings for Modeling Multi-relational Data 关于表示学习的前话​    深度学习中最重要的作用就是表示学习，深度学习首先是学习特征，然后是学习分类，即所谓的端对端学习，所以深度学习很适合去解决像图像处理这种数据的”初始表示”与解决任务所需的”合适表示”相距甚远的问题。表示学习就是要将所研究对象的语义信息表示为稠密低纬实值向量，">
@@ -419,7 +419,7 @@ h + l ≈  t</script></blockquote>
 <li><p>与之前的基于能量的框架一样，一个三元组的能量用来表示，d()即损失函数，可以采取L1距离(曼哈顿距离)或者L2距离(欧几里得距离)。该能量函数通过h+l与t的距离来表示该三元组的置信度，函数值越小，则该三元组置信度越高。</p>
 <script type="math/tex; mode=display">
  d(h+l,t) = |l_{h+l}-l_t|_{L1/L2}</script></li>
-<li><p>优化目标函数为(这里markdown没发在文字中嵌入数学公式…所以体谅下)</p>
+<li><p>优化目标函数为</p>
 <script type="math/tex; mode=display">
  \Gamma = \sum_{(h,l,t)\in S} \sum_{(h^{'},l,t^{'})\in S^{'}}[\gamma+d(h+l,t)-d(h^{'}+l,t^{'})]_{+}</script><ul>
 <li>[x]+取的是x的正数部分。</li>
