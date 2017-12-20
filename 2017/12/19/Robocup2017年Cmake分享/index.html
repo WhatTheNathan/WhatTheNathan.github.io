@@ -1,0 +1,926 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Robocup,cmake,linux," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="What The Nathan" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/uploads/site.png?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="前言本文将从为什么要使用Cmake这个问题开始，不仅仅介绍Cmake的基本使用，还将对项目的编译工具发展历程做简单的介绍，过程中夹杂一些linux编程的基本常识，最后以软件组第一次作业矩阵类的编写为例作为实战演练。 什么是CmakeCmake并不是专为C/C++所用！  Cmake全称为cross platform make 跨平台的编译工具">
+<meta name="keywords" content="Robocup,cmake,linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Robocup2017年Cmake分享">
+<meta property="og:url" content="http://yoursite.com/2017/12/19/Robocup2017年Cmake分享/index.html">
+<meta property="og:site_name" content="What The Nathan">
+<meta property="og:description" content="前言本文将从为什么要使用Cmake这个问题开始，不仅仅介绍Cmake的基本使用，还将对项目的编译工具发展历程做简单的介绍，过程中夹杂一些linux编程的基本常识，最后以软件组第一次作业矩阵类的编写为例作为实战演练。 什么是CmakeCmake并不是专为C/C++所用！  Cmake全称为cross platform make 跨平台的编译工具">
+<meta property="og:image" content="http://yoursite.com/2017/12/19/Robocup2017年Cmake分享/Screen%20Shot%202017-12-20%20at%204.25.30%20PM.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/19/Robocup2017年Cmake分享/Screen%20Shot%202017-12-20%20at%205.11.05%20PM.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/19/Robocup2017年Cmake分享/Screen%20Shot%202017-12-20%20at%205.15.47%20PM.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/19/Robocup2017年Cmake分享/Screen%20Shot%202017-12-20%20at%205.20.51%20PM.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/19/Robocup2017年Cmake分享/Screen%20Shot%202017-12-20%20at%206.18.06%20PM.png">
+<meta property="og:image" content="http://yoursite.com/2017/12/19/Robocup2017年Cmake分享/Screen%20Shot%202017-12-20%20at%206.21.53%20PM.png">
+<meta property="og:updated_time" content="2017-12-20T13:18:24.479Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Robocup2017年Cmake分享">
+<meta name="twitter:description" content="前言本文将从为什么要使用Cmake这个问题开始，不仅仅介绍Cmake的基本使用，还将对项目的编译工具发展历程做简单的介绍，过程中夹杂一些linux编程的基本常识，最后以软件组第一次作业矩阵类的编写为例作为实战演练。 什么是CmakeCmake并不是专为C/C++所用！  Cmake全称为cross platform make 跨平台的编译工具">
+<meta name="twitter:image" content="http://yoursite.com/2017/12/19/Robocup2017年Cmake分享/Screen%20Shot%202017-12-20%20at%204.25.30%20PM.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/19/Robocup2017年Cmake分享/"/>
+
+
+
+
+
+  <title>Robocup2017年Cmake分享 | What The Nathan</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">What The Nathan</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Make That Old</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/19/Robocup2017年Cmake分享/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nathan Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/what.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="What The Nathan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Robocup2017年Cmake分享</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T02:03:48+08:00">
+                2017-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/项目工程管理/" itemprop="url" rel="index">
+                    <span itemprop="name">项目工程管理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文将从为什么要使用Cmake这个问题开始，不仅仅介绍Cmake的基本使用，还将对项目的编译工具发展历程做简单的介绍，过程中夹杂一些linux编程的基本常识，最后以软件组第一次作业矩阵类的编写为例作为实战演练。</p>
+<h2 id="什么是Cmake"><a href="#什么是Cmake" class="headerlink" title="什么是Cmake"></a>什么是Cmake</h2><p><strong>Cmake并不是专为C/C++所用！</strong></p>
+<ul>
+<li>Cmake全称为cross platform make</li>
+<li>跨平台的编译工具</li>
+</ul>
+<a id="more"></a>
+<h2 id="为什么要用Cmake"><a href="#为什么要用Cmake" class="headerlink" title="为什么要用Cmake"></a>为什么要用Cmake</h2><h3 id="gcc"><a href="#gcc" class="headerlink" title="gcc"></a>gcc</h3><ul>
+<li>gcc是GNU Compiler Collection，即GNU编译器套件，可以简单地认为是编译器，可以用来编译很多种编程语言(C、C++、Objc、Java)。</li>
+</ul>
+<ul>
+<li>我们编写程序时若只有一个源文件时，我们可以直接用gcc命令编译它。</li>
+<li>但当程序包含很多个源文件时，若是用gcc命令逐个编译，容易出错且工作量大。</li>
+</ul>
+<h3 id="make"><a href="#make" class="headerlink" title="make"></a>make</h3><ul>
+<li>make工具本身没有编译和链接的功能，其可以看做一个批处理工具，相当于调用makefile文件中我们所编写的命令来进行编译和链接。</li>
+<li>我们在makefile文件中编写调用gcc(编译器)做编译的命令。</li>
+<li>但对于大型工程来说，手写makefile也是一件非常麻烦的事。</li>
+</ul>
+<h3 id="Cmake"><a href="#Cmake" class="headerlink" title="Cmake"></a>Cmake</h3><ul>
+<li>cmake可以更加简单地生成makefile文件，再使用make工具。</li>
+<li>cmake通过我们编写的CMakeLists.txt文件生成makefile。</li>
+<li>cmake还可以根据跨平台生成对应平台所支持的makefile。</li>
+<li>且根据CmakeLists.txt，我们能更加清晰地了解一个工程项目的整体架构与依赖关系。</li>
+</ul>
+<h3 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h3><ul>
+<li>我们平日编程依赖VS、CLion等IDE，IDE其实是将整个项目构建的过程封装了起来，黑盒化地运行。IDE可以根据平台、配置等生成makefile/CMakeLists.txt等。</li>
+<li>比如CLion是支持Cmake的，其会根据你对项目文件结构的改变，自动生成CMakeLists.txt中的语句。(毕竟JetBrain家的产品对跨平台支持很好)</li>
+<li>我们所使用的KDevelop同样支持Cmake，但好像没有自动生成CmakeLists.txt语句的特性。</li>
+</ul>
+<p><strong>对于小项目，可以用IDE帮你解决项目构建问题，对于复杂的大型项目，可能需要手动更改CmakeLists.txt，甚至亲自手撕。</strong></p>
+<p><strong>但不管怎样，了解Cmake的使用方法与运行机制，看得懂/会编写CmakeLists.txt都是非常有必要的。也便于我们快速地了解一个大型项目的架构。</strong></p>
+<h2 id="Cmake基础语法"><a href="#Cmake基础语法" class="headerlink" title="Cmake基础语法"></a>Cmake基础语法</h2><ul>
+<li><p>Cmake依靠CmakeLists.txt来组织管理整个项目，如果项目存在多个目录，那么每个要管理的目录都存在一个CmakeLists.txt</p>
+<p><img src="/2017/12/19/Robocup2017年Cmake分享/Screen Shot 2017-12-20 at 4.25.30 PM.png" alt="Screen Shot 2017-12-20 at 4.25.30 PM"></p>
+</li>
+<li><p>CmakeLists.txt编写的过程其实相当于编程，同样存在变量、控制流(我没用过)等概念。</p>
+</li>
+<li><p>Cmake语句编写是大小写无关的。</p>
+</li>
+</ul>
+<h3 id="project-projectname"><a href="#project-projectname" class="headerlink" title="project (projectname)"></a>project (projectname)</h3><ul>
+<li>定义工程的名称，并且可以指定工程所支持的语言(可忽略)，</li>
+</ul>
+<h3 id="cmake-minimum-required-VERSION-2-8"><a href="#cmake-minimum-required-VERSION-2-8" class="headerlink" title="cmake_minimum_required(VERSION 2.8)"></a>cmake_minimum_required(VERSION 2.8)</h3><ul>
+<li>要求cmake的最低版本</li>
+<li>可输入cmake —version查看所装的cmake版本</li>
+</ul>
+<h3 id="set-VAR-VALUE"><a href="#set-VAR-VALUE" class="headerlink" title="set(VAR VALUE)"></a>set(VAR VALUE)</h3><ul>
+<li>用于显示地定义变量。</li>
+<li>例如set(SRCS main.cpp)</li>
+</ul>
+<h3 id="add-executable-CMatrix-SRCS"><a href="#add-executable-CMatrix-SRCS" class="headerlink" title="add_executable(CMatrix ${SRCS})"></a>add_executable(CMatrix ${SRCS})</h3><ul>
+<li>定义生成可执行文件，名字为CMatrix。</li>
+<li>这里使用${}来引用变量，当然你也可以直接add_executable(CMatrix main.cpp)</li>
+</ul>
+<h3 id="add-subdirectory-source"><a href="#add-subdirectory-source" class="headerlink" title="add_subdirectory(source)"></a>add_subdirectory(source)</h3><ul>
+<li>向当前工程添加子目录，并且可以指定编译结果存放的目录。</li>
+</ul>
+<h3 id="include-directories-dir"><a href="#include-directories-dir" class="headerlink" title="include_directories(dir)"></a>include_directories(dir)</h3><ul>
+<li>用于添加头文件搜索路径。</li>
+</ul>
+<h2 id="内部编译与外部编译"><a href="#内部编译与外部编译" class="headerlink" title="内部编译与外部编译"></a>内部编译与外部编译</h2><h3 id="内部编译-构建"><a href="#内部编译-构建" class="headerlink" title="内部编译/构建"></a>内部编译/构建</h3><p><strong>举个例子，新建一个文件夹HAHA，创建main.cpp和CmakeLists.txt两个文件</strong></p>
+<p><img src="/2017/12/19/Robocup2017年Cmake分享/Screen Shot 2017-12-20 at 5.11.05 PM.png" alt="Screen Shot 2017-12-20 at 5.11.05 PM"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// main.cpp</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;<span class="string">"Hello Cmake"</span>&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// CmakeLists.txt</span></div><div class="line">cmake_minimum_required(VERSION <span class="number">2.8</span>)</div><div class="line">PROJECT (HELLO)</div><div class="line"></div><div class="line">SET(SRC main.cpp)</div><div class="line">ADD_EXECUTABLE(hello $&#123;SRC&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li><p>在文件夹当前目录下，终端输入cmake . (<strong>点号表示是在当前目录</strong>)。</p>
+</li>
+<li><p>这一步是cmake在起作用，可以看到生成了CMakeFiles、CmakeCache.txt、cmake_install.cmake等文件，最关键的是生成了Makefile。</p>
+<p><img src="/2017/12/19/Robocup2017年Cmake分享/Screen Shot 2017-12-20 at 5.15.47 PM.png" alt="Screen Shot 2017-12-20 at 5.15.47 PM"></p>
+</li>
+<li><p>输入make，这一步其实是使用make工具，生成了可执行文件hello。</p>
+<p><img src="/2017/12/19/Robocup2017年Cmake分享/Screen Shot 2017-12-20 at 5.20.51 PM.png" alt="Screen Shot 2017-12-20 at 5.20.51 PM"></p>
+</li>
+</ul>
+<h3 id="外部编译-构建"><a href="#外部编译-构建" class="headerlink" title="外部编译/构建"></a>外部编译/构建</h3><ul>
+<li><p><strong>可以看到内部构建生成的临时文件很多，且和我们的源代码文件混在一起，所以我们应该使用外部构建的方式。</strong></p>
+</li>
+<li><p>依然是HAHA文件夹目录下，删去除main.cpp和CmakeLists.txt之外的文件。输入mkdir build创建build文件夹，用来存放构建过程中生成的临时文件。</p>
+<p><img src="/2017/12/19/Robocup2017年Cmake分享/Screen Shot 2017-12-20 at 6.18.06 PM.png" alt="Screen Shot 2017-12-20 at 6.18.06 PM"></p>
+</li>
+<li><p>进入build文件夹，cmake .. （<strong>注意..代表父目录，因为CmakeLists.txt在父目录下</strong>）</p>
+<p><img src="/2017/12/19/Robocup2017年Cmake分享/Screen Shot 2017-12-20 at 6.21.53 PM.png" alt="Screen Shot 2017-12-20 at 6.21.53 PM"></p>
+</li>
+<li><p>之后一样输入make调用make工具即可。</p>
+</li>
+</ul>
+<h2 id="make-install"><a href="#make-install" class="headerlink" title="make install"></a>make install</h2><ul>
+<li>使用外部编译时，可执行文件和构建的临时文件混在来一起，我们需要的只是最后的临时文件。通常我们会将可执行文件单独放在与build同级的bin文件夹下。这就需要使用Cmake的install指令来调用make工具的instal功能。</li>
+<li>安装的内容可以包括目标二进制、动态库、静态库以及文件、目录、脚本等。所以对应的install指令包含了各种安装类型。这里只介绍常用的目标文件的安装。</li>
+<li>install(targets CMatrix [archive|library|runtime] destination ${CMAKE_INSTALL_PREFIX})<ul>
+<li>targets后面跟着的是通过add_executable或者add_library定义的目标文件，可能是可执行二进制文件、动态库、静态库。</li>
+<li>archive指静态库，library指动态库，runtime指可执行二进制文件。</li>
+<li>destination定义了安装的路径，通常我们引入CMAKE_INSTALL_PREFIX变量来定义相对路径，但其默认其实是装到用户级库文件目录下，我们在使用时可以进行更改。</li>
+</ul>
+</li>
+</ul>
+<h2 id="静态库与动态库"><a href="#静态库与动态库" class="headerlink" title="静态库与动态库"></a>静态库与动态库</h2><h3 id="库"><a href="#库" class="headerlink" title="库"></a>库</h3><ul>
+<li>我们在编写程序时，经常遇到重复或常用的代码部分，我们会将其封装成函数。而库其实就是将这些常用函数的目标文件打包在一起，并提供相应函数接口。</li>
+<li>比如C语言中实现最简单的控制台打印Hello world所调用的printf函数也是C标准库提供的函数。</li>
+<li>每种语言都有自己默认的库搜索路径，这也是为什么windows系统下要设置$PATH环境变量的原因。在调用库时，编译器会优先从库搜索路径搜索。linux则会将用户级的库文件存放在/usr/local/lib目录下。/usr/lib/存放系统级的库文件，/lib存放内核级的库文件。</li>
+</ul>
+<h3 id="静态库"><a href="#静态库" class="headerlink" title="静态库"></a>静态库</h3><ul>
+<li>静态库是在链接期间会直接链接进可执行文件，可以理解为拷贝了一份后，和目标程序一起打包为可执行文件。</li>
+<li>程序运行时不会再需要静态库。</li>
+</ul>
+<h3 id="动态库"><a href="#动态库" class="headerlink" title="动态库"></a>动态库</h3><ul>
+<li>动态库是指在程序运行期间链接，在编译时只会存储对动态库的引用，只有等到程序运行时才真正加载动态库，所以程序运行时还需要动态库存在。</li>
+<li>动态库优点在于其不需要打包到目标程序中，不会影响目标程序的大小。并且因为运行时才加载库，当我们要替换动态库文件时，不需要重新编译代码。</li>
+<li>动态库的问题在于运行时加载会带来一部分性能损失，且也使得程序依赖外部环境，若环境缺少动态库，或者库版本不正确，会导致程序无法运行。</li>
+</ul>
+<h3 id="各平台下的静态库和动态库"><a href="#各平台下的静态库和动态库" class="headerlink" title="各平台下的静态库和动态库"></a>各平台下的静态库和动态库</h3><ul>
+<li>windows下，静态库为.lib文件，动态库为.dll文件。</li>
+<li>linux下，静态库为.a文件，动态库为.so文件。</li>
+<li>Mac OS下，静态库为.a文件，动态库为.dylib文件。</li>
+</ul>
+<h3 id="Cmake构建静态库与动态库"><a href="#Cmake构建静态库与动态库" class="headerlink" title="Cmake构建静态库与动态库"></a>Cmake构建静态库与动态库</h3><h4 id="add-library-libname-SHARED-STATIC-MODULE-source"><a href="#add-library-libname-SHARED-STATIC-MODULE-source" class="headerlink" title="add_library(libname [SHARED|STATIC|MODULE] source)"></a>add_library(libname [SHARED|STATIC|MODULE] source)</h4><ul>
+<li>SHARED指动态库，STATIC指静态库。cmake会自动生成.a或.so文件。</li>
+<li>如果想生成两个相同名字的静态库和动态库，可以先add_library一个其他名字的库，再用set_target_properties来修改输出的库文件的名称。</li>
+<li>可以使用set(LIBRARY_OUTPUT_PATH path)来制定动态库生成位置。或通过intsall指令可以将其安装到其他路径下。</li>
+<li>若要为生成的target链接库，可使用target_link_libraries(target library)</li>
+</ul>
+<h2 id="矩阵类实战"><a href="#矩阵类实战" class="headerlink" title="矩阵类实战"></a>矩阵类实战</h2><ul>
+<li>要求我们生成一个/src/matrix目录下的矩阵运算库(其实从这个目录要求来看，是生成静态库)，然后在main.cpp中链接其即可。</li>
+<li>我们自底向上实现。</li>
+</ul>
+<h3 id="matrix目录下编写矩阵运算库"><a href="#matrix目录下编写矩阵运算库" class="headerlink" title="matrix目录下编写矩阵运算库"></a>matrix目录下编写矩阵运算库</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Matrix目录下CMakeLists.txt</span></div><div class="line"></div><div class="line"><span class="comment">// 生成静态库libmatrix.a</span></div><div class="line">add_library(libmatrix STATIC CMatrix.cpp)</div><div class="line">  </div><div class="line"><span class="comment">// 或者生成动态库libmatrix.so</span></div><div class="line">add_library(libmatrix SHARED CMatrix.cpp)</div><div class="line"><span class="built_in">set</span>(LIBRARY_OUTPUT_PATH $&#123;CMAKE_SOURCE_DIR&#125;/lib)</div></pre></td></tr></table></figure>
+<h3 id="src目录下主函数中链接矩阵运算库"><a href="#src目录下主函数中链接矩阵运算库" class="headerlink" title="src目录下主函数中链接矩阵运算库"></a>src目录下主函数中链接矩阵运算库</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 添加头文件搜索路径，不然main.cpp中需要inlcude"matrix/matrix.cpp"</span></div><div class="line">INCLUDE_DIRECTORIES(./matrix)</div><div class="line"></div><div class="line">add_subdirectory(matrix)</div><div class="line"></div><div class="line"><span class="comment">// 生成可执行文件</span></div><div class="line"><span class="built_in">set</span>(SRC main.cpp)</div><div class="line">add_executable(Nathan-CMatrix $&#123;SRC&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 链接矩阵运算库libmatrix.so</span></div><div class="line">target_link_libraries(Nathan-CMatrix libmatrix)</div><div class="line"></div><div class="line"><span class="comment">// 设置安装的路径，将生成的可执行文件安装到相对于执行cmake的路径的bin目录下</span></div><div class="line">SET( CMAKE_INSTALL_PREFIX <span class="string">"$&#123;CMAKE_SOURCE_DIR&#125;/bin/"</span>)</div><div class="line">INSTALL(TARGETS Nathan-CMatrix RUNTIME DESTINATION $&#123;CMAKE_INSTALL_PREFIX&#125;)</div></pre></td></tr></table></figure>
+<h3 id="根目录下配置文件"><a href="#根目录下配置文件" class="headerlink" title="根目录下配置文件"></a>根目录下配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cmake_minimum_required(VERSION 2.8)</div><div class="line"></div><div class="line">PROJECT(Nathan-CMatrix)</div><div class="line"></div><div class="line">ADD_SUBDIRECTORY(src)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Robocup/" rel="tag"># Robocup</a>
+          
+            <a href="/tags/cmake/" rel="tag"># cmake</a>
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/09/TransE论文知识总结/" rel="next" title="TransE论文知识总结">
+                <i class="fa fa-chevron-left"></i> TransE论文知识总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/what.png"
+               alt="Nathan Liu" />
+          <p class="site-author-name" itemprop="name">Nathan Liu</p>
+           
+              <p class="site-description motion-element" itemprop="description">Nathan的个人博客,关于技术与开发,关于NBA,关于我的生活。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/WhatTheNathan" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/WhatTheNathan" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/liu-gui-dong-82/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-comments-o"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/whatthenathan/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-google"></i>
+                  
+                  Instagram
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Cmake"><span class="nav-number">2.</span> <span class="nav-text">什么是Cmake</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要用Cmake"><span class="nav-number">3.</span> <span class="nav-text">为什么要用Cmake</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gcc"><span class="nav-number">3.1.</span> <span class="nav-text">gcc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#make"><span class="nav-number">3.2.</span> <span class="nav-text">make</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cmake"><span class="nav-number">3.3.</span> <span class="nav-text">Cmake</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IDE"><span class="nav-number">3.4.</span> <span class="nav-text">IDE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cmake基础语法"><span class="nav-number">4.</span> <span class="nav-text">Cmake基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#project-projectname"><span class="nav-number">4.1.</span> <span class="nav-text">project (projectname)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cmake-minimum-required-VERSION-2-8"><span class="nav-number">4.2.</span> <span class="nav-text">cmake_minimum_required(VERSION 2.8)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set-VAR-VALUE"><span class="nav-number">4.3.</span> <span class="nav-text">set(VAR VALUE)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-executable-CMatrix-SRCS"><span class="nav-number">4.4.</span> <span class="nav-text">add_executable(CMatrix ${SRCS})</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-subdirectory-source"><span class="nav-number">4.5.</span> <span class="nav-text">add_subdirectory(source)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#include-directories-dir"><span class="nav-number">4.6.</span> <span class="nav-text">include_directories(dir)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部编译与外部编译"><span class="nav-number">5.</span> <span class="nav-text">内部编译与外部编译</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内部编译-构建"><span class="nav-number">5.1.</span> <span class="nav-text">内部编译/构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外部编译-构建"><span class="nav-number">5.2.</span> <span class="nav-text">外部编译/构建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#make-install"><span class="nav-number">6.</span> <span class="nav-text">make install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态库与动态库"><span class="nav-number">7.</span> <span class="nav-text">静态库与动态库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#库"><span class="nav-number">7.1.</span> <span class="nav-text">库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态库"><span class="nav-number">7.2.</span> <span class="nav-text">静态库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态库"><span class="nav-number">7.3.</span> <span class="nav-text">动态库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各平台下的静态库和动态库"><span class="nav-number">7.4.</span> <span class="nav-text">各平台下的静态库和动态库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cmake构建静态库与动态库"><span class="nav-number">7.5.</span> <span class="nav-text">Cmake构建静态库与动态库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#add-library-libname-SHARED-STATIC-MODULE-source"><span class="nav-number">7.5.1.</span> <span class="nav-text">add_library(libname [SHARED|STATIC|MODULE] source)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵类实战"><span class="nav-number">8.</span> <span class="nav-text">矩阵类实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#matrix目录下编写矩阵运算库"><span class="nav-number">8.1.</span> <span class="nav-text">matrix目录下编写矩阵运算库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#src目录下主函数中链接矩阵运算库"><span class="nav-number">8.2.</span> <span class="nav-text">src目录下主函数中链接矩阵运算库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根目录下配置文件"><span class="nav-number">8.3.</span> <span class="nav-text">根目录下配置文件</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Nathan Liu</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
