@@ -1,0 +1,1138 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="iOS开发,Swift,Objective-C," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="What The Nathan" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/uploads/site.png?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="献给春招中所有孤独的iOSer  怕是不知道要在牛客翻多少页才能找到iOSer的面经，至少我4月份还在看着去年秋招的面经… 我想现在在知乎上关于iOS开发问的最多的问题一定是「iOS开发是否已经饱和，没必要再学？」和「入门iOS，学OC还是Swift？」(有没有总结得很到位！ 这毕竟是春招总结，关于方向上的事讲太多就跑题了，但还是简单地两句话总结下我个人的看法吧： 开发上，如果不是特别有兴趣如今">
+<meta name="keywords" content="iOS开发,Swift,Objective-C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大三iOSer春招总结(腾讯蚂蚁头条京东网易)">
+<meta property="og:url" content="http://yoursite.com/2018/05/11/大三iOSer春招总结-腾讯蚂蚁头条京东网易/index.html">
+<meta property="og:site_name" content="What The Nathan">
+<meta property="og:description" content="献给春招中所有孤独的iOSer  怕是不知道要在牛客翻多少页才能找到iOSer的面经，至少我4月份还在看着去年秋招的面经… 我想现在在知乎上关于iOS开发问的最多的问题一定是「iOS开发是否已经饱和，没必要再学？」和「入门iOS，学OC还是Swift？」(有没有总结得很到位！ 这毕竟是春招总结，关于方向上的事讲太多就跑题了，但还是简单地两句话总结下我个人的看法吧： 开发上，如果不是特别有兴趣如今">
+<meta property="og:updated_time" content="2018-05-11T13:52:44.032Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="大三iOSer春招总结(腾讯蚂蚁头条京东网易)">
+<meta name="twitter:description" content="献给春招中所有孤独的iOSer  怕是不知道要在牛客翻多少页才能找到iOSer的面经，至少我4月份还在看着去年秋招的面经… 我想现在在知乎上关于iOS开发问的最多的问题一定是「iOS开发是否已经饱和，没必要再学？」和「入门iOS，学OC还是Swift？」(有没有总结得很到位！ 这毕竟是春招总结，关于方向上的事讲太多就跑题了，但还是简单地两句话总结下我个人的看法吧： 开发上，如果不是特别有兴趣如今">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/11/大三iOSer春招总结-腾讯蚂蚁头条京东网易/"/>
+
+
+
+
+
+  <title>大三iOSer春招总结(腾讯蚂蚁头条京东网易) | What The Nathan</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">What The Nathan</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Make That Old</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/大三iOSer春招总结-腾讯蚂蚁头条京东网易/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Nathan Liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/what.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="What The Nathan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">大三iOSer春招总结(腾讯蚂蚁头条京东网易)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T21:36:41+08:00">
+                2018-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>献给春招中所有孤独的iOSer</p>
+</blockquote>
+<p>怕是不知道要在牛客翻多少页才能找到iOSer的面经，至少我4月份还在看着去年秋招的面经…</p>
+<p>我想现在在知乎上关于iOS开发问的最多的问题一定是「iOS开发是否已经饱和，没必要再学？」和「入门iOS，学OC还是Swift？」(有没有总结得很到位！</p>
+<p>这毕竟是春招总结，关于方向上的事讲太多就跑题了，但还是简单地两句话总结下我个人的看法吧： <strong>开发上，如果不是特别有兴趣如今就不要再选iOS方向了，若是非常有兴趣，并不用担心饱和的问题。至于OC和Swift，可以并且推荐先学Swift入门，但OC是之后必须要学的。</strong></p>
+<p>在整个春招过程中，我结识了不少像我一样的iOSer，也让我感觉到正走在这条路上的不止我一个人。</p>
+<p>我的春招从二月底真正开始准备，到大概五一结束吧，总共两个多月的时间。校招真的是一段劳累，佛系的历程。我将这一路的体会与心得分享给大家，希望能给大家带来一点微小的帮助。</p>
+<p><strong>预警</strong></p>
+<p>(可能有点长 :） 同时个人喜欢打省略号，已经在克制了…不喜勿喷…</p>
+<a id="more"></a>
+<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>首先我的面试经历并不算丰富，总共其实只面试了五家公司，肯定比不上各路面霸，但是过程还是非常跌宕起伏的。先简要概括下个人面试经历(详细面试过程附后，这里可以直接跳过~)</p>
+<h3 id="整体时间线"><a href="#整体时间线" class="headerlink" title="整体时间线"></a>整体时间线</h3><p>4.9 蚂蚁金服一面，头条一二面</p>
+<p>4.12 头条三面</p>
+<p>4.13 头条HR电话面</p>
+<p>4.15 网易现场一面</p>
+<p>4.16 京东现场一二面，蚂蚁金服二面</p>
+<p>4.17 头条offer</p>
+<p>4.18 京东HR电话面</p>
+<p>4.20 蚂蚁金服三面</p>
+<p>4.27 腾讯WXG一面</p>
+<p>4.28 京东offer</p>
+<p>5.7 腾讯CDG一面</p>
+<p>to be continued?</p>
+<h3 id="笔试挂"><a href="#笔试挂" class="headerlink" title="笔试挂"></a>笔试挂</h3><ul>
+<li><strong>美团: </strong> 美团是我投的第一家公司，同时美团的笔试算我人生中第一场笔试吧(不算上大二SAP的话…)，一句话总结就是吃经验，交学费。当时并没有学会笔试的套路，之前一直在看的是面试的编程题….</li>
+<li><strong>头条: </strong> 投的第二家公司，我对头条是很有好感的，因为头条做产品比较厉害，对iOS需求大。而且当时内心OS也许只有头条能有比较大的机会写Swift吧(想多了骚年，老老实实写OC去)。然而当晚头条的笔试简直是劝退…5道编程题，我没有一题AC，彻彻底底地被上了一课。之后我认真总结了每一道题，摸清了笔试的套路，之后所有企业的笔试都过了。</li>
+</ul>
+<h3 id="笔试或简历过，但放弃面试"><a href="#笔试或简历过，但放弃面试" class="headerlink" title="笔试或简历过，但放弃面试"></a>笔试或简历过，但放弃面试</h3><ul>
+<li><strong>携程: </strong>广撒网嘛..其实携程挺好的，而且是来南京现场面… 其实放弃的主要原因并不是当时已拿到了头条offer…好像是因为第二天要考试，想预习下…</li>
+<li><strong>华为: </strong>其实我一个iOSer不该去华为的，因为种种原因投了吧..最后放弃面试也是很正常的…</li>
+<li><strong>知乎: </strong>知乎呀知乎….知乎春招应该没有公开招人。我是三月份找学长直接把简历推到了iOS组，过了一个多月收到邮件选面试时间。然后…哎不提了..</li>
+</ul>
+<h3 id="最终参加面试"><a href="#最终参加面试" class="headerlink" title="最终参加面试"></a>最终参加面试</h3><ul>
+<li><p><strong>蚂蚁金服(三轮电话技术面后进池子了): </strong> 最一开始我是想晚点内推阿里的，因为听说阿里发起面试特别快。在美团头条连着笔试跪，腾讯提前批了无音讯后，等不到一个面试机会的我心态炸裂，直接内推。</p>
+<p>从现在来看，三次面试的间隔让我感觉我是天选之子，怎么这么快，这不是我所认知的阿里..甚至前两次面试都是面试官提前预约的。</p>
+<p>三面面试官和我说是终面，从那之后，到现在已经过了二十多天…..五一收假后，蚂蚁发完了最后一波offer，而我还是面试中，大概就这样了吧…</p>
+<p>阿里的面试，至少我这三轮不算难，但因为HC少，肯定要发挥得比较完美才能进吧。</p>
+</li>
+<li><p><strong>头条(三轮视频技术面+HR电话面 offer): </strong>是的..我笔试挂了，之后在牛客翻到一个帖子直推部门，我问了下笔试挂了能推吗，得到肯定回复后我就随手一发简历，第二天就接到HR电话约清明节后电话面试。</p>
+<p>在面试之前我对头条的高效率已有所耳闻，做好了面一晚上的准备。过了二面后，HR打电话和我说三面面试官时间不合适，约到了三天后，心中有些忐忑，因为11号至15号要去绍兴参加Robocup….</p>
+<p>头条的面试算是比较难的，但因为今年HC多，估计进头条的难度不算高。</p>
+</li>
+<li><p><strong>网易(现场一面挂): </strong>网易我投的是网易云音乐，网易的笔试筛得应该比较严，毕竟报销路费。我是14号晚上从绍兴坐高铁到了杭州，11点才到酒店，第二天早上10点面试，emmm，然后一面就挂了，详细后面说。印象比较深刻的是，午餐我吃了两人份….</p>
+</li>
+<li><p><strong>京东(现场两轮技术面+HR电话面 offer): </strong>投的是上海的京东商城，其实我想投的是北京的..但官网面试地点我选了上海..然后就投去上海了。</p>
+<p>京东的笔试因为与头条面试撞了所以没参加，然而我还是收到了面试邀请….佛系。网易挂了之后，我直接从杭州坐高铁到了上海，第二天下午两点面试。结识了南大小哥，同样是iOSer，同样是前天上午在杭州面网易…同样是一面挂…同样是今天来上海面京东..</p>
+</li>
+<li><p><strong>腾讯(提前批未被发起面试，正式批WXG电话一面挂，CDG电话一面过): </strong>腾讯提前批我没有写意向事业群，不知道这是不是我没被发起面试的原因，因为从之后的面试经历看，我的简历应该算有些竞争力的。</p>
+<p>可能是真的与腾讯无缘吧…等到正式批WXG电话面试时，我已经脱离面试状态大概一周了，也没有准备，加上面试官emmm。挂了之后过了几天接到CDG电话说在简历池看到我简历，把我捞起来面试。周一一面过了，官网显示复试中，还没有约二面时间，不过其实..也不在意了…</p>
+<p>今年虽然腾讯HC增多..但可能是真的无缘吧..</p>
+</li>
+</ul>
+<h3 id="未投的公司"><a href="#未投的公司" class="headerlink" title="未投的公司"></a>未投的公司</h3><ul>
+<li><strong>滴滴: </strong>我..是..真的..没找到滴滴的校园招聘网站…</li>
+<li><strong>百度: </strong>其实百度投得很早，但等到笔试时，已经拿到了两个offer..就</li>
+</ul>
+<h2 id="二、面试过程"><a href="#二、面试过程" class="headerlink" title="二、面试过程"></a>二、面试过程</h2><p>其实前期的面试我都有总结自己的回答，这里就不贴了，有疑问的可以和我讨论交流~</p>
+<p>这里对于每个公司的面试，贴上真实感受以及对自己的面试表现复盘后的自评。</p>
+<h3 id="蚂蚁金服"><a href="#蚂蚁金服" class="headerlink" title="蚂蚁金服"></a>蚂蚁金服</h3><h4 id="电话一面，25min"><a href="#电话一面，25min" class="headerlink" title="电话一面，25min"></a>电话一面，25min</h4><p>1.直入主题，自我介绍</p>
+<p>2.问重点提到的项目开发细节</p>
+<p>3.问我怎么维护登录状态的？</p>
+<p>4.uuid是什么时候创建，什么时候给用户的？有没有过期设置？</p>
+<p>5.uuid放在header里面不会被冒用身份吗？HTTPS是怎么保证安全性的？</p>
+<p>6.HTTP和TCP、UDP的关系</p>
+<p>7.TCP写过什么东西吗</p>
+<p>8.Socket是什么，在TCP里具体怎么使用的</p>
+<p>9.有没有HTTPS抓包经历，用过什么工具</p>
+<p>10.进程与线程的关系</p>
+<p>11.进程、线程通信方式</p>
+<p>12.Swift写得多，那对OC了解吗</p>
+<p>13.问StoryBoard的其他缺点(我说最先项目时提到了用StoryBoard写的)</p>
+<p>14.SnapKit是swift的Masonry，是对Autolayout的封装吧，那Autolayout相比以前的布局有什么优缺点？</p>
+<p>15.Autolayout有遇到性能问题吗？</p>
+<p>16.你提到OC的runtime，runtime有哪些应用</p>
+<h4 id="电话二面，18min"><a href="#电话二面，18min" class="headerlink" title="电话二面，18min"></a>电话二面，18min</h4><p><strong>上来就说聊个十几分钟…</strong></p>
+<p>1.聊一下京东面试面得怎么样</p>
+<p>2.自我介绍</p>
+<p>3.聊聊项目轮播图，细节</p>
+<ul>
+<li>pageControl怎么实现联动？</li>
+<li>怎么实现动态增加轮播图片？</li>
+<li>Model同时在读和写怎么办</li>
+<li>像支付宝的轮播图pageControl的渐变效果</li>
+</ul>
+<p>4.有没有继承UIView的经历</p>
+<p>5.线程同步有哪些方式</p>
+<p>6.用过NSOperationQueue吗</p>
+<p>7.你有什么要问我的</p>
+<h4 id="电话三面，16min"><a href="#电话三面，16min" class="headerlink" title="电话三面，16min"></a>电话三面，16min</h4><p><strong>因为之前两面都是有预约，而这次是突击，所以我没怎么准备，不过他说是HR忘预约了</strong></p>
+<p>1.为什么学iOS</p>
+<p>2.影响最大的项目</p>
+<p>3.所遇到的坑</p>
+<p>4.未来学习计划</p>
+<p>5.自身技能树，为什么你觉得你iOS比较精一点</p>
+<p>6.你觉得移动端，app开发本质是涉及哪些内容</p>
+<p>7.有没有做过一些技术分享</p>
+<p>8.10张图，屏幕上，怎样让两列的高度差最小(内推的编程题…)</p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>整体体验是非常不错的，面试官都很和蔼，而且相隔时间不长，因为中间还有两次预约面试的电话。但面试时间都很短，可能是面试官比较忙吧。</p>
+<p>至于三面，我感觉他不是做iOS的，问的问题也比较偏潜力或者说发展，我觉得我回答得挺好的，但是最后的场景算法题没答好，其实很简单一道DP题…</p>
+<p>..唉…我个人感觉所有面试中，蚂蚁金服应该算我发挥最好的了，只有二面一两点没深入下去，还有三面这道场景题，可能被刷就刷在这吧。</p>
+<h3 id="今日头条"><a href="#今日头条" class="headerlink" title="今日头条"></a>今日头条</h3><h4 id="视频一面，1-2h左右"><a href="#视频一面，1-2h左右" class="headerlink" title="视频一面，1.2h左右"></a>视频一面，1.2h左右</h4><p><strong>巨长….最长的一次面试</strong></p>
+<p>1.自我介绍</p>
+<p>2.MVC和MVVM详细优缺点</p>
+<p>3.函数式编程是什么，对应另一种编程思维是什么</p>
+<p>4.轮播图项目实现细节，CollectionView细节，有几种移动的方式？</p>
+<p>5.ScrollView有哪些回调，滑动时有哪些在改变？</p>
+<p>6.触发的timer在滑动时会暂停回调，为什么？</p>
+<p>7.那runloop有哪几种mode</p>
+<p>8.详细说说runloop是什么？整个app里只有一个runloop吗</p>
+<p>9.runloop中的source是什么？</p>
+<p>10.那autoreleasePool是什么？</p>
+<p>11.项目里提到cocoapods，那它怎么工作的？pod install具体过程；你看过下载下来的第三方库什么样子吗？</p>
+<p>12.GCD细节，串行/并行队列，同步/异步，任务能不能取消，怎么实现依赖？</p>
+<p>13.除了GCD还有哪些多线程方式，他们有什么区别？</p>
+<p>14.你为什么不用NSOperationQueue而用GCD，用过吗</p>
+<p>15.怎么保证线程安全？</p>
+<p>16.除了加锁呢?</p>
+<p>17.话题一转，考基础，有哪些排序算法，哪些是稳定的，哪些是不稳定</p>
+<p>18.快排为什么不稳定？</p>
+<p>19.单链表反转链表需要几个指针，怎么找到链表的环，那怎么求得链表环的长度？无编码，说思路</p>
+<p>20.Views的DFS(递归和非递归)、BFS，要求编码</p>
+<h4 id="视频二面，1h左右"><a href="#视频二面，1h左右" class="headerlink" title="视频二面，1h左右"></a>视频二面，1h左右</h4><p><strong>一面面试官和我说让我等一下二面，我上了个厕所回来过了一会儿就接着面了…</strong></p>
+<p><strong>二面有一点点压力面的意味，上来有一点点”怼”我，但其实是也是很亲和的，问的一些问题和一面一样，但深度更深</strong></p>
+<p>1.再介绍下第一个项目的细节</p>
+<p>2.你之后用MVVM，为什么不再用MVC了，哪里不好？</p>
+<p>3.发网络请求比如说用Alamofire是属于MVC哪一层？</p>
+<p>4.MVVM哪里好了，除了能剥离出网络请求部分，还能怎么样，网络请求能占多少行?</p>
+<p>5.响应式UI是什么？</p>
+<p>6.Swift Int? 和 Int能否比较，unwrap Optional有几种方式，很隐晦地考了重载</p>
+<p>7.考了值类型和写时复制相关</p>
+<p>8.考GCD串行并行队列 同步异步，面试官在出题过程中也问了概念。问题是一段代码会输出什么。有死锁的陷阱，我就不晒题了..</p>
+<p>9.算法题，无序不重复整数序列，找出极小值的index</p>
+<h4 id="视频三面，30min"><a href="#视频三面，30min" class="headerlink" title="视频三面，30min"></a>视频三面，30min</h4><p><strong>之前有所准备，头条三面应该是leader面，面试官很亲和，声音很好听</strong></p>
+<p><strong>其实吧..三面面完我就感觉offer稳了</strong></p>
+<p>1.什么时候开始学iOS的</p>
+<p>2.简历中项目的服务端架构，有哪些坑(我说我踩坑了)</p>
+<p>3.朋友圈怎么实现的？</p>
+<p>4.你有没有对比过你的和微信的朋友圈(觉得我的答案没到点上)</p>
+<p>5.那影响朋友圈滑动流畅度有哪些因素？</p>
+<p>6.你觉得你iOS哪方面比较强</p>
+<p>7.你觉得一个优秀的高级iOS开发工程师应该是什么样的，应该具备什么</p>
+<p>8.那说说runtime的消息机制吧吧</p>
+<p>9.那消息转发这三步有什么用呢？</p>
+<p>10.那runtime，runloop有哪些实际在项目里帮到你呢？或者说应用</p>
+<p>11.让你设计一个图片库怎么设计?</p>
+<p>12.怎么协调硬盘缓存和内存缓存?</p>
+<p>13.你刚才说LRU，怎么实现的</p>
+<p>14.大学里你最有成就感的一件事</p>
+<p>15.你期望的工作环境是什么样的？</p>
+<p>16.你有什么想问我的？</p>
+<h4 id="HR电话面，15min"><a href="#HR电话面，15min" class="headerlink" title="HR电话面，15min"></a>HR电话面，15min</h4><p><strong>当时是下午5点吧，Robocup小组赛第二场刚结束…正累着，嗓子都哑了…</strong></p>
+<p>1.面试感觉怎么样</p>
+<p>2.什么时候开始学习iOS的，为什么要学iOS，具体举例(我说在过程中总结不足)</p>
+<p>3.工作还是读研</p>
+<p>4.对于加入头条所希望得到什么</p>
+<p>6.大学里最有成就感的一件事</p>
+<p>7.什么时候可以开始实习，可以实习多久</p>
+<p>8.你有什么要问我的？</p>
+<h4 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h4><p>整体面试体验非常好，头条是对iOS的基础细节问得最细的一家，同时也具有深度，而且二面面试官连着出Swift的题让我有些意外…</p>
+<p>更意外的是，全程没有直接问计算机基础的问题(网络,OS)，我想可能是这些基础已经通过一些问题考察到了，比如GCD，缓存等等。</p>
+<p>头条手撕算法大家都知道了..做好准备吧…我应该算运气比较好的…</p>
+<p>我的个人表现嘛，其实面试后自行复盘时，发现有蛮多错误的，加上第一天面试还是视频面，确实比较紧张。非常感谢面试官的耐心，一二面算是苟过了吧…三面的发挥是比较不错的，整体来说渐入佳境吧。</p>
+<p>同时，三面完之后，我就很想去这个组了…</p>
+<h3 id="网易云音乐"><a href="#网易云音乐" class="headerlink" title="网易云音乐"></a>网易云音乐</h3><h4 id="现场一面挂-40min"><a href="#现场一面挂-40min" class="headerlink" title="现场一面挂 40min"></a>现场一面挂 40min</h4><p>1.自我介绍</p>
+<p>2.展示下你的项目</p>
+<p>3.Swift印象深的特性，闭包是什么，Block的内存结构？</p>
+<p>4.guard与if let的区别</p>
+<p>5.服务端怎么发推送消息的</p>
+<p>6.开发iOS的体验</p>
+<p>7.weak，weak怎么实现MRC的</p>
+<p>8.ARC具体什么时候添加retain、release语句的(答编译期不行)</p>
+<p>9.响应链，怎么获取触屏事件</p>
+<p>10.TableViewCell的复用机制，有几个Cell复用</p>
+<p>11.HTTPS，安全层除了SSL还有，最新的？ 参数握手时首先客户端要发什么额外参数</p>
+<p>12.抓包工具，CDN是什么</p>
+<p>13.include和import的区别</p>
+<p>14.线程怎么调用寄存器的</p>
+<p>15.Swizzle原理</p>
+<p>16.load和initialize</p>
+<p>17.你有什么要问我的</p>
+<h4 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h4><p>面网易我是很随缘的…前面也提到了，前三天一直在比赛，而且面完头条后心里已经有底了，可能有些放飞自我。</p>
+<p>猪厂当时面试的会场iOS一共就两个面试官..而前端有八个…</p>
+<p>自我介绍之后面试官让我展示项目的确是我没想到的…最后我只展示了一个正在写的项目。</p>
+<p>面试下来我感觉我答得一般般，但面试体验一般，因为面试官说话断断续续，我甚至感觉他有些紧张..可能是我的错觉….</p>
+<p>之后复盘总结时，问题整体上质量是比较高的，是自己有所不足。</p>
+<p>面完出来过了5分钟问HR小哥哥面试结果，他很尴尬地和我说”很遗憾，没有通过面试，不过你可以去那边吃午餐”</p>
+<p>可我内心毫无波动，吃了双人份午餐就去上海了。</p>
+<h3 id="京东"><a href="#京东" class="headerlink" title="京东"></a>京东</h3><h4 id="现场一面-40min"><a href="#现场一面-40min" class="headerlink" title="现场一面 40min"></a>现场一面 40min</h4><p>1.自我介绍</p>
+<p>2.Swift的结构类、枚举类型相比于其他语言的不同</p>
+<p>3.说一下MVC与MVVM</p>
+<p>4.GCD，输出什么，面试官写的是OC</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">print</span>(<span class="string">"1"</span>)</div><div class="line"><span class="type">Dispatch</span>.main.async&#123;</div><div class="line">    <span class="built_in">print</span>(<span class="string">"2"</span>)</div><div class="line">&#125;</div><div class="line"><span class="built_in">print</span>(<span class="string">"3"</span>)</div></pre></td></tr></table></figure>
+<p>5.具体说说runtime</p>
+<p>6.算法题，重复字符串去重，不能修改原顺序。说思路</p>
+<p>7.Runloop与线程的关系</p>
+<p>8.进程与线程的关系</p>
+<p>9.项目轮播图的实现原理</p>
+<h4 id="现场二面-leader-30min"><a href="#现场二面-leader-30min" class="headerlink" title="现场二面(leader) 30min"></a>现场二面(leader) 30min</h4><p><strong>唯一的一次只考察计算机基础的面试，leader的意思是重基础，iOS不会进来学都可以，从他的口中感觉京东比较缺人</strong></p>
+<p>1.计算机网络七层哪七层</p>
+<p>2.TCP细节，三次握手细节，ACK与ack的区别</p>
+<p>3.广播风暴，广播怎么产生的</p>
+<p>4.ICMP知道吗</p>
+<p>5.IP地址主机号全为1代表什么</p>
+<p>6.进程与线程的关系</p>
+<p>7.管道，具体的三种</p>
+<p>8.SPOOLing</p>
+<p>9.Linux下查看目录下多少文件，Linux下查看文件有多少行</p>
+<p>10.OS、计网课做过什么实验</p>
+<p>11.手写算法(白纸)，findFirstCommonNode</p>
+<h4 id="HR电话面-5分钟"><a href="#HR电话面-5分钟" class="headerlink" title="HR电话面 5分钟"></a>HR电话面 5分钟</h4><p>1.自我介绍</p>
+<p>2.为什么学iOS</p>
+<p>3.之前写Swift还是OC</p>
+<p>4.实习多久 什么时候开始实习</p>
+<p>5.有在面其他公司吗，拿offer了吗</p>
+<p>6.那怎么选择(我说拿到了头条offer)</p>
+<p>7.你有什么要问我的</p>
+<h4 id="小结-3"><a href="#小结-3" class="headerlink" title="小结"></a>小结</h4><p>其实面京东也是随缘的。一面问题比较常规，我的发挥是比较好的，二面一开始被连着问计网，TCP还好，IP协议相关的答得不好。</p>
+<p>白纸手写算法应该是我运气比较好，这道题我可能写过不下五遍了，他review一遍过，可能这里加分比较多。</p>
+<p>整体体验也很好，二面面试官当场和我说我过了，所以其实offer是有底的。offer邮件是28号凌晨收到的，应该是京东的第一批offer。</p>
+<h3 id="腾讯"><a href="#腾讯" class="headerlink" title="腾讯"></a>腾讯</h3><h4 id="WXG电话一面挂-30min"><a href="#WXG电话一面挂-30min" class="headerlink" title="WXG电话一面挂 30min"></a>WXG电话一面挂 30min</h4><p>1.自我介绍</p>
+<p>2.笔试题的问题，Swift的访问控制概念判断</p>
+<p>3.Swift的模板和C++模板区别</p>
+<p>4.tableView必须要实现的方法</p>
+<p>5.numberOfSection，numberOfRowInSection，cellForRow，高度这4个方法调用的先后顺序，为什么</p>
+<p>6.问项目吧(你太菜)</p>
+<p>7.笔试题1G的数据，100MB内存，怎么排序</p>
+<p>8.看看你的Github代码…</p>
+<p>9.你有什么要问我的</p>
+<h4 id="小结-4"><a href="#小结-4" class="headerlink" title="小结"></a>小结</h4><p>3月中旬投的腾讯，过了一个多月才接到面试，这时候我早已放飞自我了…</p>
+<p>4月23号南大小哥收到了现场面试的短信，应该是手Q的。我当时表面发说说”腾讯连面试机会都不给我”，实际上我感觉应该是被其他组锁了，心里也想过可能是WXG…没想到还真的是</p>
+<p>面试当天看到是广州的电话我心里就有逼数了..</p>
+<p>这次面试是我发挥最差的一次，基本都问到了我的不足处…也是唯一一个在线看我github代码，并且clone下来运行的面试官…</p>
+<p>面试结尾时，我直接和他说”我知道我挂了，非常感谢您能面我，我等腾讯面试已经很久了”</p>
+<p>过了两天吧，我看到我的项目收到一个star，看了下应该是他，可能是安慰吧….</p>
+<p>恩..面试官一定是广东人..然后他其实是做前端的，应该是有在做react native的东西，最近有在看Swift…</p>
+<p>以上是我从他的Github推断出来的..</p>
+<h4 id="CDG电话一面-28min"><a href="#CDG电话一面-28min" class="headerlink" title="CDG电话一面 28min"></a>CDG电话一面 28min</h4><p>1.自我介绍</p>
+<p>2.MVC的弊端(我提到),MVVM怎么能解决,两者的区别</p>
+<p>3.双向绑定怎么实现的，引着问KVO怎么实现的</p>
+<p>4.<strong>_</strong>ivar 和 self. 区别，_ivar能触发KVO吗？</p>
+<p>5.单向链表找环，两个单向链表找相交结点，说思路</p>
+<p>6.讲讲HTTP，说说状态码</p>
+<p>7.常见的排序算法，以及时间复杂度</p>
+<p>8.对于职位未来的期望</p>
+<p>9.所遇到的坑，一个tableView多个网络请求，怎么优化(我提到)</p>
+<p>10.GCD说一下</p>
+<p>11.被WXG怎么挂的</p>
+<p>12.有什么要问我的</p>
+<h4 id="小结-5"><a href="#小结-5" class="headerlink" title="小结"></a>小结</h4><p>五一放假回来接到电话说在简历池看到我简历，问我还找不找实习。毕竟是腾讯，能有机会面还是要面滴。</p>
+<p>好在问题比较常规，就过了。现在官网显示的是复试中，但是过了快五个工作日还未预约下次面试。其实已经拖到这么晚了，我并没报有什么期望。</p>
+<h2 id="三、一点体会"><a href="#三、一点体会" class="headerlink" title="三、一点体会"></a>三、一点体会</h2><p>经历了春招，我直观感受是，对于绝大多数人</p>
+<p><strong>offer = 20%心态 + 50%实力 + 10%面试技巧 + 20%缘分运气</strong></p>
+<p>我以自己的经历分析下吧:</p>
+<h3 id="心态"><a href="#心态" class="headerlink" title="心态"></a>心态</h3><ul>
+<li><p>心态很重要，我投出第一份简历是在3月中旬，在遭到美团头条笔试连环挂，腾讯阿里内推短时间内了无音讯后，我心态的确有些炸裂。直到内推了头条我才接到第一次面试的邀请，而第一次面试已经是4月9日了。不能放弃，一定要坚持。</p>
+<p>要保持一个好的心态，需要对自己的实力有一定的自信，更重要的是对自己的实力有清楚的定位。</p>
+</li>
+<li><p>建议广撒网但要有阶段性地撒，这个根据个人情况决定。准备好了就投简历，越早越好。多关注内推尤其是直推部门的信息，我觉得很多人往往是缺一个面试的机会。</p>
+</li>
+<li><p>同时建议能找到一起参加春招，能交流的伙伴。研究生的话一般一个实验室的会有交流，本科生就..找嘛…。有能一起吐槽，同时分享企业招聘内推信息的伙伴很重要，也建议可以加多个公司的内推群实习群，这都是解压，调整心态的方式。(虽然若别人都收到offer了，就自己还0offer可能心态会更崩2333) </p>
+</li>
+<li><p>一般第一次面试肯定会紧张…这个我也什么好的经验。一般自我介绍后，我回答了一两个问题就进入状态了。在面完头条之后的面试我基本都不紧张。</p>
+</li>
+<li><p>还有只有当拿到所期望的公司offer以后，才能放松下来。</p>
+</li>
+</ul>
+<h3 id="实力"><a href="#实力" class="headerlink" title="实力"></a>实力</h3><p>当然啦，实力越强，所占的比重肯定越大，不止50%。</p>
+<p>实力主要分为三部分(资料附后)</p>
+<h4 id="1-计算机基础"><a href="#1-计算机基础" class="headerlink" title="1.计算机基础"></a>1.计算机基础</h4><p>操作系统，计算机网络，数据库。一般根据方向会有不同的偏重，比如iOS问到的偏OS和计网。</p>
+<p>这方面我其实没有做很多准备，基本是吃老本，拿课堂笔记复习了一下，书籍重点看了HTTP，HTTPS，还有TCP/IP，然后根据面经查漏补缺吧…</p>
+<h4 id="2-算法与数据结构"><a href="#2-算法与数据结构" class="headerlink" title="2.算法与数据结构"></a>2.算法与数据结构</h4><p>这应该属于计算机基础的，但我还是单拎了出来。算法主要分为笔试题和面试题。</p>
+<p>笔试题因为时间充足，所以问题难度会较大一些，但都是有套路的…比如BFS的题是出现率最高的..关键在于不断地总结与反思。</p>
+<p>面试题根据情况，有的是在线编程，有的是说思路，有的是白纸手写。因为时间限制，一般代码量不高，考察数据结构的几率较大，尤其是链表。</p>
+<p>这方面我是大概过了下《算法导论》，跳着看各个章节，刷完了《剑指offer》，leetcode刷得不多…</p>
+<p>算法是可以突击的，比如寒假开始刷，是ok的，并不一定需要平日的积累。当然..科班学生平日是肯定有积累的..</p>
+<p>ACM大佬手下留情…</p>
+<h3 id="3-iOS基础知识-项目经历"><a href="#3-iOS基础知识-项目经历" class="headerlink" title="3.iOS基础知识+项目经历"></a>3.iOS基础知识+项目经历</h3><p>iOS基础知识也包括OC和Swift相关。我是Swift选手，2月份开始看OC语法，2月底正式开始刷面试题，同时也是补iOS基础。</p>
+<p>主要是看官方文档+博客来重点学习各个小方向，刷面试题以辅助。</p>
+<p>项目经历是没办法突击的，我经历应该还行吧。这个就看自己平时积累了。</p>
+<p>iOS基础知识老实说是可以突击的，比如各种iOS,OC的面试题等等，但是有了一定的项目经历，突击起来才更有效，提升更大。</p>
+<h3 id="面试技巧"><a href="#面试技巧" class="headerlink" title="面试技巧"></a>面试技巧</h3><p>首先，一般来说面试官都是很忙的..然后基本是有题库的。</p>
+<p>自我介绍其实是给面试官看你简历，也是给面试官”找问题问”的时间。</p>
+<p>我的自我介绍都是名字+学校+专业，然后就阐述iOS自学之路，会简单的说下做过的iOS相关项目，重点基本都是为了突出学MVC到MVVM，StoryBoard到代码布局，因为我个人在app架构这一块有些小心得。所以如果看问我的面试题，绝大多数面试官一开始都问的我MVC，MVVM。我的意思是:</p>
+<p><strong>引导面试官问你问题</strong></p>
+<p>这并不是很trick的做法，而是理所应当的。面试就那么短时间，最好就是要在<strong>有限的时间内展现你所有的优势</strong>。而若完全靠面试官的题库去问，呃…</p>
+<p><strong>那么遇到不会的问题怎么办呢？</strong></p>
+<p>完全不会就直说不会，但如果是这样的情况，你可以再引导一波，举个例子</p>
+<p>头条一面我被问到”Runloop的Source是什么？”。我当时对于Source只记得是事件产生的地方，而我多说了一句知道RunLoop的Observer，以及帮助实现AutoreleasePool，接着面试官就问我AutoreleasePool是什么？</p>
+<p><strong>面试嘛，就是一个面试官对面试者的知识库做DFS的过程</strong>。至于深度有多深看面试官兴趣了…</p>
+<p>绝大多数面试，比如我所经历的蚂蚁一面，JD一面，CDG一面都是比较常规的面试，对着你的自我介绍或者项目找要点问，深度扩展一下，再考察一下iOS基础，再考察一下计算机基础，再考察一下算法基础。聊得开心再多聊几句…</p>
+<h3 id="缘分运气"><a href="#缘分运气" class="headerlink" title="缘分运气"></a>缘分运气</h3><p>可能20%好像给多了..其实不然…</p>
+<p>比如内推头条，我真的就是随便在牛客看到个帖子就投了，没什么期望，真没想到第二天就能收到面试邀请。</p>
+<p>面试真的看缘分，因为面试并不是单方面的事，<strong>有时候面试就像相亲，match很重要</strong>。</p>
+<p>也看运气，有句话说得有一定道理，<strong>“面试过了，是问的题你刚好会”</strong></p>
+<p>而当然啦，我们要做的就是不断地扩展我们所会的问题域</p>
+<p>所以，我觉得<strong>如果实力不断增加，缘分运气占的比例会逐渐下降。</strong></p>
+<p>佛系佛系。</p>
+<h2 id="四、书籍及资料"><a href="#四、书籍及资料" class="headerlink" title="四、书籍及资料"></a>四、书籍及资料</h2><p>主要是推荐一下我所看的书籍和资料吧</p>
+<h3 id="计算机基础"><a href="#计算机基础" class="headerlink" title="计算机基础"></a>计算机基础</h3><p>因为我这方面看的不多..所以.</p>
+<ul>
+<li><p>先首推<a href="https://github.com/CyC2018/Interview-Notebook" target="_blank" rel="external">技术面试需要掌握的基础知识整理</a>，这个应该也不用我推荐了，良心整理，我在github看到时还只有4000satrs，现在已经2w了…</p>
+<p>推荐在面试前过一遍，查缺补漏，对不会的知识点可以再单方面深入看。</p>
+<p>同时也很适合在等待面试的前xx分钟看。</p>
+</li>
+<li><p>《HTTP权威指南》我是没看完..大概看完基础的几章，然后重点看了HTTPS</p>
+</li>
+<li><p>《TCP/IP详解》我也是挑着看的…</p>
+</li>
+<li><p>《操作系统概念》这也是教材…我只是复习了一遍自己的课堂笔记。</p>
+</li>
+</ul>
+<p>如果时间充裕，HTTP，TCP/IP能多熟就多熟，能多深就多深吧，基本功…</p>
+<h3 id="算法与数据结构"><a href="#算法与数据结构" class="headerlink" title="算法与数据结构"></a>算法与数据结构</h3><ul>
+<li>《剑指offer》不多说了，必刷</li>
+<li>Leetcode，时间充足则能多刷就多刷</li>
+<li>关于数据结构，我是把常见的数据结构跟着《算法导论》再实现了一遍(大二实现过)</li>
+</ul>
+<h3 id="iOS基础"><a href="#iOS基础" class="headerlink" title="iOS基础"></a>iOS基础</h3><ul>
+<li>先首推<a href="https://github.com/ChenYilong/iOSInterviewQuestions" target="_blank" rel="external">iOS面试题集锦</a>，如果已有基础，可以复习初始时过一遍，对着不会的逐个击破。也适合查缺补漏。同样的还有<a href="https://www.zhihu.com/question/19604641" target="_blank" rel="external">MrPeak的iOS面试题</a></li>
+<li><strong>OC</strong>《Effective Objective-C 2.0》《Objective-C高级编程 iOS与OS X多线程和内存管理》</li>
+<li><strong>Swift</strong> 问Swift问的比较少，基本上过了guide就还好，推荐看《Advanced Swift》</li>
+<li><strong>Runtime</strong> <a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008048-CH1-SW1" target="_blank" rel="external">Objective-C Runtime Programming Guide</a></li>
+<li><strong>RunLoop</strong> <a href="https://blog.ibireme.com/2015/05/18/runloop/" target="_blank" rel="external">深入理解RunLoop</a></li>
+<li><strong>多线程</strong> <a href="https://blog.csdn.net/hello_hwc/article/details/54293280" target="_blank" rel="external">GCD精讲,Swift3&amp;4</a> <a href="https://www.jianshu.com/p/0b0d9b1f1f19" target="_blank" rel="external">iOS多线程</a> <a href="https://www.jianshu.com/p/938d68ed832c" target="_blank" rel="external">保证线程安全的方式</a> <a href="https://blog.ibireme.com/2016/01/16/spinlock_is_unsafe_in_ios/" target="_blank" rel="external">不再安全的OSSpinLock</a></li>
+<li><strong>app架构</strong> <a href="https://blog.coding.net/blog/ios-architecture-patterns" target="_blank" rel="external">iOS 架构模式 - 简述 MVC, MVP, MVVM 和 VIPER</a>  Swift选手去学学RxSwift吧~</li>
+<li><strong>LifeCycle</strong><a href="https://www.jianshu.com/p/d60b388b19f5" target="_blank" rel="external">iOS程序执行顺序和UIViewController 的生命周期</a></li>
+<li><strong>Block</strong> <a href="https://blog.ibireme.com/2013/11/27/objc-block/" target="_blank" rel="external">objc 中的 block</a></li>
+<li><strong>性能优化</strong><a href="https://www.jianshu.com/p/c58001ae3da5" target="_blank" rel="external">深入剖析 iOS 性能优化</a> </li>
+<li><strong>设计模式</strong> <a href="https://www.raywenderlich.com/160651/design-patterns-ios-using-swift-part-12" target="_blank" rel="external">Design Patterns on iOS using Swift</a> 这个网站也很好，我记得以前在这看过<code>IGList</code>的教程</li>
+<li><strong>博客及网站</strong><ul>
+<li><a href="http://nshipster.com" target="_blank" rel="external">NSHipster</a> 这个不用多说吧，只要是这里有的且我想看的都看了一遍</li>
+<li><a href="http://swifter.tips" target="_blank" rel="external">Swift 必备 tips</a></li>
+<li><a href="https://blog.ibireme.com" target="_blank" rel="external">YY大神的博客</a> 上面很多篇都是他的博客，但他已经很久没更了</li>
+<li><a href="https://onevcat.com/2017/04/storyboard-argue/" target="_blank" rel="external">王巍大神的博客</a> 今天还更新了关于app架构的一篇文章</li>
+<li>其实还有很多大神的博客，但读的还不多..so</li>
+</ul>
+</li>
+</ul>
+<h3 id="其他面经"><a href="#其他面经" class="headerlink" title="其他面经"></a>其他面经</h3><p>主要是我所看的面经</p>
+<p><a href="http://dreampiggy.com/2016/09/25/ioskai-fa-mian-shi-mian-shi-zhi-shi-he-ji/" target="_blank" rel="external">为我学长打Call</a> 我复习一开始是对着他整理的知识点过的，也感谢学长在我iOS自学之路上所给予的帮助@DreamPiggy</p>
+<p><a href="https://www.jianshu.com/p/a992b5f697ca?utm_campaign=hugo&amp;utm_medium=reader_share&amp;utm_content=note&amp;utm_source=qq" target="_blank" rel="external">在一个iOS交流群看到的</a> </p>
+<p><a href="https://www.nowcoder.com/discuss/21022" target="_blank" rel="external">牛客上搜到的，去年的…</a></p>
+<h2 id="五、结语"><a href="#五、结语" class="headerlink" title="五、结语"></a>五、结语</h2><p>其实如此长篇的整理</p>
+<p>是对自己的总结，毕竟两个多月忙着同一件事，终于结束之时还是有所感慨。</p>
+<p>是一种回馈，在春招路上，我得到了很多同学的帮助，也看了很多面经，如今将自己的心得分享给大家，是促进良性的循环。</p>
+<p>同时也是希望让更多的iOSer看到，这孤独的路上，真的不止你一人。</p>
+<p>希望大家都能得到满意的结果。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS开发/" rel="tag"># iOS开发</a>
+          
+            <a href="/tags/Swift/" rel="tag"># Swift</a>
+          
+            <a href="/tags/Objective-C/" rel="tag"># Objective-C</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/06/UnlimitedCarousel自定义无限轮播图-真·初识开源/" rel="next" title="UnlimitedCarousel自定义无限轮播图(真·初识开源)">
+                <i class="fa fa-chevron-left"></i> UnlimitedCarousel自定义无限轮播图(真·初识开源)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/what.png"
+               alt="Nathan Liu" />
+          <p class="site-author-name" itemprop="name">Nathan Liu</p>
+           
+              <p class="site-description motion-element" itemprop="description">Nathan的个人博客,关于技术与开发,关于NBA,关于我的生活。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/WhatTheNathan" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/WhatTheNathan" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/liu-gui-dong-82/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-comments-o"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/whatthenathan/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-google"></i>
+                  
+                  Instagram
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、前言"><span class="nav-number">1.</span> <span class="nav-text">一、前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整体时间线"><span class="nav-number">1.1.</span> <span class="nav-text">整体时间线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#笔试挂"><span class="nav-number">1.2.</span> <span class="nav-text">笔试挂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#笔试或简历过，但放弃面试"><span class="nav-number">1.3.</span> <span class="nav-text">笔试或简历过，但放弃面试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最终参加面试"><span class="nav-number">1.4.</span> <span class="nav-text">最终参加面试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#未投的公司"><span class="nav-number">1.5.</span> <span class="nav-text">未投的公司</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、面试过程"><span class="nav-number">2.</span> <span class="nav-text">二、面试过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#蚂蚁金服"><span class="nav-number">2.1.</span> <span class="nav-text">蚂蚁金服</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#电话一面，25min"><span class="nav-number">2.1.1.</span> <span class="nav-text">电话一面，25min</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#电话二面，18min"><span class="nav-number">2.1.2.</span> <span class="nav-text">电话二面，18min</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#电话三面，16min"><span class="nav-number">2.1.3.</span> <span class="nav-text">电话三面，16min</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小结"><span class="nav-number">2.1.4.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#今日头条"><span class="nav-number">2.2.</span> <span class="nav-text">今日头条</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#视频一面，1-2h左右"><span class="nav-number">2.2.1.</span> <span class="nav-text">视频一面，1.2h左右</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#视频二面，1h左右"><span class="nav-number">2.2.2.</span> <span class="nav-text">视频二面，1h左右</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#视频三面，30min"><span class="nav-number">2.2.3.</span> <span class="nav-text">视频三面，30min</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HR电话面，15min"><span class="nav-number">2.2.4.</span> <span class="nav-text">HR电话面，15min</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小结-1"><span class="nav-number">2.2.5.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网易云音乐"><span class="nav-number">2.3.</span> <span class="nav-text">网易云音乐</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#现场一面挂-40min"><span class="nav-number">2.3.1.</span> <span class="nav-text">现场一面挂 40min</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小结-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#京东"><span class="nav-number">2.4.</span> <span class="nav-text">京东</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#现场一面-40min"><span class="nav-number">2.4.1.</span> <span class="nav-text">现场一面 40min</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#现场二面-leader-30min"><span class="nav-number">2.4.2.</span> <span class="nav-text">现场二面(leader) 30min</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HR电话面-5分钟"><span class="nav-number">2.4.3.</span> <span class="nav-text">HR电话面 5分钟</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小结-3"><span class="nav-number">2.4.4.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#腾讯"><span class="nav-number">2.5.</span> <span class="nav-text">腾讯</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#WXG电话一面挂-30min"><span class="nav-number">2.5.1.</span> <span class="nav-text">WXG电话一面挂 30min</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小结-4"><span class="nav-number">2.5.2.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CDG电话一面-28min"><span class="nav-number">2.5.3.</span> <span class="nav-text">CDG电话一面 28min</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小结-5"><span class="nav-number">2.5.4.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、一点体会"><span class="nav-number">3.</span> <span class="nav-text">三、一点体会</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#心态"><span class="nav-number">3.1.</span> <span class="nav-text">心态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实力"><span class="nav-number">3.2.</span> <span class="nav-text">实力</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-计算机基础"><span class="nav-number">3.2.1.</span> <span class="nav-text">1.计算机基础</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-算法与数据结构"><span class="nav-number">3.2.2.</span> <span class="nav-text">2.算法与数据结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-iOS基础知识-项目经历"><span class="nav-number">3.3.</span> <span class="nav-text">3.iOS基础知识+项目经历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面试技巧"><span class="nav-number">3.4.</span> <span class="nav-text">面试技巧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缘分运气"><span class="nav-number">3.5.</span> <span class="nav-text">缘分运气</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、书籍及资料"><span class="nav-number">4.</span> <span class="nav-text">四、书籍及资料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机基础"><span class="nav-number">4.1.</span> <span class="nav-text">计算机基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法与数据结构"><span class="nav-number">4.2.</span> <span class="nav-text">算法与数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS基础"><span class="nav-number">4.3.</span> <span class="nav-text">iOS基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他面经"><span class="nav-number">4.4.</span> <span class="nav-text">其他面经</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、结语"><span class="nav-number">5.</span> <span class="nav-text">五、结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Nathan Liu</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
