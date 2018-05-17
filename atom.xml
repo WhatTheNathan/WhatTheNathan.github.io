@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>What The Nathan</title>
+  
   <subtitle>Make That Old</subtitle>
   <link href="/atom.xml" rel="self"/>
   
@@ -57,7 +58,10 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;UnlimitedCarousel自定义无限轮播图-真·初识开源&quot;&gt;&lt;a href=&quot;#UnlimitedCarousel自定义无限轮播图-真·初识开源&quot; class=&quot;headerlink&quot; title=&quot;UnlimitedCarousel自定义无限轮播图(真·
+      
+      
+        &lt;h1 id=&quot;UnlimitedCarousel自定义无限轮播图-真·初识开源&quot;&gt;&lt;a href=&quot;#UnlimitedCarousel自定义无限轮播图-真·初识开源&quot; class=&quot;headerlink&quot; title=&quot;UnlimitedCarousel自定义无限轮播图(真·
+      
     
     </summary>
     
@@ -164,11 +168,14 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
+      
+      
+        &lt;blockquote&gt;
 &lt;p&gt;近期学习了MVVM/RxSwift，简单重构了一下短学期的OOG-iOS,然后大彻大悟 “我短学期写的1W行Swift都是屎啊！”&lt;/p&gt;
 &lt;p&gt;当然，我现在写的也是屎，不过可能比以前香一点….&lt;/p&gt;
 &lt;p&gt;先占坑..督促自己赶紧写&lt;/p&gt;
 &lt;/
+      
     
     </summary>
     
@@ -237,11 +244,14 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
+      
+      
+        &lt;blockquote&gt;
 &lt;p&gt;找到一个让我写东西的地方。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;其实，个人是喜欢写东西的，中二的时候在空间日志里写下了很多对于NBA的一些想法，当然我那些青涩的样子都被我删除了哈哈哈。&lt;/p&gt;
 &lt;p&gt;所以我一直是想找一个地方去写东西的，而且作
+      
     
     </summary>
     
