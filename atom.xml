@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-11T13:52:44.032Z</updated>
+  <updated>2018-06-07T09:24:02.237Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Swift Style Guide自用笔记</title>
+    <link href="http://yoursite.com/2018/06/07/Swift-Style-Guide%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2018/06/07/Swift-Style-Guide自用笔记/</id>
+    <published>2018-06-07T09:23:02.000Z</published>
+    <updated>2018-06-07T09:24:02.237Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Swift-Style-Guide自用笔记&quot;&gt;&lt;a href=&quot;#Swift-Style-Guide自用笔记&quot; class=&quot;headerlink&quot; title=&quot;Swift Style Guide自用笔记&quot;&gt;&lt;/a&gt;Swift Style Guide自用笔记&lt;/
+      
+    
+    </summary>
+    
+      <category term="iOS开发" scheme="http://yoursite.com/categories/iOS%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="iOS开发" scheme="http://yoursite.com/tags/iOS%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="Swift" scheme="http://yoursite.com/tags/Swift/"/>
+    
+  </entry>
   
   <entry>
     <title>大三iOSer春招总结(腾讯蚂蚁头条京东网易)</title>
