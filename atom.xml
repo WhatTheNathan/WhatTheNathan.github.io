@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-07T09:24:02.237Z</updated>
+  <updated>2018-06-07T09:26:03.705Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,14 +21,11 @@
     <link href="http://yoursite.com/2018/06/07/Swift-Style-Guide%E8%87%AA%E7%94%A8%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2018/06/07/Swift-Style-Guide自用笔记/</id>
     <published>2018-06-07T09:23:02.000Z</published>
-    <updated>2018-06-07T09:24:02.237Z</updated>
+    <updated>2018-06-07T09:26:03.705Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;Swift-Style-Guide自用笔记&quot;&gt;&lt;a href=&quot;#Swift-Style-Guide自用笔记&quot; class=&quot;headerlink&quot; title=&quot;Swift Style Guide自用笔记&quot;&gt;&lt;/a&gt;Swift Style Guide自用笔记&lt;/
-      
+      &lt;h1 id=&quot;Swift-Style-Guide自用笔记&quot;&gt;&lt;a href=&quot;#Swift-Style-Guide自用笔记&quot; class=&quot;headerlink&quot; title=&quot;Swift Style Guide自用笔记&quot;&gt;&lt;/a&gt;Swift Style Guide自用笔记&lt;/h1&gt;&lt;h2 id=&quot;闲谈&quot;&gt;&lt;a href=&quot;#闲谈&quot; class=&quot;headerlink&quot; title=&quot;闲谈&quot;&gt;&lt;/a&gt;闲谈&lt;/h2&gt;&lt;p&gt;我的Swift风格基本上是跟着白胡子老爷爷，然后被一些开源项目的源码影响，这次阅读了Google的Swift Style Guide，还是发现了不少自己风格上的问题，这里的笔记仅仅是针对自己所记录的笔记。&lt;/p&gt;
     
     </summary>
     
